@@ -122,5 +122,89 @@ document.addEventListener('DOMContentLoaded', function() {
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
     document.documentElement.style.setProperty('--transition', 'none');
   }
+
+  // Seamless Page Navigation via Keyboard (Up/Down/Left/Right) and Scroll
+  const pages = [
+    'index.html',
+    'features.html',
+    'isc_integration.html',
+    'risks_costs.html',
+    'roadmap.html',
+    'analysis.html',
+    'comparison.html',
+    'conclusion.html'
+  ];
+
+  function getPageIndex() {
+    const currentPath = window.location.pathname;
+    const pageName = currentPath.split('/').pop() || 'index.html';
+    return pages.indexOf(pageName);
+  }
+
+  // Seamless page exit animation before navigation
+  function navigateTo(direction) {
+    const currentIndex = getPageIndex();
+    if (currentIndex === -1) return;
+
+    let nextIndex = currentIndex + direction;
+    if (nextIndex >= 0 && nextIndex < pages.length) {
+      document.body.classList.add('page-exit');
+      setTimeout(() => {
+        window.location.href = pages[nextIndex];
+      }, 280); // Match CSS animation duration
+    }
+  }
+
+  // Intercept sidebar link clicks to apply exit animation
+  document.querySelectorAll('.sidebar nav a, .nav-links a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href && !href.startsWith('#')) {
+        e.preventDefault();
+        document.body.classList.add('page-exit');
+        setTimeout(() => { window.location.href = href; }, 280);
+      }
+    });
+  });
+
+  // Keyboard Navigation (Arrows)
+  document.addEventListener('keydown', (e) => {
+    // Prevent navigation if user is typing in an input/textarea (though not present here, good practice)
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+      navigateTo(1); // Next page
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      navigateTo(-1); // Previous page
+    }
+  });
+
+  // Scroll to Transition (Bottom of page to next)
+  let wheelTimeout;
+  window.addEventListener('wheel', (e) => {
+    // Only trigger if scrolling down
+    if (e.deltaY > 0) {
+      // Check if we hit the very bottom
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 2) {
+        // Debounce to prevent rapid transitions
+        if (!wheelTimeout) {
+          wheelTimeout = setTimeout(() => {
+            navigateTo(1);
+            wheelTimeout = null;
+          }, 800);
+        }
+      }
+    } else if (e.deltaY < 0) {
+      // Check if we hit the very top
+      if (window.scrollY === 0) {
+        if (!wheelTimeout) {
+          wheelTimeout = setTimeout(() => {
+            navigateTo(-1);
+            wheelTimeout = null;
+          }, 800);
+        }
+      }
+    }
+  });
 });
 

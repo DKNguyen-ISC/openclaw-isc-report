@@ -1,110 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2. The 5W-2H Framework | ISC Digital Transformation</title>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="Style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The 3 Critical Risks | ISC OpenClaw Analysis</title>
+  <meta name="description" content="Three critical risks that prevent ISC from deploying OpenClaw: data security, infrastructure cost, and unpredictable API bills.">
+  <link rel="stylesheet" href="Style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <nav class="sidebar">
-        <div class="sidebar-header">
-            <div class="logo-circle"><i class="fa-solid fa-chart-pie"></i></div>
-            <div class="brand">
-                <h2>ISC CĐS Report</h2>
-                <p>Data Automation Strategy</p>
-            </div>
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html"><span class="icon-wrap"><i class="fa-solid fa-bolt"></i></span>0. CĐS Executive Summary</a></li>
-            <li><a href="features.html"><span class="icon-wrap"><i class="fa-solid fa-gears"></i></span>1. AI Eval vs Reality</a></li>
-            <li><a href="isc_integration.html" class="active"><span class="icon-wrap"><i class="fa-solid fa-puzzle-piece"></i></span>2. The 5W-2H Framework</a></li>
-            <li><a href="risks_costs.html"><span class="icon-wrap"><i class="fa-solid fa-exclamation-triangle"></i></span>3. Kaizen & 7-Wastes</a></li>
-            <li><a href="roadmap.html"><span class="icon-wrap"><i class="fa-solid fa-road"></i></span>4. Department Scopes</a></li>
-            <li><a href="analysis.html"><span class="icon-wrap"><i class="fa-solid fa-chart-line"></i></span>5. Weekly Report</a></li>
-            <li><a href="comparison.html"><span class="icon-wrap"><i class="fa-solid fa-balance-scale"></i></span>6. CĐS Roadmap</a></li>
-            <li><a href="conclusion.html"><span class="icon-wrap"><i class="fa-solid fa-flag-checkered"></i></span>7. Long-Term Vision</a></li>
-        </ul>
-        <div class="sidebar-footer">
-            <p>V1 - 2026 | ISC CĐS Weekly</p>
-        </div>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-logo">ISC</span>
+      <span class="brand-sub">OpenClaw Analysis Report</span>
+      <span class="brand-meta">CEO Kent · Q2 2026</span>
+    </div>
+    <nav>
+      <a href="index.html"><i class="fa-solid fa-file-lines"></i> Executive Summary</a>
+      <a href="features.html"><i class="fa-solid fa-robot"></i> What is OpenClaw?</a>
+      <a href="isc_integration.html" class="active"><i class="fa-solid fa-shield-halved"></i> The 3 Critical Risks</a>
+      <a href="risks_costs.html"><i class="fa-solid fa-scale-balanced"></i> OpenClaw vs Claude</a>
+      <a href="roadmap.html"><i class="fa-solid fa-building"></i> Can ISC Use It?</a>
+      <a href="analysis.html"><i class="fa-solid fa-chart-gantt"></i> Our Alternative</a>
+      <a href="comparison.html"><i class="fa-solid fa-table-cells"></i> 5W-2H Framework</a>
+      <a href="conclusion.html"><i class="fa-solid fa-flag-checkered"></i> Recommendation</a>
     </nav>
-    <main class="content">
-        <header class="top-header">
-            <div class="header-content">
-                <div class="title-area">
-                    <span class="eyebrow">Company-Wide Rollout Strategy</span>
-                    <h1>The 5W-2H <span class="text-gradient">Framework</span></h1>
-                </div>
-            </div>
-        </header>
-        <section class="section-container">
-            <div class="section-header">
-                <h2><i class="fa-solid fa-table-columns"></i> 5W-2H Strategy Execution</h2>
-                <div class="divider"></div>
-            </div>
-            <p>To systematically scale Kaizen and 5S principles, we apply the 5W-2H framework at three distinct levels of the organization: Individual, Department, and Company.</p>
-            
-            <div class="table-container mb-8">
-                <table class="modern-table">
-                    <thead>
-                        <tr>
-                            <th>Level</th>
-                            <th>WHAT (Action)</th>
-                            <th>WHY (Benefit)</th>
-                            <th>WHEN (Timeline)</th>
-                            <th>WHO (Owner)</th>
-                            <th>WHERE (Platform)</th>
-                            <th>HOW TO (Method)</th>
-                            <th>HOW MUCH (Cost)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="highlight-row">
-                            <td><i class="fa-solid fa-user text-gold"></i> <strong>Cá nhân</strong> (Individual)</td>
-                            <td>Automate daily manual repetitive tasks</td>
-                            <td>Eliminate <em>Waiting</em> & <em>Defects</em> (7-Wastes)</td>
-                            <td>Immediate effect upon deployment</td>
-                            <td>Individual PICs</td>
-                            <td>Google Sheets / Excel macros</td>
-                            <td>Formula optimization, simple Apps Scripts</td>
-                            <td>$0 (Zero added cost)</td>
-                        </tr>
-                        <tr>
-                            <td><i class="fa-solid fa-users text-primary"></i> <strong>Phòng ban</strong> (Department)</td>
-                            <td>E.g. Auto-calculate SCM Shortage (Demand - Stock + POs)</td>
-                            <td>Standardize processes, reduce bottlenecks and cross-communication</td>
-                            <td>Within Q1 - Q3 2026</td>
-                            <td>Department Managers (e.g. SC Lead)</td>
-                            <td>Department Data Silos (BigQuery)</td>
-                            <td>Automated Scheduled Queries, Auto-Email alerts to Purchasing</td>
-                            <td>Minimal (~$10-15/mo for Queries)</td>
-                        </tr>
-                        <tr>
-                            <td><i class="fa-solid fa-building text-success"></i> <strong>Công ty</strong> (Company)</td>
-                            <td>Cross-departmental data synchronization (SCM ↔ Prod ↔ Finance)</td>
-                            <td>Achieve ultimate CEO visibility & comprehensive Digital Transformation</td>
-                            <td>End of 2026 Rollout</td>
-                            <td>CEO Kent / Tech Leads</td>
-                            <td>Enterprise Data Warehouse (EDW)</td>
-                            <td>Live Dashboards (Looker Studio), API integrations</td>
-                            <td>High ROI ($5k/yr infrastructure for $500k+ efficiency yield)</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            
-            <div class="verdict-banner">
-                <h3><i class="fa-solid fa-circle-check"></i> Standardized Approach</h3>
-                <p>This identical framework is mandated for all new digitalization initiatives. By framing every project through 5W-2H, we ensure alignment with the overarching goal of reducing Muda (waste) across ISC.</p>
-            </div>
-        </section>
-        <footer class="footer">
-            <p>ISC CĐS Weekly Report · CEO Kent Review · V2.0</p>
-        </footer>
-    </main>
-    <script src="assets/shared.js"></script>
+    <div class="sidebar-footer">ISC Digital Transformation · 2026</div>
+  </aside>
+
+  <main class="main-content">
+
+    <!-- HERO -->
+    <div class="page-hero">
+      <span class="eyebrow"><i class="fa-solid fa-shield-halved" style="margin-right:0.4rem;"></i>Page 2 of 7 · Risk Assessment</span>
+      <h1>3 Reasons ISC Cannot Deploy<br>OpenClaw Today</h1>
+      <p class="hero-subtitle">An honest risk assessment for our specific business environment</p>
+    </div>
+
+    <div class="section-container">
+      <div class="standout-box" style="margin-bottom:3rem;">
+        <div class="box-icon"><i class="fa-solid fa-circle-exclamation"></i></div>
+        <div>
+          <p class="lead-text">These are not hypothetical concerns. Each risk below maps directly to ISC's current infrastructure, data sensitivity, and operational scale. DK evaluated these risks against the <strong>actual conditions at ISC</strong> — not against an ideal enterprise with unlimited IT budget.</p>
+        </div>
+      </div>
+
+      <!-- RISK 1: DATA SECURITY -->
+      <div class="card card-danger" style="margin-bottom:2rem;">
+        <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;">
+          <div style="font-size:2rem;">🔒</div>
+          <div>
+            <div class="risk-badge risk-critical" style="margin-bottom:0.4rem;">CRITICAL RISK</div>
+            <h3>Risk #1 — Data Security: A Black Box Inside Our Network</h3>
+          </div>
+        </div>
+
+        <div class="grid-2" style="gap:1.5rem;margin-bottom:1.5rem;">
+          <div>
+            <h4 style="margin-bottom:0.75rem;color:var(--text-heading);">What OpenClaw Does</h4>
+            <p style="font-size:0.9rem;">To automate tasks, OpenClaw needs deep access to your computer and network. It reads files, accesses email, interacts with databases — the same systems that hold ISC's supplier contracts, pricing data, customer orders, and production plans.</p>
+          </div>
+          <div>
+            <h4 style="margin-bottom:0.75rem;color:var(--red);">The Problem</h4>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem;">
+              <li style="display:flex;gap:0.6rem;font-size:0.9rem;"><span style="color:var(--red);flex-shrink:0;">•</span> No enterprise security audit proving it doesn't leak data</li>
+              <li style="display:flex;gap:0.6rem;font-size:0.9rem;"><span style="color:var(--red);flex-shrink:0;">•</span> No guarantee updates won't change how it handles your files</li>
+              <li style="display:flex;gap:0.6rem;font-size:0.9rem;"><span style="color:var(--red);flex-shrink:0;">•</span> Open-source means anyone can read the code — including attackers</li>
+              <li style="display:flex;gap:0.6rem;font-size:0.9rem;"><span style="color:var(--red);flex-shrink:0;">•</span> A compromised version could exfiltrate data silently overnight</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="background:rgba(255,107,107,0.08);border-radius:var(--radius-sm);padding:1rem 1.25rem;border-left:3px solid var(--red);">
+          <strong style="color:var(--text-heading);display:block;margin-bottom:0.4rem;">ISC-Specific Impact</strong>
+          <p style="font-size:0.88rem;margin:0;">Our M1–M4 SCM system holds pricing logic, customer shortage data, and supplier relationships. This is ISC's competitive advantage. A data breach means competitor access to our entire supply chain strategy.</p>
+        </div>
+        <div style="margin-top:1.25rem;">
+          <span class="risk-badge risk-critical">❌ UNACCEPTABLE RISK — Data security cannot be guaranteed</span>
+        </div>
+      </div>
+
+      <!-- RISK 2: INFRASTRUCTURE -->
+      <div class="card card-warning" style="margin-bottom:2rem;">
+        <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;">
+          <div style="font-size:2rem;">🖥️</div>
+          <div>
+            <div class="risk-badge risk-high" style="margin-bottom:0.4rem;">HIGH RISK</div>
+            <h3>Risk #2 — Hardware: We Cannot Use Existing Computers</h3>
+          </div>
+        </div>
+
+        <div class="grid-2" style="gap:1.5rem;margin-bottom:1.5rem;">
+          <div>
+            <h4 style="margin-bottom:0.75rem;color:var(--text-heading);">Why Isolation Is Required</h4>
+            <p style="font-size:0.9rem;">The safest way to run OpenClaw is on a completely separate, isolated computer — one not connected to ISC's main network. This prevents accidental or intentional data leakage through the AI agent. Installing it on daily work computers creates a direct path to all company data.</p>
+          </div>
+          <div>
+            <h4 style="margin-bottom:0.75rem;color:var(--orange);">What ISC Would Need to Buy</h4>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem;">
+              <li style="display:flex;gap:0.6rem;font-size:0.9rem;"><span style="color:var(--orange);flex-shrink:0;">→</span> 1 dedicated isolated server or workstation</li>
+              <li style="display:flex;gap:0.6rem;font-size:0.9rem;"><span style="color:var(--orange);flex-shrink:0;">→</span> Network isolation setup (firewall, separate VLAN)</li>
+              <li style="display:flex;gap:0.6rem;font-size:0.9rem;"><span style="color:var(--orange);flex-shrink:0;">→</span> IT maintenance for the isolated environment</li>
+              <li style="display:flex;gap:0.6rem;font-size:0.9rem;"><span style="color:var(--orange);flex-shrink:0;">→</span> <strong style="color:var(--text-heading);">Estimated: $2,000–$5,000 USD upfront</strong></li>
+            </ul>
+          </div>
+        </div>
+        <span class="risk-badge risk-high">⚠️ SIGNIFICANT UPFRONT COST — Not justified without proven ROI</span>
+      </div>
+
+      <!-- RISK 3: API COSTS -->
+      <div class="card" style="border-left:4px solid var(--yellow);background:linear-gradient(135deg,var(--bg-card) 0%,rgba(255,215,0,0.04) 100%);margin-bottom:2rem;">
+        <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;">
+          <div style="font-size:2rem;">💸</div>
+          <div>
+            <div class="risk-badge risk-high" style="margin-bottom:0.4rem;">HIGH RISK</div>
+            <h3>Risk #3 — Hidden Costs: The API Bill That Grows Without Warning</h3>
+          </div>
+        </div>
+
+        <p style="margin-bottom:1.5rem;font-size:0.95rem;"><strong style="color:var(--text-heading);">OpenClaw is free. The AI brain that powers it is not.</strong></p>
+
+        <div class="grid-2" style="gap:1.5rem;margin-bottom:1.5rem;">
+          <div style="background:var(--bg-card-hover);padding:1.25rem;border-radius:var(--radius-sm);border:1px solid var(--border);">
+            <h4 style="margin-bottom:0.75rem;color:var(--red);">Option A — Pay-per-use AI (Claude, GPT-4)</h4>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;font-size:0.88rem;">
+              <li>Every task calls an AI API — billed per 1,000 tokens</li>
+              <li>24/7 operation across departments = thousands of calls/day</li>
+              <li>One month of full deployment: <strong style="color:var(--red);">$500–$3,000+ USD</strong></li>
+              <li>Cost is unpredictable — depends on task complexity</li>
+            </ul>
+          </div>
+          <div style="background:var(--bg-card-hover);padding:1.25rem;border-radius:var(--radius-sm);border:1px solid var(--border);">
+            <h4 style="margin-bottom:0.75rem;color:var(--yellow);">Option B — Free Local AI (Llama, Mistral)</h4>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;font-size:0.88rem;">
+              <li>No API cost, but requires GPU server: <strong style="color:var(--yellow);">$3,000–$8,000</strong></li>
+              <li>Current free models lack reasoning quality for SCM data</li>
+              <li>Risk of logic errors in shortage calculations and PO matching</li>
+              <li>An error in SCM logic → missed purchase orders → production stoppages</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="background:rgba(255,107,107,0.06);padding:1rem 1.25rem;border-radius:var(--radius-sm);margin-bottom:1.25rem;">
+          <strong style="color:var(--text-heading);">The Trap:</strong>
+          <p style="font-size:0.88rem;margin-top:0.25rem;margin-bottom:0;">"Free" OpenClaw requires either unpredictable ongoing API costs OR expensive hardware. There is no genuinely zero-cost path for enterprise use.</p>
+        </div>
+        <span class="risk-badge risk-high">⚠️ COST STRUCTURE IS UNSUITABLE — No budget control mechanism exists</span>
+      </div>
+
+      <!-- RISK MATRIX -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2><i class="fa-solid fa-table"></i> Risk Summary Matrix</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="table-container" style="margin-bottom:2rem;">
+        <table class="modern-table">
+          <thead>
+            <tr>
+              <th>Risk Area</th>
+              <th>Severity</th>
+              <th>ISC Impact</th>
+              <th>Mitigation Available?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="highlight-row-danger">
+              <td><strong>Data Security</strong></td>
+              <td><span class="risk-badge risk-critical">CRITICAL</span></td>
+              <td>Customer & supplier data leak</td>
+              <td><span class="text-danger">❌ Not yet available</span></td>
+            </tr>
+            <tr>
+              <td><strong>Infrastructure</strong></td>
+              <td><span class="risk-badge risk-high">HIGH</span></td>
+              <td>$2k–$5k+ hardware cost</td>
+              <td><span class="text-warning">✓ Buy dedicated hardware</span></td>
+            </tr>
+            <tr>
+              <td><strong>API Costs</strong></td>
+              <td><span class="risk-badge risk-high">HIGH</span></td>
+              <td>Uncontrolled monthly spend</td>
+              <td><span class="text-warning">✓ Set API billing limits</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="standout-box">
+        <div class="box-icon"><i class="fa-solid fa-ban" style="color:var(--red);"></i></div>
+        <div>
+          <p class="lead-text">"The security risk alone is sufficient reason to pause adoption. Until enterprise-grade security audits exist for OpenClaw, ISC should <strong>observe — not deploy.</strong>"</p>
+        </div>
+      </div>
+
+      <div class="nav-arrows">
+        <a href="features.html" class="prev"><i class="fa-solid fa-arrow-left"></i> What is OpenClaw?</a>
+        <a href="risks_costs.html">OpenClaw vs Claude <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="assets/shared.js"></script>
 </body>
 </html>

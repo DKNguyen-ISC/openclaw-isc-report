@@ -1,116 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>5. Weekly Progress Report | ISC Digital Transformation</title>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="Style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Alternative | ISC OpenClaw Analysis</title>
+  <meta name="description" content="ISC's Data Automation strategy — safer, faster, and already running. See what's been built and what it's saving the company.">
+  <link rel="stylesheet" href="Style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <nav class="sidebar">
-        <div class="sidebar-header">
-            <div class="logo-circle"><i class="fa-solid fa-chart-pie"></i></div>
-            <div class="brand">
-                <h2>ISC CĐS Report</h2>
-                <p>Data Automation Strategy</p>
-            </div>
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html"><span class="icon-wrap"><i class="fa-solid fa-bolt"></i></span>0. CĐS Executive Summary</a></li>
-            <li><a href="features.html"><span class="icon-wrap"><i class="fa-solid fa-gears"></i></span>1. AI Eval vs Reality</a></li>
-            <li><a href="isc_integration.html"><span class="icon-wrap"><i class="fa-solid fa-puzzle-piece"></i></span>2. The 5W-2H Framework</a></li>
-            <li><a href="risks_costs.html"><span class="icon-wrap"><i class="fa-solid fa-exclamation-triangle"></i></span>3. Kaizen & 7-Wastes</a></li>
-            <li><a href="roadmap.html"><span class="icon-wrap"><i class="fa-solid fa-road"></i></span>4. Department Scopes</a></li>
-            <li><a href="analysis.html" class="active"><span class="icon-wrap"><i class="fa-solid fa-chart-line"></i></span>5. Weekly Report</a></li>
-            <li><a href="comparison.html"><span class="icon-wrap"><i class="fa-solid fa-balance-scale"></i></span>6. CĐS Roadmap</a></li>
-            <li><a href="conclusion.html"><span class="icon-wrap"><i class="fa-solid fa-flag-checkered"></i></span>7. Long-Term Vision</a></li>
-        </ul>
-        <div class="sidebar-footer">
-            <p>V1 - 2026 | ISC CĐS Weekly</p>
-        </div>
-    </nav>
-    <main class="content">
-        <header class="top-header">
-            <div class="header-content">
-                <div class="title-area">
-                    <span class="eyebrow">Friday 16:00 Updates</span>
-                    <h1>Weekly Progress <span class="text-gradient">Report</span></h1>
-                </div>
-                <div class="badges">
-                    <span class="badge badge-gold"><i class="fa-solid fa-clock"></i> Updated: March 2026</span>
-                </div>
-            </div>
-        </header>
-        <section class="section-container">
-            <div class="section-header">
-                <h2><i class="fa-solid fa-tasks"></i> Current Week Achievements</h2>
-                <div class="divider"></div>
-            </div>
-            <div class="grid-2">
-                <div class="feature-card" style="border-color: rgba(52,211,153,0.3);">
-                    <div class="card-icon bg-success-light"><i class="fa-solid fa-check text-success"></i></div>
-                    <h4>SCM Shortage Automation</h4>
-                    <p>Successfully deployed the deterministic script for Shortage calculation. Purchasing team now receives auto-emails daily at 06:00.</p>
-                </div>
-                <div class="feature-card" style="border-color: rgba(251,191,36,0.3);">
-                    <div class="card-icon bg-warning-light"><i class="fa-solid fa-spinner text-warning"></i></div>
-                    <h4>Production Dashboard</h4>
-                    <p>In Progress: Mapping out the Looker Studio dashboard requirements for the Production scheduling team.</p>
-                </div>
-            </div>
-            
-            <div class="section-header mt-12">
-                <h2><i class="fa-solid fa-chart-line"></i> Kaizen Metrics Tracker</h2>
-                <div class="divider"></div>
-            </div>
-            <div class="table-container mb-8">
-                <table class="modern-table">
-                    <thead>
-                        <tr>
-                            <th>Department</th>
-                            <th>Initiative</th>
-                            <th>Status</th>
-                            <th>Est. Hours Saved/Wk</th>
-                            <th>Owner</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="highlight-row">
-                            <td>Supply Chain</td>
-                            <td>Auto-Shortage Calc</td>
-                            <td><span class="tag tag-solid" style="background:var(--success); color:white;">Live</span></td>
-                            <td class="text-success">14 hrs</td>
-                            <td>DK Nguyen</td>
-                        </tr>
-                        <tr>
-                            <td>Production</td>
-                            <td>Scheduling Sync</td>
-                            <td><span class="tag tag-outline text-warning">In Progress</span></td>
-                            <td class="text-warning">Pending</td>
-                            <td>Khánh</td>
-                        </tr>
-                        <tr>
-                            <td>Finance</td>
-                            <td>Automated Invoicing</td>
-                            <td><span class="tag tag-outline">Planned Q3</span></td>
-                            <td>—</td>
-                            <td>Finance Team</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
 
-            <div class="verdict-banner">
-                <h3><i class="fa-solid fa-bullhorn"></i> Next Week Focus</h3>
-                <p>Complete the Production Data Pipeline integration and begin initial testing of the QC Defect charting tool.</p>
-            </div>
-        </section>
-        <footer class="footer">
-            <p>ISC CĐS Weekly Report · CEO Kent Review · V2.0</p>
-        </footer>
-    </main>
-    <script src="assets/shared.js"></script>
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-logo">ISC</span>
+      <span class="brand-sub">OpenClaw Analysis Report</span>
+      <span class="brand-meta">CEO Kent · Q2 2026</span>
+    </div>
+    <nav>
+      <a href="index.html"><i class="fa-solid fa-file-lines"></i> Executive Summary</a>
+      <a href="features.html"><i class="fa-solid fa-robot"></i> What is OpenClaw?</a>
+      <a href="isc_integration.html"><i class="fa-solid fa-shield-halved"></i> The 3 Critical Risks</a>
+      <a href="risks_costs.html"><i class="fa-solid fa-scale-balanced"></i> OpenClaw vs Claude</a>
+      <a href="roadmap.html"><i class="fa-solid fa-building"></i> Can ISC Use It?</a>
+      <a href="analysis.html" class="active"><i class="fa-solid fa-chart-gantt"></i> Our Alternative</a>
+      <a href="comparison.html"><i class="fa-solid fa-table-cells"></i> 5W-2H Framework</a>
+      <a href="conclusion.html"><i class="fa-solid fa-flag-checkered"></i> Recommendation</a>
+    </nav>
+    <div class="sidebar-footer">ISC Digital Transformation · 2026</div>
+  </aside>
+
+  <main class="main-content">
+
+    <!-- HERO -->
+    <div class="page-hero">
+      <span class="eyebrow"><i class="fa-solid fa-chart-gantt" style="margin-right:0.4rem;"></i>Page 5 of 7 · ISC Strategy</span>
+      <h1>What We're Doing Instead</h1>
+      <p class="hero-subtitle">ISC's Data Automation Strategy — Safer, Faster, Already Running</p>
+    </div>
+
+    <div class="section-container">
+
+      <!-- OPENING STATEMENT -->
+      <div class="standout-box" style="margin-bottom:3rem;">
+        <div class="box-icon"><i class="fa-solid fa-rocket"></i></div>
+        <div>
+          <p class="lead-text">While OpenClaw is an interesting experiment, ISC has already deployed a more reliable version of the same vision: <strong>intelligent automation that eliminates the 7-Wastes</strong> without the security risks. Here's what's running right now.</p>
+        </div>
+      </div>
+
+      <!-- SECTION 1: LIVE SYSTEM -->
+      <div class="section-header">
+        <h2><i class="fa-solid fa-circle-check" style="color:var(--green);"></i> Supply Chain Automation: Already Eliminating Waste</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="grid-2" style="margin-bottom:2rem;gap:1.5rem;">
+        <div class="card card-success">
+          <div class="card-icon card-icon-green"><i class="fa-solid fa-bolt"></i></div>
+          <h4 style="margin-bottom:0.5rem;">Automated Shortage Calculation</h4>
+          <p style="font-size:0.9rem;">Runs every business day at 06:00. Zero manual Excel work required.</p>
+        </div>
+        <div class="card card-success">
+          <div class="card-icon card-icon-green"><i class="fa-solid fa-envelope-circle-check"></i></div>
+          <h4 style="margin-bottom:0.5rem;">Auto-email to Purchasing</h4>
+          <p style="font-size:0.9rem;">Exact shortage list delivered before the team arrives at work.</p>
+        </div>
+      </div>
+
+      <!-- CODE BLOCK -->
+      <h3 style="margin-bottom:1rem;">The Logic — ISC Shortage Engine</h3>
+      <div class="code-mac" style="margin-bottom:2rem;">
+        <div class="mac-header">
+          <div class="mac-btn red"></div>
+          <div class="mac-btn yellow"></div>
+          <div class="mac-btn green"></div>
+          <span class="mac-title">BigQuery SQL · shortage_engine.sql</span>
+        </div>
+        <pre><span class="code-comment">-- ISC Shortage Engine (Google BigQuery)</span>
+<span class="code-keyword">SELECT</span>
+  Part_ID,
+  Part_Name,
+  <span class="code-key">Demand_This_Week</span>      <span class="code-keyword">AS</span> Demand,
+  <span class="code-key">Current_Stock</span>         <span class="code-keyword">AS</span> Stock,
+  <span class="code-key">On_The_Way_PO</span>         <span class="code-keyword">AS</span> PO_Supply,
+  <span class="code-highlight">(Demand - Stock - On_The_Way_PO)</span> <span class="code-keyword">AS</span> SHORTAGE
+<span class="code-keyword">FROM</span> SCM_Database
+<span class="code-keyword">WHERE</span> (Demand - Stock - On_The_Way_PO) &gt; 0
+<span class="code-keyword">ORDER BY</span> SHORTAGE <span class="code-keyword">DESC</span>;</pre>
+      </div>
+
+      <div class="grid-2" style="gap:1rem;margin-bottom:3rem;">
+        <div class="step"><i class="fa-solid fa-check" style="color:var(--green);"></i> 14+ hours of manual work eliminated per week</div>
+        <div class="step"><i class="fa-solid fa-check" style="color:var(--green);"></i> Zero formula errors — deterministic SQL logic</div>
+        <div class="step"><i class="fa-solid fa-check" style="color:var(--green);"></i> Purchasing gets data before they arrive at work</div>
+        <div class="step"><i class="fa-solid fa-check" style="color:var(--green);"></i> 100% data stays inside ISC's Google infrastructure</div>
+      </div>
+
+      <!-- SECTION 2: 7-WASTES -->
+      <div class="section-header">
+        <h2><i class="fa-solid fa-recycle"></i> How Data Automation Targets the 7-Wastes</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="table-container" style="margin-bottom:3rem;">
+        <table class="modern-table">
+          <thead>
+            <tr>
+              <th>Waste Type</th>
+              <th>Old Problem at ISC</th>
+              <th><i class="fa-solid fa-bolt" style="color:var(--green);margin-right:0.3rem;"></i>Automation Solution</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="highlight-row">
+              <td><strong>⏱ Waiting</strong></td>
+              <td>Waiting for daily Excel reports to be compiled</td>
+              <td><span class="text-success">Auto-runs at 06:00 every business day</span></td>
+            </tr>
+            <tr class="highlight-row">
+              <td><strong>🔴 Defects</strong></td>
+              <td>Manual formula errors (#REF!, wrong cell references)</td>
+              <td><span class="text-success">Deterministic SQL = zero formula errors</span></td>
+            </tr>
+            <tr class="highlight-row">
+              <td><strong>🔄 Over-processing</strong></td>
+              <td>Reprocessing and reformatting the same data 3× per week</td>
+              <td><span class="text-success">Single source of truth — BigQuery schema</span></td>
+            </tr>
+            <tr>
+              <td><strong>🚶 Motion</strong></td>
+              <td>Opening 5 different files to get one answer</td>
+              <td><span class="text-success">One dashboard, all data in one place</span></td>
+            </tr>
+            <tr>
+              <td><strong>📦 Transportation</strong></td>
+              <td>Emailing Excel files back and forth for updates</td>
+              <td><span class="text-success">Auto-email with fully processed data</span></td>
+            </tr>
+            <tr>
+              <td><strong>📋 Info Waste</strong></td>
+              <td>Outdated spreadsheets living in multiple locations</td>
+              <td><span class="text-success">Real-time BigQuery database — always current</span></td>
+            </tr>
+            <tr>
+              <td><strong>📊 Overproduction</strong></td>
+              <td>Reports nobody reads, emailed to everyone</td>
+              <td><span class="text-success">Targeted alerts delivered to the right person only</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- SECTION 3: TECH STACK -->
+      <div class="section-header">
+        <h2><i class="fa-solid fa-diagram-project"></i> Technology Stack</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="card" style="margin-bottom:1.5rem;">
+        <div style="display:flex;align-items:center;gap:0;flex-wrap:wrap;justify-content:space-between;margin-bottom:1.5rem;">
+          <div style="text-align:center;flex:1;min-width:120px;">
+            <div style="font-size:2rem;margin-bottom:0.5rem;">📊</div>
+            <strong style="color:var(--text-heading);display:block;font-size:0.9rem;">Google Sheets</strong>
+            <p style="font-size:0.78rem;color:var(--text-muted);margin:0.25rem 0 0;">Team enters data<br>(familiar tool)</p>
+          </div>
+          <div style="font-size:1.5rem;color:var(--gold);padding:0 0.5rem;">→</div>
+          <div style="text-align:center;flex:1;min-width:120px;">
+            <div style="font-size:2rem;margin-bottom:0.5rem;">🗄️</div>
+            <strong style="color:var(--gold-bright);display:block;font-size:0.9rem;">Google BigQuery</strong>
+            <p style="font-size:0.78rem;color:var(--text-muted);margin:0.25rem 0 0;">DK builds SQL logic<br>(the "brain" of the system)</p>
+          </div>
+          <div style="font-size:1.5rem;color:var(--gold);padding:0 0.5rem;">→</div>
+          <div style="text-align:center;flex:1;min-width:120px;">
+            <div style="font-size:2rem;margin-bottom:0.5rem;">⚙️</div>
+            <strong style="color:var(--text-heading);display:block;font-size:0.9rem;">Apps Script</strong>
+            <p style="font-size:0.78rem;color:var(--text-muted);margin:0.25rem 0 0;">Automation scheduler<br>(no human trigger needed)</p>
+          </div>
+          <div style="font-size:1.5rem;color:var(--gold);padding:0 0.5rem;">→</div>
+          <div style="text-align:center;flex:1;min-width:120px;">
+            <div style="font-size:2rem;margin-bottom:0.5rem;">📧</div>
+            <strong style="color:var(--text-heading);display:block;font-size:0.9rem;">Email / Dashboard</strong>
+            <p style="font-size:0.78rem;color:var(--text-muted);margin:0.25rem 0 0;">Results delivered<br>automatically</p>
+          </div>
+        </div>
+        <div class="grid-2" style="gap:0.75rem;border-top:1px solid var(--border);padding-top:1.25rem;">
+          <div class="step" style="font-size:0.85rem;"><i class="fa-solid fa-check" style="color:var(--green);"></i> No new hardware — runs on Google's cloud</div>
+          <div class="step" style="font-size:0.85rem;"><i class="fa-solid fa-check" style="color:var(--green);"></i> No security risk — data never leaves Google Workspace</div>
+          <div class="step" style="font-size:0.85rem;"><i class="fa-solid fa-check" style="color:var(--green);"></i> No API cost surprises — Apps Script is free with Workspace</div>
+          <div class="step" style="font-size:0.85rem;"><i class="fa-solid fa-check" style="color:var(--green);"></i> No supervision — deterministic SQL, not probabilistic AI</div>
+        </div>
+      </div>
+
+      <!-- SECTION 4: KAIZEN METRICS -->
+      <div class="section-header">
+        <h2><i class="fa-solid fa-chart-line"></i> Kaizen Impact Metrics</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="table-container" style="margin-bottom:2rem;">
+        <table class="modern-table">
+          <thead>
+            <tr>
+              <th>Department</th>
+              <th>Initiative</th>
+              <th>Hours Saved / Week</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="highlight-row">
+              <td><strong>Supply Chain</strong></td>
+              <td>Shortage auto-calculation</td>
+              <td><span class="text-success"><strong>14 hrs</strong></span></td>
+              <td><span class="tag tag-green">✅ Live</span></td>
+            </tr>
+            <tr class="highlight-row">
+              <td><strong>Supply Chain</strong></td>
+              <td>PO matching engine</td>
+              <td><span class="text-success"><strong>6 hrs</strong></span></td>
+              <td><span class="tag tag-green">✅ Live</span></td>
+            </tr>
+            <tr>
+              <td><strong>Production</strong></td>
+              <td>Scheduling dashboard</td>
+              <td>~8 hrs (est.)</td>
+              <td><span class="tag tag-gold">🔄 Q2 2026</span></td>
+            </tr>
+            <tr>
+              <td><strong>QC</strong></td>
+              <td>Defect pattern tracking</td>
+              <td>~5 hrs (est.)</td>
+              <td><span class="tag tag-outline">📋 Q3 2026</span></td>
+            </tr>
+            <tr>
+              <td><strong>Finance</strong></td>
+              <td>Invoice matching automation</td>
+              <td>~10 hrs (est.)</td>
+              <td><span class="tag tag-outline">📋 Q3 2026</span></td>
+            </tr>
+            <tr class="highlight-row-gold">
+              <td><strong>TOTAL IMPACT</strong></td>
+              <td><em>Full roadmap complete</em></td>
+              <td><strong style="color:var(--gold-bright);font-size:1.1rem;">43+ hrs/week</strong></td>
+              <td><span class="tag tag-gold">2026 Roadmap</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="nav-arrows">
+        <a href="roadmap.html" class="prev"><i class="fa-solid fa-arrow-left"></i> Can ISC Use It?</a>
+        <a href="comparison.html">5W-2H Framework <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="assets/shared.js"></script>
 </body>
 </html>

@@ -1,151 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>4. Department Scopes | ISC Digital Transformation</title>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="Style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Can ISC Use OpenClaw? | ISC OpenClaw Analysis</title>
+  <meta name="description" content="Kent's original question answered honestly — can individual employees or departments use OpenClaw for Kaizen and 5S improvement?">
+  <link rel="stylesheet" href="Style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <nav class="sidebar">
-        <!-- Sidebar content -->
-        <div class="sidebar-header">
-            <div class="logo-circle"><i class="fa-solid fa-chart-pie"></i></div>
-            <div class="brand">
-                <h2>ISC CĐS Report</h2>
-                <p>Data Automation Strategy</p>
-            </div>
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html"><span class="icon-wrap"><i class="fa-solid fa-bolt"></i></span>0. CĐS Executive Summary</a></li>
-            <li><a href="features.html"><span class="icon-wrap"><i class="fa-solid fa-gears"></i></span>1. AI Eval vs Reality</a></li>
-            <li><a href="isc_integration.html"><span class="icon-wrap"><i class="fa-solid fa-puzzle-piece"></i></span>2. The 5W-2H Framework</a></li>
-            <li><a href="risks_costs.html"><span class="icon-wrap"><i class="fa-solid fa-exclamation-triangle"></i></span>3. Kaizen & 7-Wastes</a></li>
-            <li><a href="roadmap.html" class="active"><span class="icon-wrap"><i class="fa-solid fa-road"></i></span>4. Department Scopes</a></li>
-            <li><a href="analysis.html"><span class="icon-wrap"><i class="fa-solid fa-chart-line"></i></span>5. Weekly Report</a></li>
-            <li><a href="comparison.html"><span class="icon-wrap"><i class="fa-solid fa-balance-scale"></i></span>6. CĐS Roadmap</a></li>
-            <li><a href="conclusion.html"><span class="icon-wrap"><i class="fa-solid fa-flag-checkered"></i></span>7. Long-Term Vision</a></li>
-        </ul>
-        <div class="sidebar-footer">
-            <p>V1 - 2026 | ISC CĐS Weekly</p>
-        </div>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-logo">ISC</span>
+      <span class="brand-sub">OpenClaw Analysis Report</span>
+      <span class="brand-meta">CEO Kent · Q2 2026</span>
+    </div>
+    <nav>
+      <a href="index.html"><i class="fa-solid fa-file-lines"></i> Executive Summary</a>
+      <a href="features.html"><i class="fa-solid fa-robot"></i> What is OpenClaw?</a>
+      <a href="isc_integration.html"><i class="fa-solid fa-shield-halved"></i> The 3 Critical Risks</a>
+      <a href="risks_costs.html"><i class="fa-solid fa-scale-balanced"></i> OpenClaw vs Claude</a>
+      <a href="roadmap.html" class="active"><i class="fa-solid fa-building"></i> Can ISC Use It?</a>
+      <a href="analysis.html"><i class="fa-solid fa-chart-gantt"></i> Our Alternative</a>
+      <a href="comparison.html"><i class="fa-solid fa-table-cells"></i> 5W-2H Framework</a>
+      <a href="conclusion.html"><i class="fa-solid fa-flag-checkered"></i> Recommendation</a>
     </nav>
-    <main class="content">
-        <header class="top-header">
-            <div class="header-content">
-                <div class="title-area">
-                    <span class="eyebrow">Cross-Department Application</span>
-                    <h1>Department <span class="text-gradient">Scopes</span></h1>
-                </div>
-                <div class="badges">
-                    <span class="badge badge-gold" data-tooltip="Weekly Reports Pre-4PM Fri">
-                        <i class="fa-solid fa-calendar-week"></i> H1/H2/H3 Horizons
-                    </span>
-                </div>
-            </div>
-        </header>
+    <div class="sidebar-footer">ISC Digital Transformation · 2026</div>
+  </aside>
 
-        <section class="section-container animate-on-scroll">
-            <div class="section-header">
-                <h2><i class="fa-solid fa-list-check"></i> 5W-2H Framework Alignment</h2>
-                <div class="divider"></div>
-            </div>
-            <div class="glass-card">
-                <p class="lead-text"><strong>WHAT:</strong> Structured digitalization (Kaizen/5S/7-Wastes reduction) at 3 levels: Individual → Department → Company.<br>
-                <strong>WHY:</strong> Eliminate manual waste, accountability via weekly reports, strategic focus.<br>
-                <strong>WHEN:</strong> Weekly progress (Fri 4PM), Q1-Q4 2026 rollout.<br>
-                <strong>WHO:</strong> Khánh lead, Dept Managers, Kent review.<br>
-                <strong>WHERE:</strong> Google Workspace (Sheets/Apps Script/BigQuery – zero new infrastructure).<br>
-                <strong>HOW:</strong> Deterministic structured automation over black-box tools.<br>
-                <strong>HOW MUCH:</strong> Minimal serverless overhead ($10-15/month) vs high-risk unproven AI budgets.</p>
-            </div>
+  <main class="main-content">
 
-            <h3>Department Rollout Order</h3>
-            <div class="grid-2 mb-8">
-                <div class="feature-card hover-lift" style="border-left-color: var(--gold);">
-                    <div class="card-icon bg-gold-light"><i class="fa-solid fa-truck text-gold"></i></div>
-                    <h4>Supply Chain (Q1 Complete)</h4>
-                    <p>Shortage calculation matrix, PO data alignment. Eliminating 14+ hours of Waiting waste weekly.</p>
-                </div>
-                <div class="feature-card hover-lift" style="border-left-color: var(--primary);">
-                    <div class="card-icon bg-primary-light"><i class="fa-solid fa-industry text-primary"></i></div>
-                    <h4>Production (Q2 Planned)</h4>
-                    <p>Live scheduling dashboards, automated yield reporting. Replicating the SCM blueprint.</p>
-                </div>
-                <div class="feature-card hover-lift" style="border-left-color: var(--warning);">
-                    <div class="card-icon bg-warning-light"><i class="fa-solid fa-clipboard-check text-warning"></i></div>
-                    <h4>Quality Control [QC] (Q3 Planned)</h4>
-                    <p>Defect aggregation and real-time SPC/Pareto tracking across supplier batches.</p>
-                </div>
-                <div class="feature-card hover-lift" style="border-left-color: var(--success);">
-                    <div class="card-icon bg-success-light"><i class="fa-solid fa-warehouse text-success"></i></div>
-                    <h4>Warehouse (Q3/Q4 Planned)</h4>
-                    <p>Barcode sync optimizations, automated space utilization calculations and cycle counts.</p>
-                </div>
-            </div>
+    <!-- HERO -->
+    <div class="page-hero">
+      <span class="eyebrow"><i class="fa-solid fa-building" style="margin-right:0.4rem;"></i>Page 4 of 7 · Department Assessment</span>
+      <h1>Can Our Teams Use OpenClaw<br>for Daily Work?</h1>
+      <p class="hero-subtitle">Kent's question answered honestly — for each level of the organization</p>
+    </div>
 
-            <div class="table-container mb-8">
-                <table class="modern-table">
-                    <thead>
-                        <tr>
-                            <th>Department</th>
-                            <th>Target Automation Initiative</th>
-                            <th>7-Wastes Eliminated</th>
-                            <th>Status / When</th>
-                            <th>Owner</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="highlight-row">
-                            <td>Supply Chain</td>
-                            <td>Shortage/PO auto</td>
-                            <td>Waiting & Defects</td>
-                            <td><span class="tag tag-solid" style="background:var(--success); color:white;">Live Q1</span></td>
-                            <td>Khánh & DK</td>
-                        </tr>
-                        <tr>
-                            <td>Production</td>
-                            <td>Scheduling dashboard</td>
-                            <td>Overproduction</td>
-                            <td><span class="tag tag-outline">Q2 Pipeline</span></td>
-                            <td>Khánh & Prod Lead</td>
-                        </tr>
-                        <tr>
-                            <td>QC</td>
-                            <td>SPC/Pareto tracking</td>
-                            <td>Defects Mitigation</td>
-                            <td><span class="tag tag-outline text-warning">Q3 Pipeline</span></td>
-                            <td>QC Manager</td>
-                        </tr>
-                        <tr>
-                            <td>Warehouse</td>
-                            <td>Inventory location mapping</td>
-                            <td>Motion & Transport</td>
-                            <td><span class="tag tag-outline text-warning">Q3 Pipeline</span></td>
-                            <td>Warehouse Lead</td>
-                        </tr>
-                        <tr>
-                            <td>Finance</td>
-                            <td>Invoice matching</td>
-                            <td>Over-processing</td>
-                            <td><span class="tag tag-outline">Q4 Pipeline</span></td>
-                            <td>Finance Manager</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    <div class="section-container">
 
-            <div class="verdict-banner">
-                <h3><i class="fa-solid fa-calendar-check"></i> Rolling Execution Strategy</h3>
-                <p>By defining use cases department by department, we ensure that deterministic data automation organically replaces manual waste (Muda) across the entire ISC network.</p>
-            </div>
-        </section>
-        <footer class="footer">
-            <p>ISC CĐS Weekly Report · CEO Kent Review · V2.0</p>
-        </footer>
-    </main>
-    <script src="assets/shared.js"></script>
+      <!-- KENT'S ORIGINAL QUESTION -->
+      <div class="card card-gold" style="margin-bottom:2.5rem;">
+        <div style="display:flex;align-items:flex-start;gap:1rem;">
+          <div style="font-size:1.75rem;flex-shrink:0;">💬</div>
+          <div>
+            <h3 style="margin-bottom:0.75rem;">Kent's Original Question</h3>
+            <blockquote style="font-style:italic;color:var(--text-body);font-size:1.05rem;border-left:3px solid var(--gold);padding-left:1rem;margin:0 0 0.75rem 0;">
+              "Vậy giá trị sử dụng cho cá nhân, cho từng bộ phận để Kaizen, 5S, 7-wastes, tăng hiệu suất?"
+            </blockquote>
+            <p style="font-size:0.88rem;color:var(--text-muted);margin:0;"><em>Translation: "What value does it have for individuals and departments to do Kaizen, 5S, reduce 7-wastes, improve efficiency?"</em></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="standout-box" style="margin-bottom:3rem;">
+        <div class="box-icon"><i class="fa-solid fa-comment-dots"></i></div>
+        <div>
+          <p class="lead-text">This is exactly the right question. The theory is sound — AI agents that eliminate repetitive tasks would directly address Waiting, Defects, and Over-processing waste. The problem is that OpenClaw, in its current form, <strong>creates more work than it saves</strong> for typical office users.</p>
+        </div>
+      </div>
+
+      <!-- LEVEL 1: INDIVIDUAL -->
+      <div class="section-header">
+        <h2><i class="fa-solid fa-user"></i> Level 1: Individual Employees</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="card" style="border-left:4px solid var(--yellow);margin-bottom:2rem;">
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;">
+          <span class="risk-badge risk-medium">⚠️ NOT READY FOR GENERAL STAFF</span>
+        </div>
+        <div class="grid-2" style="gap:1.5rem;">
+          <div>
+            <h4 style="margin-bottom:0.75rem;color:var(--red);">Why It Doesn't Work Yet</h4>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;font-size:0.9rem;">
+              <li style="display:flex;gap:0.5rem;"><span style="color:var(--red);">✗</span> Requires command-line setup — coding knowledge needed</li>
+              <li style="display:flex;gap:0.5rem;"><span style="color:var(--red);">✗</span> Requires continuous supervision — AI errors compound quickly</li>
+              <li style="display:flex;gap:0.5rem;"><span style="color:var(--red);">✗</span> When it fails, it fails silently — staff won't know until damage is done</li>
+              <li style="display:flex;gap:0.5rem;"><span style="color:var(--red);">✗</span> Each person needs their own isolated environment</li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="margin-bottom:0.75rem;color:var(--green);">Who Could Use It TODAY</h4>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;font-size:0.9rem;">
+              <li style="display:flex;gap:0.5rem;"><span style="color:var(--green);">✓</span> IT staff or technical engineers comfortable with Linux/Python</li>
+              <li style="display:flex;gap:0.5rem;"><span style="color:var(--green);">✓</span> Personal, non-sensitive tasks only (document formatting, file organization)</li>
+              <li style="display:flex;gap:0.5rem;"><span style="color:var(--yellow);">!</span> <strong>NOT connected to ISC systems under any circumstances</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- LEVEL 2: DEPARTMENT -->
+      <div class="section-header">
+        <h2><i class="fa-solid fa-people-group"></i> Level 2: Department Automation</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="card card-danger" style="margin-bottom:2rem;">
+        <span class="risk-badge risk-critical" style="margin-bottom:1.25rem;display:inline-flex;">❌ NOT SUITABLE FOR DEPARTMENTAL AUTOMATION</span>
+        <p style="margin-bottom:1.5rem;">DK's data automation approach already does what OpenClaw promises, but <strong style="color:var(--green);">reliably</strong>. The SCM shortage calculation is the clearest example:</p>
+
+        <div class="comparison-panel">
+          <div class="comp-col system-side">
+            <div class="comp-header"><i class="fa-solid fa-xmark" style="color:var(--red);"></i> OLD WAY (Manual)</div>
+            <ul>
+              <li><i class="fa-solid fa-file-excel" style="color:var(--text-muted);"></i> Open 4 Excel files separately</li>
+              <li><i class="fa-solid fa-magnifying-glass" style="color:var(--text-muted);"></i> Cross-reference demand vs. stock manually</li>
+              <li><i class="fa-solid fa-calculator" style="color:var(--text-muted);"></i> Calculate shortage by hand</li>
+              <li><i class="fa-solid fa-envelope" style="color:var(--text-muted);"></i> Email Purchasing with findings</li>
+              <li style="color:var(--red);"><i class="fa-solid fa-clock" style="color:var(--red);"></i> Time: <strong style="color:var(--red);">10 hours/week</strong></li>
+            </ul>
+          </div>
+          <div class="comp-vs">VS</div>
+          <div class="comp-col alt-side">
+            <div class="comp-header"><i class="fa-solid fa-check" style="color:var(--green);"></i> NEW WAY (DK's Automation)</div>
+            <ul>
+              <li><i class="fa-solid fa-database" style="color:var(--green);"></i> BigQuery SQL runs: SELECT Demand - Stock AS Shortage</li>
+              <li><i class="fa-solid fa-envelope-circle-check" style="color:var(--green);"></i> Apps Script emails Purchasing at 06:00 automatically</li>
+              <li><i class="fa-solid fa-moon" style="color:var(--green);"></i> Runs while the entire team is still asleep</li>
+              <li style="color:var(--green);"><i class="fa-solid fa-stopwatch" style="color:var(--green);"></i> Time: <strong style="color:var(--green);">0 hours/week</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="margin-top:1.5rem;padding:1rem 1.25rem;background:rgba(255,107,107,0.06);border-radius:var(--radius-sm);">
+          <h4 style="margin-bottom:0.5rem;">OpenClaw's approach to this same task would be:</h4>
+          <p style="font-size:0.88rem;margin:0;color:var(--text-body);">Watch the screen → open Excel → drag formulas → copy-paste results. Higher chance of formula error, incorrect cell references, skipped rows. Needs someone watching to verify output.</p>
+        </div>
+      </div>
+
+      <!-- LEVEL 3: COMPANY -->
+      <div class="section-header">
+        <h2><i class="fa-solid fa-sitemap"></i> Level 3: Company-Wide Enterprise</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="card card-danger" style="margin-bottom:2rem;">
+        <span class="risk-badge risk-critical" style="margin-bottom:1.25rem;display:inline-flex;">❌ NOT APPROPRIATE FOR ENTERPRISE DEPLOYMENT</span>
+        <p style="margin-bottom:1.25rem;">Enterprise deployment of OpenClaw at ISC's scale requires:</p>
+        <div class="grid-2" style="gap:0.75rem;">
+          <div class="step"><i class="fa-solid fa-shield" style="color:var(--red);"></i> Security framework <span>that doesn't exist for OpenClaw yet</span></div>
+          <div class="step"><i class="fa-solid fa-server" style="color:var(--red);"></i> Infrastructure budget <span>$5k–$15k setup cost</span></div>
+          <div class="step"><i class="fa-solid fa-user-gear" style="color:var(--red);"></i> IT team dedicated <span>to monitor and maintain the system</span></div>
+          <div class="step"><i class="fa-solid fa-file-contract" style="color:var(--red);"></i> Legal review <span>of data handling compliance</span></div>
+        </div>
+      </div>
+
+      <!-- DEPARTMENT ROLLOUT TABLE -->
+      <div class="section-header">
+        <h2><i class="fa-solid fa-table"></i> Department Readiness Assessment</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="table-container" style="margin-bottom:2rem;">
+        <table class="modern-table">
+          <thead>
+            <tr>
+              <th>Department</th>
+              <th>OpenClaw Suitable?</th>
+              <th>ISC Alternative</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Supply Chain</strong></td>
+              <td><span class="text-danger">❌ No</span></td>
+              <td>BigQuery + Apps Script automation</td>
+              <td><span class="tag tag-green">✅ Live</span></td>
+            </tr>
+            <tr>
+              <td><strong>Production</strong></td>
+              <td><span class="text-danger">❌ No</span></td>
+              <td>Scheduling & capacity dashboard</td>
+              <td><span class="tag tag-gold">🔄 Q2 2026</span></td>
+            </tr>
+            <tr>
+              <td><strong>Quality (QC)</strong></td>
+              <td><span class="text-danger">❌ No</span></td>
+              <td>Defect tracking automation</td>
+              <td><span class="tag tag-outline">📋 Q3 2026</span></td>
+            </tr>
+            <tr>
+              <td><strong>Finance</strong></td>
+              <td><span class="text-danger">❌ No</span></td>
+              <td>Invoice matching automation</td>
+              <td><span class="tag tag-outline">📋 Q3 2026</span></td>
+            </tr>
+            <tr>
+              <td><strong>HR</strong></td>
+              <td><span class="text-warning">⚠️ Personal only</span></td>
+              <td>Report generation assistance</td>
+              <td><span class="tag tag-outline">📋 Q4 2026</span></td>
+            </tr>
+            <tr>
+              <td><strong>Individual (Tech Staff)</strong></td>
+              <td><span class="text-warning">⚠️ Tech-savvy only</span></td>
+              <td>Personal tools OK (non-ISC tasks)</td>
+              <td><span class="tag tag-outline">Ongoing</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="cta-box">
+        <h3 style="margin-bottom:0.75rem;"><i class="fa-solid fa-seedling" style="color:var(--green);margin-right:0.5rem;"></i>The Kaizen Opportunity Is Real</h3>
+        <p>The Kaizen opportunity Kent identified is valid and important. The answer is not to use OpenClaw — it's to <strong style="color:var(--gold-bright);">accelerate ISC's Data Automation roadmap,</strong> which already delivers exactly those Kaizen benefits, safely and reliably. The foundation is built.</p>
+      </div>
+
+      <div class="nav-arrows">
+        <a href="risks_costs.html" class="prev"><i class="fa-solid fa-arrow-left"></i> OpenClaw vs Claude</a>
+        <a href="analysis.html">Our Alternative <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="assets/shared.js"></script>
 </body>
 </html>
