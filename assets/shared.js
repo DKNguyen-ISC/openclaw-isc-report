@@ -234,22 +234,60 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   prefetchAdjacentPages();
 
+  let arrowNavTimeout;
+  let arrowNavReady = false;
+
   // Keyboard Navigation (Arrows)
   document.addEventListener('keydown', (e) => {
     // Prevent navigation if user is typing in an input/textarea (though not present here, good practice)
     if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
 
     if (e.key === 'ArrowRight') {
-      navigateTo(1);
+      if (!e.repeat) navigateTo(1);
     } else if (e.key === 'ArrowLeft') {
-      navigateTo(-1);
+      if (!e.repeat) navigateTo(-1);
     } else if (e.key === 'ArrowDown') {
-      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 2) {
-        navigateTo(1);
+      const isAtBottom = Math.ceil(window.innerHeight + window.scrollY) >= document.body.offsetHeight - 5;
+      
+      if (!isAtBottom) {
+        // Let the browser handle standard smooth scrolling naturally.
+        arrowNavReady = false;
+      } else {
+        // At the bottom boundary
+        e.preventDefault(); // Stop native behavior to avoid jumping
+        
+        // Require a firm, distinct key press to navigate (ignore if key is held down)
+        if (!e.repeat) {
+          if (arrowNavReady) {
+            navigateTo(1);
+            arrowNavReady = false;
+          } else {
+            arrowNavReady = true;
+            clearTimeout(arrowNavTimeout);
+            arrowNavTimeout = setTimeout(() => { arrowNavReady = false; }, 2000);
+          }
+        }
       }
     } else if (e.key === 'ArrowUp') {
-      if (window.scrollY === 0) {
-        navigateTo(-1);
+      const isAtTop = window.scrollY <= 5;
+      
+      if (!isAtTop) {
+        // Let the browser handle standard smooth scrolling naturally.
+        arrowNavReady = false;
+      } else {
+        // At the top boundary
+        e.preventDefault(); // Stop native behavior
+        
+        if (!e.repeat) {
+          if (arrowNavReady) {
+            navigateTo(-1);
+            arrowNavReady = false;
+          } else {
+            arrowNavReady = true;
+            clearTimeout(arrowNavTimeout);
+            arrowNavTimeout = setTimeout(() => { arrowNavReady = false; }, 2000);
+          }
+        }
       }
     }
   });
