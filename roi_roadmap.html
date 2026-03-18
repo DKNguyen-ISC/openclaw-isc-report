@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5. ROI &amp; Roadmap | OpenClaw Report</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-circle"><i class="fa-solid fa-robot"></i></div>
+            <div class="brand">
+                <h2>OpenClaw Report</h2>
+                <p>AI Automation Evaluation</p>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html"><span class="icon-wrap"><i class="fa-solid fa-bolt"></i></span>0. Executive Summary</a></li>
+            <li><a href="features.html"><span class="icon-wrap"><i class="fa-solid fa-gears"></i></span>1. OpenClaw Features</a></li>
+            <li><a href="isc_integration.html"><span class="icon-wrap"><i class="fa-solid fa-puzzle-piece"></i></span>2. ISC Integration Fit</a></li>
+            <li><a href="risks_costs.html"><span class="icon-wrap"><i class="fa-solid fa-exclamation-triangle"></i></span>3. Risks &amp; Costs</a></li>
+            <li><a href="vision.html"><span class="icon-wrap"><i class="fa-solid fa-eye"></i></span>4. Vision 2028</a></li>
+            <li><a href="roi_roadmap.html" class="active"><span class="icon-wrap"><i class="fa-solid fa-map-signs"></i></span>5. ROI &amp; Roadmap</a></li>
+            <li><a href="comparison.html"><span class="icon-wrap"><i class="fa-solid fa-balance-scale"></i></span>6. Comparison</a></li>
+            <li><a href="conclusion.html"><span class="icon-wrap"><i class="fa-solid fa-flag-checkered"></i></span>7. Conclusion</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <p>V1 - 2026 | ISC SCM Digitalization</p>
+        </div>
+    </nav>
+
+    <main class="content">
+        <header class="top-header">
+            <div class="header-content">
+                <div class="title-area">
+                    <span class="eyebrow">Investment Case &amp; Execution Timeline</span>
+                    <h1>ROI <span class="text-gradient">&amp; Roadmap</span></h1>
+                </div>
+                <div class="badges">
+                    <span class="badge badge-gold"><i class="fa-solid fa-coins"></i> Break-even: 3 Months</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="section-container">
+
+            <!-- ROI HEADLINE NUMBERS -->
+            <div class="section-header">
+                <h2><i class="fa-solid fa-chart-bar"></i> ROI Headline Numbers</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="grid-3 mb-8">
+                <div class="feature-card hover-lift">
+                    <div class="card-icon bg-gold-light"><i class="fa-solid fa-coins text-gold"></i></div>
+                    <h4>Annual Savings Potential</h4>
+                    <p>Phase3 baseline: 1–3% COGS savings. OpenClaw extends to PRIVATE agg + M4 issuance = estimated 3–5% additional at 10x session volume.</p>
+                    <div class="stat-highlight text-gold">$500k–$2M / year</div>
+                </div>
+                <div class="feature-card hover-lift">
+                    <div class="card-icon bg-success-light"><i class="fa-solid fa-calendar-check text-success"></i></div>
+                    <h4>Payback Period</h4>
+                    <p>PoC investment ~$50k (infra + integration). Against $500k+ annualized savings trajectory, break-even achieved within first quarter of production use.</p>
+                    <div class="stat-highlight text-success">3 Months Payback</div>
+                </div>
+                <div class="feature-card hover-lift">
+                    <div class="card-icon bg-primary-light"><i class="fa-solid fa-users text-primary"></i></div>
+                    <h4>PIC Capacity Freed</h4>
+                    <p>5 PICs × 357 BOMs/week handled manually. OpenClaw automates 80% = 4 FTE-equivalent hours redirected to high-value strategic work.</p>
+                    <div class="stat-highlight text-primary">4 FTE Redirected</div>
+                </div>
+            </div>
+
+            <!-- ROI BARS -->
+            <div class="card mb-8" style="padding: 2rem;">
+                <h4 class="mb-6"><i class="fa-solid fa-chart-simple text-gold"></i> &nbsp;Annual Value vs Investment</h4>
+                <div class="roi-bar-row">
+                    <div class="roi-bar-label" style="font-size:0.82rem; color: var(--text-muted);">PoC Setup Cost</div>
+                    <div class="roi-bar-track"><div class="roi-bar-fill" style="width: 5%; background: var(--danger);"></div></div>
+                    <div class="roi-bar-val" style="color: var(--danger);">-$50k</div>
+                </div>
+                <div class="roi-bar-row">
+                    <div class="roi-bar-label" style="font-size:0.82rem; color: var(--text-muted);">Annual Infra</div>
+                    <div class="roi-bar-track"><div class="roi-bar-fill" style="width: 6%; background: var(--warning);"></div></div>
+                    <div class="roi-bar-val" style="color: var(--warning);">-$6k</div>
+                </div>
+                <div class="roi-bar-row">
+                    <div class="roi-bar-label" style="font-size:0.82rem; color: var(--text-muted);">LLM API (opt.)</div>
+                    <div class="roi-bar-track"><div class="roi-bar-fill" style="width: 24%; background: var(--warning);"></div></div>
+                    <div class="roi-bar-val" style="color: var(--warning);">-$24k</div>
+                </div>
+                <div class="roi-bar-row">
+                    <div class="roi-bar-label" style="font-size:0.82rem; color: var(--text-muted);">Phase4 Savings</div>
+                    <div class="roi-bar-track"><div class="roi-bar-fill" style="width: 50%; background: var(--success);"></div></div>
+                    <div class="roi-bar-val">$500k+</div>
+                </div>
+                <div class="roi-bar-row">
+                    <div class="roi-bar-label" style="font-size:0.82rem; color: var(--text-muted);">Full Scale (2028)</div>
+                    <div class="roi-bar-track"><div class="roi-bar-fill" style="width: 100%; background: linear-gradient(90deg, var(--success), var(--gold));"></div></div>
+                    <div class="roi-bar-val">$2M+</div>
+                </div>
+                <p class="mt-4" style="font-size: 0.8rem; color: var(--text-light);">* Savings estimate based on Phase3 1–3% COGS baseline extended to PRIVATE agg + 10x session volume. Actual results depend on negotiation outcomes.</p>
+            </div>
+
+            <!-- ROI TABLE -->
+            <div class="section-header">
+                <h2><i class="fa-solid fa-table"></i> 3-Year Financial Model</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="table-container mb-8">
+                <table class="modern-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Year 1 (PoC)</th>
+                            <th>Year 2 (Scale)</th>
+                            <th>Year 3 (Full)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Setup Cost</strong></td>
+                            <td class="text-danger">-$50,000</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Annual Infra (EC2)</strong></td>
+                            <td class="text-danger">-$6,000</td>
+                            <td class="text-danger">-$6,000</td>
+                            <td class="text-danger">-$8,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>LLM API (optimized)</strong></td>
+                            <td class="text-danger">-$12,000</td>
+                            <td class="text-danger">-$24,000</td>
+                            <td class="text-danger">-$8,000 (internal)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Team Integration</strong></td>
+                            <td class="text-danger">-$20,000</td>
+                            <td class="text-danger">-$5,000</td>
+                            <td class="text-danger">-$5,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sourcing Savings</strong></td>
+                            <td class="text-success">+$150,000</td>
+                            <td class="text-success">+$500,000</td>
+                            <td class="text-success">+$1,500,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>PIC Capacity Gain</strong></td>
+                            <td class="text-success">+$40,000</td>
+                            <td class="text-success">+$120,000</td>
+                            <td class="text-success">+$200,000</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td><strong>Net ROI</strong></td>
+                            <td><strong class="text-success">+$102,000</strong></td>
+                            <td><strong class="text-success">+$585,000</strong></td>
+                            <td><strong class="text-gold">+$1,679,000</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- PHASED ROADMAP -->
+            <div class="section-header">
+                <h2><i class="fa-solid fa-map"></i> Phased Execution Roadmap</h2>
+                <div class="divider"></div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;">
+                <div class="roadmap-phase">
+                    <div class="phase-header">
+                        <div class="phase-num">0</div>
+                        <div class="phase-title">Pre-PoC Preparation</div>
+                        <div class="phase-timeline">Jan–Mar 2026</div>
+                    </div>
+                    <div class="phase-body">
+                        <p>Validate OpenClaw local setup, configure ISC Sheets/BQ access permissions, define PoC success KPIs with Kent.</p>
+                        <ul class="phase-tasks">
+                            <li><i class="fa-solid fa-check text-success"></i> Install OpenClaw on isolated VM (no prod access)</li>
+                            <li><i class="fa-solid fa-check text-success"></i> Define Ngàn Chì BOM cluster as PoC scope (357 BOMs)</li>
+                            <li><i class="fa-solid fa-check text-success"></i> Establish baseline: manual PIC session timing + savings rate</li>
+                            <li><i class="fa-solid fa-check text-success"></i> KPI sign-off: accuracy ≥95%, savings ≥1%, runtime ≤PIC baseline</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="roadmap-phase">
+                    <div class="phase-header">
+                        <div class="phase-num" style="background: var(--info);">1</div>
+                        <div class="phase-title">PoC: Ngàn Chì Pilot</div>
+                        <div class="phase-timeline">Q2 2026 · 8 Weeks</div>
+                    </div>
+                    <div class="phase-body">
+                        <p>First live run with human oversight. OpenClaw executes P1–P3 analysis and Gate B–E validation on read-only shadow mode.</p>
+                        <ul class="phase-tasks">
+                            <li><i class="fa-solid fa-check text-success"></i> Shadow execution alongside PIC (no auto-write)</li>
+                            <li><i class="fa-solid fa-check text-success"></i> Compare OpenClaw vs PIC decisions — accuracy matrix</li>
+                            <li><i class="fa-solid fa-check text-success"></i> Identify hallucination patterns, retrain prompt chains</li>
+                            <li><i class="fa-solid fa-check text-success"></i> Go/No-Go gate: ≥90% accuracy on Gate B–E</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="roadmap-phase">
+                    <div class="phase-header">
+                        <div class="phase-num" style="background: var(--success);">2</div>
+                        <div class="phase-title">Phase 3 Augmentation: M3 PUBLIC Agg</div>
+                        <div class="phase-timeline">Q3 2026 · 12 Weeks</div>
+                    </div>
+                    <div class="phase-body">
+                        <p>OpenClaw takes over PUBLIC aggregation sessions autonomously. PIC supervises exception escalations only (Gate F).</p>
+                        <ul class="phase-tasks">
+                            <li><i class="fa-solid fa-check text-success"></i> Auto-write enabled for Gate B–D approvals (≥95% confidence)</li>
+                            <li><i class="fa-solid fa-check text-success"></i> Flight Recorder audit log integration with ISC Logger</li>
+                            <li><i class="fa-solid fa-check text-success"></i> Weekly savings report auto-generated to CEO dashboard</li>
+                            <li><i class="fa-solid fa-check text-success"></i> Target: 5x session throughput vs Q1 baseline</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="roadmap-phase">
+                    <div class="phase-header">
+                        <div class="phase-num gold-num">3</div>
+                        <div class="phase-title">Phase 4 Full Automation: PRIVATE Agg + M4</div>
+                        <div class="phase-timeline">Q4 2026–Q2 2027</div>
+                    </div>
+                    <div class="phase-body">
+                        <p>Extend to PRIVATE aggregation and M4 issuance preview. Internal Llama3 model replaces external API for cost optimization.</p>
+                        <ul class="phase-tasks">
+                            <li><i class="fa-solid fa-check text-gold"></i> PRIVATE agg automation with MOQ enforcement</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> M4 issuance preview trigger from OpenClaw output</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> Llama3 fine-tuned on ISC Phase2/3 data deployed</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> 10x session volume achieved · $500k+ annual savings verified</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PoC SUCCESS CRITERIA -->
+            <div class="section-header">
+                <h2><i class="fa-solid fa-bullseye"></i> PoC Success Criteria</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="table-container mb-8">
+                <table class="modern-table">
+                    <thead>
+                        <tr>
+                            <th>KPI</th>
+                            <th>Threshold (Pass)</th>
+                            <th>Target (Strong)</th>
+                            <th>Measurement</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Gate B–E Accuracy</td>
+                            <td class="text-success">≥ 90%</td>
+                            <td class="text-gold">≥ 95%</td>
+                            <td>vs PIC decisions</td>
+                        </tr>
+                        <tr>
+                            <td>P1 Tolerance Detection</td>
+                            <td class="text-success">≥ 95%</td>
+                            <td class="text-gold">≥ 99%</td>
+                            <td>4% mismatch catch rate</td>
+                        </tr>
+                        <tr>
+                            <td>Q7.1 Invariant Preserved</td>
+                            <td class="text-success">100%</td>
+                            <td class="text-gold">100%</td>
+                            <td>∑Q = Q_BOM every session</td>
+                        </tr>
+                        <tr>
+                            <td>Session Runtime</td>
+                            <td class="text-success">≤ PIC baseline</td>
+                            <td class="text-gold">50% faster</td>
+                            <td>Minutes per BOM cluster</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td><strong>Savings Rate</strong></td>
+                            <td class="text-success"><strong>≥ 1% COGS</strong></td>
+                            <td class="text-gold"><strong>≥ 2% COGS</strong></td>
+                            <td>vs pre-PoC baseline</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="takeaway-box" style="border-left-color: var(--gold);">
+                <strong style="color: var(--gold);">Investment Decision:</strong> &nbsp;$50k PoC cost against $500k+ Year-1 savings trajectory yields a 10:1 minimum ROI multiple. Risk is bounded — PoC scope is isolated, read-only first, with explicit Go/No-Go gate before auto-write is enabled.
+            </div>
+        </section>
+
+        <footer class="footer"><p>Internal ISC SCM Report · Confidential</p></footer>
+    </main>
+</body>
+</html>
