@@ -5,8 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>What is OpenClaw? | ISC OpenClaw Analysis</title>
   <meta name="description" content="Understand what OpenClaw is, how it works, and what a data engineer actually sees when evaluating it.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=DM+Sans:wght@300;400;500;600&family=Fira+Code:wght@400;500&display=swap">
   <link rel="stylesheet" href="Style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .page-hero { --hero-glow: rgba(87,203,255,0.06); }
+  </style>
 </head>
 <body>
 
@@ -21,7 +27,7 @@
       <a href="index.html"><i class="fa-solid fa-file-lines"></i> <span class="nav-label">Executive Summary</span></a>
       <a href="features.html" class="active"><i class="fa-solid fa-robot"></i> <span class="nav-label">What is OpenClaw?</span></a>
       <a href="isc_integration.html"><i class="fa-solid fa-shield-halved"></i> <span class="nav-label">The 3 Critical Risks</span></a>
-      <a href="risks_costs.html"><i class="fa-solid fa-scale-balanced"></i> <span class="nav-label">OpenClaw vs Claude</span></a>
+      <a href="risks_costs.html"><i class="fa-solid fa-scale-balanced"></i> <span class="nav-label">OpenClaw vs Gemini</span></a>
       <a href="roadmap.html"><i class="fa-solid fa-building"></i> <span class="nav-label">Can ISC Use It?</span></a>
       <a href="analysis.html"><i class="fa-solid fa-chart-gantt"></i> <span class="nav-label">Our Alternative</span></a>
       <a href="comparison.html"><i class="fa-solid fa-table-cells"></i> <span class="nav-label">5W-2H Framework</span></a>
@@ -114,14 +120,14 @@
 
       <div class="comparison-panel" style="margin-bottom:1.5rem;">
         <div class="comp-col system-side" style="text-align:center;padding:2rem;">
-          <div style="font-size:2.5rem;margin-bottom:0.75rem;">🤖</div>
+          <div style="font-size:2.5rem;margin-bottom:0.75rem;">🦀</div>
           <strong style="color:var(--text-heading);display:block;font-family:var(--font-display);">OpenClaw Agent</strong>
           <p style="font-size:0.85rem;color:var(--text-muted);margin-top:0.5rem;">The "hands" — clicks, types, navigates UI</p>
         </div>
         <div class="comp-vs">↔↔</div>
         <div class="comp-col" style="text-align:center;padding:2rem;background:linear-gradient(135deg,#10213a,#0a1628);">
           <div style="font-size:2.5rem;margin-bottom:0.75rem;">🧠</div>
-          <strong style="color:var(--gold-bright);display:block;font-family:var(--font-display);">AI Brain: Claude / GPT / Llama</strong>
+          <strong style="color:var(--gold-bright);display:block;font-family:var(--font-display);">AI Brain: Gemini / GPT / Llama</strong>
           <p style="font-size:0.85rem;color:var(--text-muted);margin-top:0.5rem;">The "intelligence" — understands and decides</p>
         </div>
         <div class="comp-vs">↔↔</div>
@@ -131,7 +137,7 @@
           <p style="font-size:0.85rem;color:var(--text-muted);margin-top:0.5rem;">The "environment" — files, apps, networks</p>
         </div>
       </div>
-      <p class="text-muted text-sm">The choice of AI "brain" is where the cost and quality debate begins. Powerful brains (Claude, GPT-4) cost money per use. Free brains (Llama, Mistral) require expensive hardware.</p>
+      <p class="text-muted text-sm">The choice of AI "brain" is where the cost and quality debate begins. Powerful brains (Gemini, GPT-4) cost money per use. Free brains (Llama, Mistral) require expensive hardware.</p>
     </div>
 
     <!-- SECTION 3: PROMISE VS REALITY -->

@@ -3,10 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OpenClaw vs Claude | ISC OpenClaw Analysis</title>
-  <meta name="description" content="A detailed comparison of OpenClaw Agent versus Claude direct integration — why Claude is the superior choice for ISC's data automation.">
+  <title>OpenClaw vs Gemini | ISC OpenClaw Analysis</title>
+  <meta name="description" content="A detailed comparison of OpenClaw Agent versus Gemini direct integration — why Gemini is the superior choice for ISC's data automation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=DM+Sans:wght@300;400;500;600&family=Fira+Code:wght@400;500&display=swap">
   <link rel="stylesheet" href="Style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .page-hero { --hero-glow: rgba(255,172,69,0.07); }
+  </style>
 </head>
 <body>
 
@@ -21,7 +27,7 @@
       <a href="index.html"><i class="fa-solid fa-file-lines"></i> <span class="nav-label">Executive Summary</span></a>
       <a href="features.html"><i class="fa-solid fa-robot"></i> <span class="nav-label">What is OpenClaw?</span></a>
       <a href="isc_integration.html"><i class="fa-solid fa-shield-halved"></i> <span class="nav-label">The 3 Critical Risks</span></a>
-      <a href="risks_costs.html" class="active"><i class="fa-solid fa-scale-balanced"></i> <span class="nav-label">OpenClaw vs Claude</span></a>
+      <a href="risks_costs.html" class="active"><i class="fa-solid fa-scale-balanced"></i> <span class="nav-label">OpenClaw vs Gemini</span></a>
       <a href="roadmap.html"><i class="fa-solid fa-building"></i> <span class="nav-label">Can ISC Use It?</span></a>
       <a href="analysis.html"><i class="fa-solid fa-chart-gantt"></i> <span class="nav-label">Our Alternative</span></a>
       <a href="comparison.html"><i class="fa-solid fa-table-cells"></i> <span class="nav-label">5W-2H Framework</span></a>
@@ -45,35 +51,35 @@
     <!-- HERO -->
     <div class="page-hero">
       <span class="eyebrow"><i class="fa-solid fa-scale-balanced" style="margin-right:0.4rem;"></i>Page 3 of 7 · Head-to-Head Comparison</span>
-      <h1>OpenClaw vs. Claude:<br>A Real Comparison</h1>
+      <h1>OpenClaw vs. Gemini:<br>A Real Comparison</h1>
       <p class="hero-subtitle">Two different tools built for two very different purposes</p>
     </div>
 
     <div class="section-container">
 
       <!-- INTRO -->
-      <p style="font-size:1.05rem;margin-bottom:2rem;">OpenClaw and Claude are often mentioned together because OpenClaw <em>uses</em> Claude as its AI brain. But they serve fundamentally different roles. Understanding this distinction is key to ISC's technology strategy.</p>
+      <p style="font-size:1.05rem;margin-bottom:2rem;">OpenClaw and Gemini are often mentioned together because OpenClaw <em>uses</em> Gemini as its AI brain. But they serve fundamentally different roles. Understanding this distinction is key to ISC's technology strategy.</p>
 
       <!-- ANALOGY -->
       <div class="card card-gold" style="margin-bottom:3rem;">
         <h3 style="margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem;"><i class="fa-solid fa-lightbulb" style="color:var(--gold);"></i> Think of It This Way</h3>
         <div class="grid-2" style="gap:1.5rem;">
           <div style="background:var(--bg-card-hover);padding:1.25rem;border-radius:var(--radius-sm);display:flex;gap:1rem;align-items:flex-start;">
-            <div style="font-size:1.75rem;flex-shrink:0;">🧑‍💼</div>
+            <div style="font-size:1.75rem;flex-shrink:0;">✨</div>
             <div>
-              <strong style="color:var(--gold-bright);display:block;margin-bottom:0.4rem;">Claude = A skilled analyst</strong>
-              <p style="font-size:0.88rem;margin:0;">Sitting at a desk, following precise instructions. You give Claude data, it calculates the answer, delivers results.</p>
+              <strong style="color:var(--gold-bright);display:block;margin-bottom:0.4rem;">Gemini = A skilled analyst</strong>
+              <p style="font-size:0.88rem;margin:0;">Sitting at a desk, following precise instructions. You give Gemini data, it calculates the answer, delivers results.</p>
             </div>
           </div>
           <div style="background:var(--bg-card-hover);padding:1.25rem;border-radius:var(--radius-sm);display:flex;gap:1rem;align-items:flex-start;">
-            <div style="font-size:1.75rem;flex-shrink:0;">🦾</div>
+            <div style="font-size:1.75rem;flex-shrink:0;">🦀</div>
             <div>
               <strong style="color:var(--text-heading);display:block;margin-bottom:0.4rem;">OpenClaw = A robot arm</strong>
-              <p style="font-size:0.88rem;margin:0;">Moves files and clicks buttons based on what Claude tells it. Adds physical interaction, but also risk and complexity.</p>
+              <p style="font-size:0.88rem;margin:0;">Moves files and clicks buttons based on what Gemini tells it. Adds physical interaction, but also risk and complexity.</p>
             </div>
           </div>
         </div>
-        <p style="margin-top:1.25rem;font-size:0.92rem;padding-top:1.25rem;border-top:1px solid var(--gold-border);"><strong style="color:var(--text-heading);">ISC's current automation uses Claude directly — without the robot arm.</strong> We give Claude our data, it calculates the answer, and the result goes directly into our systems. This is faster, cheaper, and much safer.</p>
+        <p style="margin-top:1.25rem;font-size:0.92rem;padding-top:1.25rem;border-top:1px solid var(--gold-border);"><strong style="color:var(--text-heading);">ISC's current automation uses Gemini directly — without the robot arm.</strong> We give Gemini our data, it calculates the answer, and the result goes directly into our systems. This is faster, cheaper, and much safer.</p>
       </div>
 
       <!-- COMPARISON TABLE -->
@@ -88,7 +94,7 @@
             <tr>
               <th>Criterion</th>
               <th><i class="fa-solid fa-robot" style="margin-right:0.4rem;color:var(--text-muted);"></i>OpenClaw Agent</th>
-              <th><i class="fa-solid fa-check-circle" style="margin-right:0.4rem;color:var(--green);"></i>Claude Direct Integration</th>
+              <th><i class="fa-solid fa-check-circle" style="margin-right:0.4rem;color:var(--green);"></i>Gemini Direct Integration</th>
             </tr>
           </thead>
           <tbody>
@@ -123,13 +129,13 @@
       </div>
 
       <div style="background:rgba(100,255,218,0.05);border:1px solid rgba(100,255,218,0.15);border-radius:var(--radius-sm);padding:1rem 1.25rem;margin-bottom:2rem;">
-        <p style="font-size:0.9rem;margin:0;color:var(--text-body);">None of these match ISC's current automation priorities. Our data already lives in BigQuery — a modern, API-accessible system that Claude can reach directly. There is no GUI to navigate.</p>
+        <p style="font-size:0.9rem;margin:0;color:var(--text-body);">None of these match ISC's current automation priorities. Our data already lives in BigQuery — a modern, API-accessible system that Gemini can reach directly. There is no GUI to navigate.</p>
       </div>
 
       <!-- VERDICT -->
       <div class="cta-box">
         <h3 style="margin-bottom:1rem;"><i class="fa-solid fa-trophy" style="color:var(--gold);margin-right:0.5rem;"></i> Closing Verdict</h3>
-        <p style="font-size:1rem;line-height:1.75;">"For ISC's data automation needs in 2026, <strong style="color:var(--gold-bright);">Claude direct integration is the superior choice in every measurable dimension:</strong> security, cost, reliability, and speed. OpenClaw adds complexity without adding capability for our specific use case."</p>
+        <p style="font-size:1rem;line-height:1.75;">"For ISC's data automation needs in 2026, <strong style="color:var(--gold-bright);">Gemini direct integration is the superior choice in every measurable dimension:</strong> security, cost, reliability, and speed. OpenClaw adds complexity without adding capability for our specific use case."</p>
       </div>
 
       <div class="nav-arrows">

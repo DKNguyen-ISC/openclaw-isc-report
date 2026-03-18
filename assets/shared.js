@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Print styles trigger
-  window.matchMedia('print').addListener((mql) => {
+  window.matchMedia('print').addEventListener('change', (mql) => {
     if (mql.matches) {
       document.querySelector('.sidebar').style.display = 'none';
       document.body.style.paddingLeft = '0';
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let nextIndex = currentIndex + direction;
     if (nextIndex >= 0 && nextIndex < pages.length) {
       showProgress();
-      document.body.classList.add('page-exit');
+      document.querySelector('.main-content').classList.add('page-exit');
       setTimeout(() => {
         window.location.href = pages[nextIndex];
       }, 180); // Reduced from 280ms
@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (href && !href.startsWith('#')) {
         e.preventDefault();
         showProgress();
-        document.body.classList.add('page-exit');
+        document.querySelector('.main-content').classList.add('page-exit');
         setTimeout(() => { window.location.href = href; }, 180);
       }
     });
@@ -239,10 +239,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // Prevent navigation if user is typing in an input/textarea (though not present here, good practice)
     if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
 
-    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-      navigateTo(1); // Next page
-    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-      navigateTo(-1); // Previous page
+    if (e.key === 'ArrowRight') {
+      navigateTo(1);
+    } else if (e.key === 'ArrowLeft') {
+      navigateTo(-1);
+    } else if (e.key === 'ArrowDown') {
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 2) {
+        navigateTo(1);
+      }
+    } else if (e.key === 'ArrowUp') {
+      if (window.scrollY === 0) {
+        navigateTo(-1);
+      }
     }
   });
 
