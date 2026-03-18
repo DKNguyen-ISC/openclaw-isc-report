@@ -1,14 +1,14 @@
-# OpenClaw ISC SCM Evaluation Report
+# ISC Digital Transformation (CĐS) Strategry Report
 
-![OpenClaw](https://img.shields.io/badge/OpenClaw-ISC%20SCM-blueviolet?style=flat&logo=github)
-[![Pages](https://github.com/YOUR_USERNAME/openclaw-isc-report/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/YOUR_USERNAME/openclaw-isc-report/actions/workflows/pages/pages-build-deployment)
+![Status](https://img.shields.io/badge/Status-Actively%20Developed-success?style=flat)
+[![Pages](https://github.com/dknguyen-isc/openclaw-isc-report/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/dknguyen-isc/openclaw-isc-report/actions/workflows/pages/pages-build-deployment)
 
-**AI Automation Evaluation for ISC Supply Chain Digitalization (CEO Kent Review V130)**
+**Digital Transformation & Data Automation Strategy for ISC (CEO Kent Review)**
 
-Professional static site evaluating OpenClaw for scaling Phase3 sourcing 10x. Gold-themed, responsive, accessible.
+Professional static site outlining the Kaizen, 5S, and 7-Wastes automation strategy via structured Data Automation across ISC departments. Previously an OpenClaw evaluation, now pivoted to enterprise-wide data strategy.
 
 ## Live Demo
-🚀 **GitHub Pages:** https://YOUR_USERNAME.github.io/openclaw-isc-report
+🚀 **GitHub Pages:** https://dknguyen-isc.github.io/openclaw-isc-report/
 
 ## Features
 - ✅ CEO-ready design (IBM Plex, gold theme)
@@ -17,15 +17,15 @@ Professional static site evaluating OpenClaw for scaling Phase3 sourcing 10x. Go
 - ✅ Print/PDF exec summary
 - ✅ Lighthouse 90+ score
 
-## Navigation
-- [0. Executive Summary](index.html)
-- [1. Features](features.html)
-- [2. ISC Fit](isc_integration.html)
-- [3. Risks](risks_costs.html)
-- [4. Roadmap](roadmap.html)
-- [5. Analysis](analysis.html)
-- [6. Comparison](comparison.html)
-- [7. Conclusion](conclusion.html)
+## Navigation Overview
+- [0. CĐS Executive Summary](index.html)
+- [1. AI Evaluation vs Reality](features.html)
+- [2. The 5W-2H Framework](isc_integration.html)
+- [3. Kaizen & 7-Wastes](risks_costs.html)
+- [4. Department Use Cases](roadmap.html)
+- [5. Weekly Progress Report](analysis.html)
+- [6. CĐS Roadmap](comparison.html)
+- [7. Long-Term Vision](conclusion.html)
 
 ## Local Preview
 ```cmd
