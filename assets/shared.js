@@ -99,6 +99,38 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
+  // Desktop Sidebar Collapse Toggle
+  function initSidebarCollapse() {
+    const sidebar = document.querySelector('.sidebar');
+    if (!sidebar) return;
+
+    // Restore saved state
+    if (localStorage.getItem('isc_sidebar_collapsed') === 'true') {
+      sidebar.classList.add('collapsed');
+      document.body.classList.add('sidebar-collapsed');
+    }
+
+    // Create toggle button
+    const collapseBtn = document.createElement('button');
+    collapseBtn.className = 'sidebar-collapse-btn';
+    collapseBtn.setAttribute('aria-label', 'Toggle sidebar');
+    collapseBtn.title = 'Collapse sidebar';
+    collapseBtn.innerHTML = '<i class="fa-solid fa-chevron-left"></i>';
+    sidebar.style.position = 'fixed'; // ensure relative for button
+    sidebar.appendChild(collapseBtn);
+
+    collapseBtn.addEventListener('click', () => {
+      const isCollapsed = sidebar.classList.toggle('collapsed');
+      document.body.classList.toggle('sidebar-collapsed', isCollapsed);
+      localStorage.setItem('isc_sidebar_collapsed', isCollapsed);
+    });
+  }
+
+  // Only run on desktop
+  if (window.innerWidth >= 850) {
+    initSidebarCollapse();
+  }
+
   // Keyboard accessibility
   document.querySelectorAll('nav a, .btn-primary-glow, .btn-gold').forEach(el => {
     el.setAttribute('tabindex', '0');
@@ -141,31 +173,66 @@ document.addEventListener('DOMContentLoaded', function() {
     return pages.indexOf(pageName);
   }
 
-  // Seamless page exit animation before navigation
+  // Create progress bar element
+  const progressBar = document.createElement('div');
+  progressBar.id = 'page-transition-bar';
+  document.body.appendChild(progressBar);
+
+  function showProgress() {
+    progressBar.style.width = '70%';
+    progressBar.style.opacity = '1';
+  }
+  function completeProgress() {
+    progressBar.style.width = '100%';
+    setTimeout(() => { progressBar.style.opacity = '0'; progressBar.style.width = '0%'; }, 200);
+  }
+
+  // On page enter: complete the bar
+  window.addEventListener('load', completeProgress);
+
   function navigateTo(direction) {
     const currentIndex = getPageIndex();
     if (currentIndex === -1) return;
-
     let nextIndex = currentIndex + direction;
     if (nextIndex >= 0 && nextIndex < pages.length) {
+      showProgress();
       document.body.classList.add('page-exit');
       setTimeout(() => {
         window.location.href = pages[nextIndex];
-      }, 280); // Match CSS animation duration
+      }, 180); // Reduced from 280ms
     }
   }
 
-  // Intercept sidebar link clicks to apply exit animation
+  // Intercept sidebar link clicks — apply exit animation + progress bar
   document.querySelectorAll('.sidebar nav a, .nav-links a').forEach(link => {
     link.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
       if (href && !href.startsWith('#')) {
         e.preventDefault();
+        showProgress();
         document.body.classList.add('page-exit');
-        setTimeout(() => { window.location.href = href; }, 280);
+        setTimeout(() => { window.location.href = href; }, 180);
       }
     });
   });
+
+  // Prefetch adjacent pages for faster navigation
+  function prefetchAdjacentPages() {
+    const currentIndex = getPageIndex();
+    if (currentIndex === -1) return;
+
+    const toPrefetch = [];
+    if (currentIndex + 1 < pages.length) toPrefetch.push(pages[currentIndex + 1]);
+    if (currentIndex - 1 >= 0) toPrefetch.push(pages[currentIndex - 1]);
+
+    toPrefetch.forEach(page => {
+      const link = document.createElement('link');
+      link.rel = 'prefetch';
+      link.href = page;
+      document.head.appendChild(link);
+    });
+  }
+  prefetchAdjacentPages();
 
   // Keyboard Navigation (Arrows)
   document.addEventListener('keydown', (e) => {
