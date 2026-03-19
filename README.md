@@ -21,7 +21,7 @@ Professional static site containing DK Nguyen's full analysis of the OpenClaw AI
 1. [Executive Summary](index.html)
 2. [What is OpenClaw?](features.html)
 3. [The 3 Critical Risks](isc_integration.html)
-4. [OpenClaw vs Claude](risks_costs.html)
+4. [OpenClaw vs Gemini](risks_costs.html)
 5. [Can ISC Use It?](roadmap.html)
 6. [Our Alternative](analysis.html)
 7. [5W-2H Framework](comparison.html)
@@ -39,4 +39,4 @@ start index.html
 - Flexbox and CSS Grid layout system
 
 ---
-**Prepared by DK Nguyen, System Architect · ISC Digital Transformation Initiative · March 2026**
+**Prepared by DK Nguyen, Data Engineer · ISC Digital Transformation Initiative · March 2026**
