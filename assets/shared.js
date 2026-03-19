@@ -190,31 +190,120 @@ document.addEventListener('DOMContentLoaded', function() {
   // On page enter: complete the bar
   window.addEventListener('load', completeProgress);
 
+  // ── SPA Page Loader ──
+  let isNavigating = false;
+
+  async function loadPage(href, isPopState = false) {
+    if (isNavigating || href === window.location.pathname.split('/').pop()) return;
+    isNavigating = true;
+
+    // 1. Animate current content OUT
+    const main = document.querySelector('.main-content');
+    if (main) {
+      main.style.transition = 'opacity 0.15s ease, transform 0.15s ease';
+      main.style.opacity = '0';
+      main.style.transform = 'translateY(-8px)';
+    }
+
+    // 2. Fetch the new page HTML
+    showProgress();
+    try {
+      const res = await fetch(href);
+      if (!res.ok) throw new Error('Network response was not ok');
+      const html = await res.text();
+
+      // 3. Parse & extract the new <main> content
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      const newMain = doc.querySelector('.main-content');
+      const newTitle = doc.querySelector('title') ? doc.querySelector('title').innerText : document.title;
+
+      // Wait a tiny bit for exit animation to feel smooth
+      await new Promise(r => setTimeout(r, 150));
+
+      // 4. Swap content + update URL
+      if (main && newMain) {
+        main.innerHTML = newMain.innerHTML;
+      }
+      document.title = newTitle;
+      
+      if (!isPopState) {
+        history.pushState({}, '', href);
+      }
+
+      // 5. Update sidebar active state
+      document.querySelectorAll('.sidebar nav a').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === href) {
+          link.classList.add('active');
+        }
+      });
+
+      // 6. Animate content IN
+      if (main) {
+        main.style.transform = 'translateY(18px)';
+        // Force reflow
+        void main.offsetWidth;
+        main.style.transition = 'opacity 0.55s cubic-bezier(0.16,1,0.3,1), transform 0.55s cubic-bezier(0.16,1,0.3,1)';
+        main.style.opacity = '1';
+        main.style.transform = 'translateY(0)';
+      }
+
+      // 7. Scroll to top and complete
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      completeProgress();
+      prefetchAdjacentPages(); 
+      
+      // 8. Re-initialize scroll animations for new content
+      const newSections = document.querySelectorAll('.section-container');
+      newSections.forEach(el => {
+        el.classList.add('animate-on-scroll');
+        observer.observe(el);
+      });
+
+      // 9. Rebind next/prev internal links inside the new content
+      bindInternalLinks();
+
+    } catch (e) {
+      console.error('SPA Load Failed, falling back to traditional navigation', e);
+      window.location.href = href;
+    } finally {
+      isNavigating = false;
+    }
+  }
+
+  // Handle browser Back/Forward buttons
+  window.addEventListener('popstate', () => {
+    const href = window.location.pathname.split('/').pop() || 'index.html';
+    loadPage(href, true);
+  });
+
   function navigateTo(direction) {
     const currentIndex = getPageIndex();
     if (currentIndex === -1) return;
     let nextIndex = currentIndex + direction;
     if (nextIndex >= 0 && nextIndex < pages.length) {
-      showProgress();
-      document.body.classList.add('page-exit');
-      setTimeout(() => {
-        window.location.href = pages[nextIndex];
-      }, 180);
+      loadPage(pages[nextIndex]);
     }
   }
 
-  // Intercept sidebar link clicks — apply exit animation + progress bar
-  document.querySelectorAll('.sidebar nav a, .nav-links a').forEach(link => {
-    link.addEventListener('click', function(e) {
-      const href = this.getAttribute('href');
-      if (href && !href.startsWith('#')) {
-        e.preventDefault();
-        showProgress();
-        document.body.classList.add('page-exit');
-        setTimeout(() => { window.location.href = href; }, 180);
-      }
+  // Intercept links to keep SPA experience
+  function bindInternalLinks() {
+    document.querySelectorAll('a').forEach(link => {
+      // Avoid binding multiple times
+      if (link.dataset.spaBound) return;
+      
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href && !href.startsWith('#') && !href.startsWith('http') && href.endsWith('.html')) {
+          e.preventDefault();
+          loadPage(href);
+        }
+      });
+      link.dataset.spaBound = 'true';
     });
-  });
+  }
+  
+  bindInternalLinks();
 
   // Prefetch adjacent pages for faster navigation
   function prefetchAdjacentPages() {
@@ -225,6 +314,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (currentIndex + 1 < pages.length) toPrefetch.push(pages[currentIndex + 1]);
     if (currentIndex - 1 >= 0) toPrefetch.push(pages[currentIndex - 1]);
 
+    // Clear old prefetches
+    document.querySelectorAll('link[rel="prefetch"]').forEach(l => l.remove());
+
     toPrefetch.forEach(page => {
       const link = document.createElement('link');
       link.rel = 'prefetch';
@@ -232,6 +324,7 @@ document.addEventListener('DOMContentLoaded', function() {
       document.head.appendChild(link);
     });
   }
+  
   prefetchAdjacentPages();
 
   let arrowNavTimeout;
