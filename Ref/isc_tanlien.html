@@ -1,0 +1,1922 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ISC HR Intelligence Report 2026 — Cụm CN Tân Liên · V3</title>
+<meta name="description" content="Báo cáo khảo sát lương & phúc lợi tại Cụm Công nghiệp Tân Liên A, Vĩnh Bảo, Hải Phòng — Phiên bản V3 dành cho CEO Kent">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   ISC HR Intelligence Report 2026 — V3.1 Premium Executive Design
+   ============================================================ */
+
+/* ─── DESIGN TOKENS ─── */
+:root {
+  /* Core Colors */
+  --bg-app:      #F4F7F9; /* Soft cool gray for body */
+  --surface:     #FFFFFF;
+  --surface-alt: #F8FAFC;
+  --border:      #E2E8F0;
+  --border-light:#F1F5F9;
+
+  /* Typography Colors */
+  --text-main:   #1E293B; /* Slate 800 */
+  --text-muted:  #475569; /* Slate 600 */
+  --text-light:  #94A3B8; /* Slate 400 */
+
+  /* Brand Colors */
+  --navy:        #0F172A; /* Deep Slate 900 */
+  --navy-light:  #1E293B;
+  --navy-accent: #38BDF8; /* Sky 400 */
+
+  --gold:        #D97706; /* Amber 600 */
+  --gold-light:  #FEF3C7; /* Amber 100 */
+  --gold-line:   #EAB308; /* Yellow 500 */
+
+  /* Status Colors */
+  --success:     #059669;
+  --success-bg:  #D1FAE5;
+  --warning:     #D97706;
+  --warning-bg:  #FEF3C7;
+  --danger:      #DC2626;
+  --danger-bg:   #FEE2E2;
+  --info:        #0284C7;
+  --info-bg:     #E0F2FE;
+  --purple:      #7C3AED;
+  --purple-bg:   #EDE9FE;
+
+  /* Typography */
+  --disp:  'Playfair Display', Georgia, serif;
+  --body:  'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --mono:  'JetBrains Mono', 'Courier New', monospace;
+
+  /* Radii & Shadows */
+  --radius-sm:  6px;
+  --radius-md:  12px;
+  --radius-lg:  20px;
+  --radius-xl:  24px;
+  
+  --shadow-sm:  0 2px 8px rgba(15, 23, 42, 0.04);
+  --shadow-md:  0 8px 24px rgba(15, 23, 42, 0.06);
+  --shadow-lg:  0 20px 40px rgba(15, 23, 42, 0.08);
+  --shadow-float: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* ─── RESET & BASE ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 15px; }
+body {
+  background: var(--bg-app);
+  color: var(--text-main);
+  font-family: var(--body);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-app); }
+::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
+
+/* ─── TOP BAR ─── */
+.top-bar {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+  color: rgba(255,255,255,0.7);
+  padding: 10px 40px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.top-bar .brand { color: #FFFFFF; font-weight: 700; letter-spacing: 0.08em; }
+.top-bar .sep { color: rgba(255,255,255,0.2); }
+.top-bar .status-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #34D399; animation: pulse 2s infinite; flex-shrink: 0;
+  box-shadow: 0 0 8px rgba(52, 211, 153, 0.6);
+}
+@keyframes pulse { 0%,100%{opacity:1; transform:scale(1);} 50%{opacity:.5; transform:scale(0.8);} }
+.top-bar .actions { margin-left: auto; display: flex; gap: 12px; }
+.btn-topbar {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+  font-family: var(--body);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease;
+}
+.btn-topbar:hover { background: rgba(255,255,255,0.15); transform: translateY(-1px); }
+.btn-topbar.gold { background: var(--gold-line); color: var(--navy); border-color: var(--gold-line); }
+.btn-topbar.gold:hover { background: #FDE047; box-shadow: 0 0 12px rgba(234, 179, 8, 0.4); }
+
+/* ─── COVER ─── */
+.cover {
+  background: radial-gradient(circle at 80% 0%, #1E293B 0%, #0F172A 60%, #020617 100%);
+  color: #fff;
+  padding: 80px 40px 140px; /* Extra bottom padding for floating KPIs */
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.cover::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.04"/></svg>');
+  pointer-events: none;
+}
+.cover-deco-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(234, 179, 8, 0.15);
+  pointer-events: none;
+}
+.cover-deco-circle.c1 { width: 800px; height: 800px; top: -300px; right: -200px; }
+.cover-deco-circle.c2 { width: 400px; height: 400px; top: 100px; left: -100px; border-color: rgba(56, 189, 248, 0.1); }
+.cover-deco-line {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, transparent 0%, var(--gold-line) 50%, transparent 100%);
+  opacity: 0.8;
+}
+
+.cover-eyebrow {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--gold-line); margin-bottom: 24px;
+  background: rgba(234, 179, 8, 0.1);
+  padding: 6px 20px;
+  border-radius: 100px;
+  border: 1px solid rgba(234, 179, 8, 0.2);
+}
+
+.cover h1 {
+  font-family: var(--disp);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 700;
+  line-height: 1.15;
+  color: #FFFFFF;
+  max-width: 900px;
+  margin-bottom: 12px;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+.cover-en { font-size: 16px; color: rgba(255,255,255,0.5); font-style: italic; margin-bottom: 24px; font-family: var(--disp); }
+.cover-sub {
+  font-size: 16px; color: rgba(255,255,255,0.8);
+  max-width: 680px; margin-bottom: 48px; line-height: 1.7;
+  font-weight: 300;
+}
+
+.cover-meta { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; position: relative; z-index: 2; max-width: 900px; }
+.cmeta {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 100px; padding: 8px 20px;
+  font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.9);
+  display: flex; align-items: center; gap: 8px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.cmeta .dot { width: 8px; height: 8px; border-radius: 50%; background: #34D399; flex-shrink: 0; box-shadow: 0 0 6px currentColor; }
+.cmeta .dot.gold   { background: var(--gold-line); }
+.cmeta .dot.amber  { background: #FBBF24; }
+.cmeta .dot.red    { background: #F87171; }
+.cmeta .dot.blue   { background: #38BDF8; }
+
+/* ─── FLOATING KPI DASHBOARD ─── */
+.kpi-container {
+  max-width: 1160px;
+  margin: -80px auto 40px; /* Pulls it up over the cover */
+  padding: 0 40px;
+  position: relative;
+  z-index: 10;
+}
+.kpi-ribbon {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+}
+.kpi-cell {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  padding: 24px 20px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.kpi-cell:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+.kpi-cell::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--border);
+}
+.kpi-cell.highlight::before { background: var(--gold-line); }
+.kpi-cell.highlight-blue::before { background: var(--navy-accent); }
+
+.kpi-label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 12px; line-height: 1.4; }
+.kpi-value { font-family: var(--disp); font-size: 28px; font-weight: 700; color: var(--navy); line-height: 1; margin-bottom: 6px; }
+.kpi-sub { font-size: 12px; color: var(--text-light); font-weight: 500; }
+.kpi-cell.highlight .kpi-value { color: var(--gold); }
+
+/* ─── FLOATING NAV TOC ─── */
+.toc-wrapper {
+  position: sticky; top: 70px; z-index: 99;
+  display: flex; justify-content: center;
+  pointer-events: none; /* Let clicks pass through empty space */
+  margin-bottom: 40px;
+  padding: 0 20px;
+}
+.toc-bar {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.4);
+  padding: 6px 8px;
+  display: flex; flex-wrap: wrap; gap: 4px; justify-content: center;
+  box-shadow: var(--shadow-float);
+  border-radius: 100px;
+  pointer-events: auto; /* Re-enable clicks for the bar */
+}
+.toc-bar a {
+  color: var(--text-muted); text-decoration: none;
+  font-size: 12.5px; font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 100px;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+.toc-bar a:hover { color: var(--navy); background: var(--surface-alt); }
+.toc-bar a.active { color: #fff; background: var(--navy); box-shadow: 0 2px 8px rgba(15, 23, 42, 0.2); }
+
+/* ─── BODY LAYOUT ─── */
+.body-wrap { max-width: 1080px; margin: 0 auto; padding: 0 40px 100px; }
+
+/* ─── SECTION CARDS ─── */
+.section {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  margin-bottom: 40px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0,0,0,0.03);
+  scroll-margin-top: 140px;
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.section.reveal { opacity: 1; transform: translateY(0); }
+
+.sec-header {
+  display: flex; align-items: center; gap: 16px;
+  margin-bottom: 32px; padding-bottom: 20px;
+  border-bottom: 2px solid var(--border-light);
+}
+.sec-num {
+  font-family: var(--body); font-size: 13px; font-weight: 800;
+  letter-spacing: 0.1em; color: #fff;
+  background: var(--navy);
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(15,23,42,0.15);
+}
+.sec-header h2 {
+  font-family: var(--disp); font-size: 28px;
+  font-weight: 700; color: var(--navy);
+  margin: 0; line-height: 1.2;
+}
+.sec-header .sec-en { font-size: 15px; color: var(--text-light); font-style: italic; font-family: var(--disp); font-weight: 400; margin-left: 8px; }
+
+.subsec-title {
+  font-size: 13px; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--navy); margin: 40px 0 20px;
+  display: flex; align-items: center; gap: 16px;
+}
+.subsec-title::after { content:''; flex:1; height:2px; background: var(--border-light); }
+
+/* ─── PROSE ─── */
+.prose { color: var(--text-muted); font-size: 15.5px; line-height: 1.8; margin-bottom: 24px; }
+.prose strong { color: var(--text-main); font-weight: 700; }
+
+/* ─── EXECUTIVE BOX ─── */
+.exec-box {
+  background: linear-gradient(145deg, #F8FAFC, #FFFFFF);
+  border: 1px solid var(--border);
+  border-left: 6px solid var(--navy-accent);
+  border-radius: var(--radius-md);
+  padding: 32px; margin-bottom: 32px;
+  box-shadow: var(--shadow-sm);
+}
+.exec-box p { margin-bottom: 16px; color: var(--text-main); font-size: 15.5px; line-height: 1.8; }
+.exec-box p:last-child { margin-bottom: 0; }
+.exec-box strong { color: var(--navy); font-weight: 700; }
+
+/* ─── CALLOUTS ─── */
+.callout {
+  border-radius: var(--radius-md); padding: 20px 24px;
+  margin: 24px 0; font-size: 14.5px; line-height: 1.7;
+  display: flex; gap: 16px;
+  border: 1px solid transparent;
+}
+.callout::before { font-size: 20px; flex-shrink: 0; line-height: 1.2; }
+.callout-info    { background: var(--info-bg); border-color: #BAE6FD; color: #0369A1; }
+.callout-info::before { content: '💡'; }
+.callout-warn    { background: var(--warning-bg); border-color: #FDE68A; color: #B45309; }
+.callout-warn::before { content: '⚠️'; }
+.callout-success { background: var(--success-bg); border-color: #A7F3D0; color: #047857; }
+.callout-success::before { content: '✅'; }
+.callout-danger  { background: var(--danger-bg); border-color: #FECACA; color: #B91C1C; }
+.callout-danger::before { content: '🚨'; }
+.callout-gold    { background: var(--gold-light); border-color: #FDE047; color: #A16207; }
+.callout-gold::before { content: '⭐'; }
+.callout strong  { font-weight: 700; color: inherit; }
+.callout div { flex: 1; } /* wrapper for text if needed, but styling applies to root */
+
+/* ─── SAAS-STYLE TABLES ─── */
+.tbl-wrap { 
+  overflow-x: auto; margin: 24px 0 32px; 
+  border-radius: var(--radius-md); 
+  border: 1px solid var(--border); 
+  box-shadow: var(--shadow-sm); 
+  background: var(--surface);
+}
+table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 14px; }
+thead th {
+  background: var(--surface-alt);
+  padding: 16px 20px; text-align: left;
+  font-size: 11.5px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--text-muted); white-space: nowrap;
+  border-bottom: 2px solid var(--border);
+}
+tbody tr { transition: background 0.2s ease; }
+tbody tr:not(:last-child) td { border-bottom: 1px solid var(--border-light); }
+tbody tr:hover { background: #F8FAFC; }
+tbody td { padding: 16px 20px; vertical-align: middle; color: var(--text-main); line-height: 1.6; }
+.td-label { font-weight: 700; color: var(--navy); }
+.td-mono  { font-family: var(--mono); font-size: 13.5px; font-weight: 500; }
+.td-dim   { color: var(--text-muted); }
+.td-green { color: var(--success); font-weight: 700; }
+.td-gold  { color: var(--gold); font-weight: 700; }
+.td-red   { color: var(--danger); font-weight: 700; }
+.td-navy  { color: var(--navy); font-weight: 700; }
+
+/* ─── PREMIUM BADGES ─── */
+.badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 4px 10px; border-radius: 6px; font-size: 11px;
+  font-weight: 700; letter-spacing: 0.05em; white-space: nowrap; line-height: 1.4;
+}
+.badge-fdi    { background: var(--info-bg); color: var(--info); }
+.badge-sme    { background: var(--purple-bg); color: var(--purple); }
+.badge-soe    { background: #E0E7FF; color: #4338CA; }
+.badge-jv     { background: var(--warning-bg); color: var(--warning); }
+.badge-high   { background: var(--success-bg); color: var(--success); }
+.badge-med    { background: var(--warning-bg); color: var(--warning); }
+.badge-low    { background: var(--danger-bg); color: var(--danger); }
+.badge-ok     { background: var(--success-bg); color: var(--success); }
+.badge-warn   { background: var(--warning-bg); color: var(--warning); }
+.badge-gap    { background: var(--danger-bg); color: var(--danger); }
+.badge-ref    { background: var(--bg-app); color: var(--text-muted); border: 1px solid var(--border); }
+.badge-anchor { background: var(--navy); color: #fff; box-shadow: 0 2px 6px rgba(15,23,42,0.2); }
+.badge-unk    { background: var(--bg-app); color: var(--text-light); border: 1px dashed var(--text-light); }
+.badge-isc    { background: linear-gradient(135deg, #1E293B, #0F172A); color: var(--gold-line); box-shadow: 0 2px 6px rgba(15,23,42,0.3); }
+.badge-weekly { background: var(--success); color: #fff; box-shadow: 0 2px 6px rgba(5,150,105,0.3); }
+
+/* ─── INLINE CITATION ─── */
+sup.cit a {
+  font-family: var(--mono); font-size: 10px; font-weight: 700;
+  color: var(--navy-accent); background: var(--info-bg);
+  padding: 2px 5px; border-radius: 4px; text-decoration: none;
+  white-space: nowrap; vertical-align: super; line-height: 1;
+  transition: all 0.2s;
+}
+sup.cit a:hover { background: var(--navy-accent); color: #fff; }
+
+/* ─── SALARY RANGE VIS ─── */
+.salary-range { display: flex; align-items: center; gap: 10px; min-width: 220px; }
+.sal-min, .sal-max { font-size: 12.5px; font-weight: 700; white-space: nowrap; font-family: var(--mono); }
+.sal-min { color: var(--text-light); }
+.sal-max { color: var(--navy); }
+.sal-bar-wrap { flex:1; height: 8px; background: var(--border-light); border-radius: 8px; overflow: hidden; min-width: 60px; box-shadow: inset 0 1px 2px rgba(0,0,0,0.05); }
+.sal-bar { height: 100%; border-radius: 8px; background: linear-gradient(90deg, #38BDF8, #0284C7); transition: width 1s cubic-bezier(0.16, 1, 0.3, 1); width: 0; }
+.sal-bar.green { background: linear-gradient(90deg, #34D399, #059669); }
+.sal-bar.gold  { background: linear-gradient(90deg, #FBBF24, #D97706); }
+
+/* ─── ISC HIGHLIGHT BOX ─── */
+.isc-box {
+  background: radial-gradient(circle at top right, #1E293B, #0F172A);
+  border-radius: var(--radius-xl); padding: 40px;
+  margin-bottom: 32px; color: #fff;
+  box-shadow: var(--shadow-lg);
+  position: relative; overflow: hidden;
+}
+.isc-box::after {
+  content: ''; position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+  background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M0 100 L100 0 L100 100 Z" fill="rgba(255,255,255,0.02)"/></svg>') no-repeat right bottom;
+  background-size: cover; pointer-events: none;
+}
+.isc-box h3 { font-family: var(--disp); font-size: 22px; color: var(--gold-line); margin-bottom: 8px; position: relative; z-index: 1; }
+.isc-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 16px; margin-top: 24px; position: relative; z-index: 1; }
+.isc-kv { padding: 16px 20px; background: rgba(255,255,255,0.05); border-radius: var(--radius-md); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.1); transition: transform 0.2s; }
+.isc-kv:hover { transform: translateY(-2px); background: rgba(255,255,255,0.08); }
+.isc-kv-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 8px; }
+.isc-kv-value { font-family: var(--mono); font-size: 15px; font-weight: 700; color: #fff; }
+.isc-kv-value.gold { color: var(--gold-line); }
+.isc-kv-value.green { color: #34D399; }
+
+/* ─── SHIFT RATE TABLE ─── */
+.shift-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 24px 0; }
+.shift-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-md); padding: 20px;
+  box-shadow: var(--shadow-sm); text-align: center;
+  transition: box-shadow 0.2s;
+}
+.shift-card:hover { box-shadow: var(--shadow-md); }
+.shift-type { font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 8px; }
+.shift-val { font-family: var(--mono); font-size: 16px; font-weight: 700; color: var(--navy); }
+.shift-sub { font-size: 12px; color: var(--text-light); margin-top: 4px; }
+.shift-card.night { border-top: 4px solid var(--purple); }
+.shift-card.night .shift-val { color: var(--purple); }
+.shift-card.weekend { border-top: 4px solid var(--warning); }
+.shift-card.weekend .shift-val { color: var(--warning); }
+.shift-card.holiday { border-top: 4px solid var(--danger); }
+.shift-card.holiday .shift-val { color: var(--danger); }
+.shift-card.day { border-top: 4px solid var(--success); }
+.shift-card.day .shift-val { color: var(--success); }
+
+/* ─── CLUSTER MAP ─── */
+.cluster-map {
+  background: var(--surface-alt); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm);
+  margin-top: 24px;
+}
+.cluster-title {
+  background: var(--surface); color: var(--navy);
+  padding: 16px 24px; font-size: 14px; font-weight: 800;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 12px;
+}
+.cluster-road {
+  padding: 12px 24px; background: #F1F5F9;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px; color: var(--text-muted); font-weight: 500;
+}
+.cluster-grid {
+  display: grid; grid-template-columns: repeat(8,1fr);
+  gap: 8px; padding: 24px; background: var(--surface-alt);
+}
+.lot {
+  background: var(--surface); padding: 12px 8px;
+  border-radius: var(--radius-sm); border: 1px solid var(--border);
+  text-align: center; min-height: 90px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 6px;
+  cursor: default; transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+.lot:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); z-index: 2; position: relative; }
+.lot-num { font-size: 10px; font-weight: 800; color: var(--text-light); letter-spacing: 0.1em; background: var(--bg-app); padding: 2px 8px; border-radius: 4px; }
+.lot-name { font-size: 12px; font-weight: 700; line-height: 1.3; text-align: center; color: var(--navy); }
+.lot-tag  { font-size: 10px; color: var(--text-muted); line-height: 1.2; font-weight: 500; }
+.lot-isc    { background: linear-gradient(135deg, #1E293B, #0F172A); border: none; box-shadow: 0 4px 12px rgba(15,23,42,0.3); }
+.lot-isc .lot-name { color: var(--gold-line); font-size: 13px; font-weight: 800; }
+.lot-isc .lot-tag  { color: rgba(255,255,255,0.7); }
+.lot-isc .lot-num  { color: var(--navy); background: rgba(255,255,255,0.9); }
+.lot-garment { background: #FFF7ED; border-color: #FED7AA; }
+.lot-garment .lot-name { color: #C2410C; }
+.lot-pkg    { background: var(--info-bg); border-color: #BAE6FD; }
+.lot-pkg .lot-name { color: #0369A1; }
+.lot-fdi    { background: var(--success-bg); border-color: #A7F3D0; }
+.lot-fdi .lot-name { color: #047857; }
+.lot-svc    { background: #F8FAFC; border-color: var(--border); }
+.lot-empty  { background: transparent; border: 1px dashed #CBD5E1; box-shadow: none; }
+.lot-empty .lot-name { color: var(--text-light); font-weight: 500; }
+.lot-empty .lot-num { background: transparent; color: #CBD5E1; }
+.lot-empty:hover { transform: none; box-shadow: none; background: #F8FAFC; }
+.lot-span2  { grid-column: span 2; }
+.cluster-legend {
+  display: flex; flex-wrap: wrap; gap: 16px;
+  padding: 16px 24px; background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+.leg-item { display: flex; align-items: center; gap: 8px; font-size: 12.5px; font-weight: 600; color: var(--text-muted); }
+.leg-dot { width: 14px; height: 14px; border-radius: 4px; flex-shrink: 0; }
+.cluster-note {
+  padding: 12px 24px; font-size: 12.5px; color: var(--text-light);
+  background: var(--surface); border-top: 1px solid var(--border-light);
+  font-style: italic;
+}
+
+/* ─── GAP CARDS ─── */
+.gap-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px,1fr)); gap: 20px; margin-top: 24px; }
+.gap-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-md); padding: 24px;
+  box-shadow: var(--shadow-sm); transition: transform 0.2s, box-shadow 0.2s;
+  display: flex; flex-direction: column;
+}
+.gap-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.gap-card-top { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 16px; }
+.gap-card h4 { font-size: 16px; font-weight: 800; color: var(--navy); line-height: 1.4; }
+.gap-lbl { font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); margin-bottom: 6px; margin-top: auto; padding-top: 16px; }
+.gap-card p { color: var(--text-muted); font-size: 14px; line-height: 1.7; margin-bottom: 12px; }
+
+/* ─── RISK ROWS ─── */
+.risk-row {
+  display: flex; align-items: flex-start; gap: 16px;
+  padding: 20px; background: var(--surface-alt);
+  border: 1px solid var(--border); border-radius: var(--radius-md);
+  margin: 12px 0; transition: all 0.2s;
+}
+.risk-row:hover { background: var(--surface); box-shadow: var(--shadow-md); transform: translateX(4px); border-color: #CBD5E1; }
+.risk-icon { font-size: 24px; flex-shrink: 0; background: #fff; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 12px; box-shadow: var(--shadow-sm); }
+.risk-body { flex: 1; }
+.risk-body strong { color: var(--navy); font-size: 15px; font-weight: 800; display: block; margin-bottom: 6px; }
+.risk-body p { color: var(--text-muted); font-size: 14px; line-height: 1.7; margin: 0; }
+
+/* ─── TWO-COL ─── */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+/* ─── REFERENCE LIST ─── */
+.ref-list { list-style: none; counter-reset: ref; }
+.ref-list li {
+  counter-increment: ref;
+  display: flex; gap: 16px; padding: 16px 0;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 13.5px; color: var(--text-muted); line-height: 1.6;
+}
+.ref-list li:last-child { border-bottom: none; }
+.ref-list li::before {
+  content: "[" counter(ref) "]";
+  font-size: 11px; font-weight: 700; color: var(--navy-accent);
+  background: var(--info-bg);
+  padding: 4px 8px; border-radius: 6px;
+  flex-shrink: 0; align-self: flex-start;
+  white-space: nowrap; font-family: var(--mono);
+}
+.ref-list a { color: var(--info); text-decoration: none; font-weight: 600; transition: color 0.2s; }
+.ref-list a:hover { color: var(--navy); text-decoration: underline; }
+.ref-conf { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 4px; margin-left: 8px; vertical-align: middle; }
+
+/* ─── DIVIDER ─── */
+hr.divider { border: none; border-top: 2px dashed var(--border); margin: 60px 0; }
+
+/* ─── DATA QUALITY MATRIX ─── */
+.dq-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin: 24px 0 32px; }
+.dq-card {
+  background: var(--surface); border-radius: var(--radius-md);
+  border: 1px solid var(--border); padding: 24px;
+  text-align: center; box-shadow: var(--shadow-sm);
+  transition: transform 0.2s;
+}
+.dq-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.dq-icon { font-size: 28px; margin-bottom: 12px; }
+.dq-label { font-size: 11.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 8px; }
+.dq-value { font-family: var(--disp); font-size: 24px; font-weight: 700; }
+.dq-desc { font-size: 13px; color: var(--text-light); margin-top: 8px; line-height: 1.5; }
+
+/* ─── FOOTER ─── */
+.footer {
+  background: var(--navy); color: rgba(255,255,255,0.6);
+  padding: 32px 40px;
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px;
+  font-size: 13px; border-top: 4px solid var(--gold-line);
+}
+.footer strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+.footer a { color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
+.footer a:hover { color: #fff; }
+
+/* ─── PRINT ─── */
+@media print {
+  body { background: #fff; font-size: 12px; }
+  .top-bar, .toc-wrapper, .btn-print { display: none !important; }
+  .cover { background: #0F172A !important; padding: 40px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .kpi-container { margin-top: 0; padding: 0; }
+  .kpi-cell, .section { box-shadow: none; border: 1px solid #ddd; margin-bottom: 24px; padding: 24px; opacity: 1; transform: none; }
+  .body-wrap { padding: 0; max-width: 100%; }
+  .footer { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .gap-card, .risk-row, .stat-card, .dq-card { break-inside: avoid; }
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1024px) {
+  .cover { padding: 60px 32px 120px; }
+  .body-wrap { padding: 0 32px 80px; }
+  .kpi-container { padding: 0 32px; margin-top: -60px; }
+  .top-bar, .footer { padding-left: 32px; padding-right: 32px; }
+  .kpi-ribbon { grid-template-columns: repeat(3, 1fr); }
+  .cluster-grid { grid-template-columns: repeat(4, 1fr); }
+  .section { padding: 32px; }
+}
+@media (max-width: 768px) {
+  .cover h1 { font-size: 32px; }
+  .kpi-ribbon { grid-template-columns: repeat(2, 1fr); }
+  .shift-grid { grid-template-columns: repeat(2, 1fr); }
+  .dq-grid { grid-template-columns: 1fr; }
+  .two-col { grid-template-columns: 1fr; }
+  .toc-bar a { font-size: 11.5px; padding: 6px 12px; }
+  .section { padding: 24px; }
+  .isc-box { padding: 24px; }
+  .cover-meta { flex-direction: column; align-items: stretch; }
+  .cmeta { justify-content: center; }
+}
+@media (max-width: 480px) {
+  .kpi-ribbon { grid-template-columns: 1fr; }
+  .shift-grid { grid-template-columns: 1fr; }
+  .cluster-grid { grid-template-columns: repeat(2, 1fr); }
+  .top-bar { flex-direction: column; align-items: flex-start; padding: 16px; }
+  .top-bar .actions { margin-left: 0; margin-top: 12px; width: 100%; }
+  .btn-topbar { flex: 1; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ TOP BAR ═══ -->
+<div class="top-bar">
+  <span class="brand">ISC</span>
+  <span class="sep">/</span>
+  <span>HR Intelligence Report 2026</span>
+  <span class="sep">/</span>
+  <span class="status-dot"></span>
+  <span>Cụm CN Tân Liên A · Phiên bản nội bộ · Bảo mật</span>
+  <div class="actions">
+    <button class="btn-topbar btn-print">⎙ In / PDF</button>
+    <button class="btn-topbar gold">V3.1 — 18/03/2026</button>
+  </div>
+</div>
+
+<!-- ═══ COVER ═══ -->
+<div class="cover">
+  <div class="cover-deco-circle c1"></div>
+  <div class="cover-deco-circle c2"></div>
+  <div class="cover-deco-line"></div>
+
+  <div class="cover-eyebrow">ISC — Gravity Research Series · 2026 · Confidential</div>
+
+  <h1>Báo cáo Khảo sát Lương &amp; Phúc lợi<br>Cụm Công nghiệp Tân Liên</h1>
+  <div class="cover-en">Salary &amp; Benefits Intelligence Report — Tân Liên Industrial Cluster</div>
+  <div class="cover-sub">
+    Phân tích mặt bằng cạnh tranh nhân sự tại Cụm CN Tân Liên A, Vĩnh Bảo, Hải Phòng.<br>
+    Cơ sở dữ liệu chiến lược cho chính sách đãi ngộ ISC năm 2026 — Kính trình CEO Kent.
+  </div>
+
+  <div class="cover-meta">
+    <div class="cmeta"><span class="dot gold"></span> Kính gửi: CEO Kent — Lãnh đạo Điều hành ISC</div>
+    <div class="cmeta"><span class="dot blue"></span> Ngày lập: 18/03/2026 · Deadline: 29/04/2026</div>
+    <div class="cmeta"><span class="dot"></span> Phạm vi: 21+ doanh nghiệp — 68,2 ha · Lấp đầy 100%</div>
+    <div class="cmeta"><span class="dot amber"></span> Giai đoạn 0–1 Hoàn tất · P2–P5 Đang tiến hành</div>
+    <div class="cmeta"><span class="dot red"></span> BẢO MẬT — Lưu hành nội bộ ISC</div>
+  </div>
+</div>
+
+<!-- ═══ FLOATING KPI RIBBON ═══ -->
+<div class="kpi-container">
+  <div class="kpi-ribbon">
+    <div class="kpi-cell highlight-blue">
+      <div class="kpi-label">Doanh nghiệp khảo sát</div>
+      <div class="kpi-value" data-val="21">21</div>
+      <div class="kpi-sub">Cụm CN Tân Liên A</div>
+    </div>
+    <div class="kpi-cell">
+      <div class="kpi-label">Lương tối thiểu Vùng I</div>
+      <div class="kpi-value">5,31M</div>
+      <div class="kpi-sub">VNĐ/tháng — HP 2026 <sup class="cit"><a href="#ref-1">[1]</a></sup></div>
+    </div>
+    <div class="kpi-cell highlight">
+      <div class="kpi-label">ISC Thực tế — CN phổ thông</div>
+      <div class="kpi-value">8–10M</div>
+      <div class="kpi-sub">VNĐ/tháng · Lương tuần ✅</div>
+    </div>
+    <div class="kpi-cell">
+      <div class="kpi-label">Thu nhập TB KCN VSIP HP</div>
+      <div class="kpi-value">10,26M</div>
+      <div class="kpi-sub">VNĐ/tháng — 2025 <sup class="cit"><a href="#ref-5">[5]</a></sup></div>
+    </div>
+    <div class="kpi-cell">
+      <div class="kpi-label">Tăng lương thị trường 2026</div>
+      <div class="kpi-value">7–8%</div>
+      <div class="kpi-sub">Trung bình năm <sup class="cit"><a href="#ref-3">[3]</a></sup></div>
+    </div>
+    <div class="kpi-cell highlight-blue">
+      <div class="kpi-label">BHXH Doanh nghiệp</div>
+      <div class="kpi-value">21,5%</div>
+      <div class="kpi-sub">+ NLĐ đóng 10,5% <sup class="cit"><a href="#ref-2">[2]</a></sup></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FLOATING TOC ═══ -->
+<div class="toc-wrapper">
+  <div class="toc-bar">
+    <a href="#s1">I. Tóm tắt</a>
+    <a href="#s-isc">II. ISC Thực tế</a>
+    <a href="#s2">III. Danh sách CT</a>
+    <a href="#s2b">↳ Bản đồ Lô</a>
+    <a href="#s3">IV. Mặt bằng Lương</a>
+    <a href="#s3b">↳ Tin TD Thực tế</a>
+    <a href="#s3c">↳ Ước tính CT</a>
+    <a href="#s4">V. Phụ cấp</a>
+    <a href="#s5">VI. Phúc lợi</a>
+    <a href="#s6">VII. FDI vs SME</a>
+    <a href="#s7">VIII. Rủi ro</a>
+    <a href="#s8">IX. Đề xuất</a>
+    <a href="#s9">X. Hạn chế</a>
+    <a href="#refs">Tài liệu TK</a>
+  </div>
+</div>
+
+<!-- ═══ BODY ═══ -->
+<div class="body-wrap">
+
+<!-- ══════════════ SECTION I — EXECUTIVE SUMMARY ══════════════ -->
+<div class="section" id="s1">
+  <div class="sec-header">
+    <span class="sec-num">I</span>
+    <h2>Tóm tắt Điều hành <span class="sec-en">Executive Summary</span></h2>
+  </div>
+
+  <div class="exec-box">
+    <p><strong>Mục tiêu:</strong> Báo cáo cung cấp bức tranh toàn cảnh về mặt bằng lương, phụ cấp và phúc lợi tại Cụm CN Tân Liên A (Vĩnh Bảo, Hải Phòng) — nơi ISC (<em>Công ty TNHH Văn phòng phẩm Quốc Tế</em>) đang hoạt động với ~1.000 nhân sự. Kết quả nghiên cứu là cơ sở cho các quyết định điều chỉnh chính sách đãi ngộ của Ban Lãnh đạo ISC năm 2026.</p>
+    <p><strong>Phát hiện chính:</strong> Cụm CN Tân Liên A có ~21 doanh nghiệp, trong đó 14–15 công ty sản xuất có giá trị benchmark trực tiếp. Lương công nhân phổ thông dao động <strong>7–14 triệu VNĐ/tháng</strong> (bao gồm phụ cấp). ISC trả <strong>8–10M VNĐ/tháng</strong> kèm <strong>cơm miễn phí</strong> và có <strong>lương hàng tuần</strong> — đây là lợi thế cạnh tranh độc đáo tại thị trường Vĩnh Bảo.</p>
+    <p><strong>Điểm rủi ro cấp bách:</strong> (1) Tỷ lệ nghỉ việc ngành SX nhẹ Hải Phòng ước 15–25%/năm <sup class="cit"><a href="#ref-3">[3]</a></sup>; (2) FDI mới (Nhật/Hàn) thường chào lương cao hơn 10–20% trong 6–12 tháng đầu để nhanh chóng đủ nhân sự; (3) Cụm CN Tân Liên <strong>lấp đầy 100%</strong> — mỗi người rời ISC chuyển thẳng sang đối thủ ngay bên cạnh.</p>
+  </div>
+
+  <div class="dq-grid">
+    <div class="dq-card">
+      <div class="dq-icon">🟢</div>
+      <div class="dq-label">Dữ liệu Pháp lý</div>
+      <div class="dq-value" style="color:var(--success)">CAO</div>
+      <div class="dq-desc">Lương tối thiểu, BHXH, luật OT — nguồn chính phủ</div>
+    </div>
+    <div class="dq-card">
+      <div class="dq-icon">🟡</div>
+      <div class="dq-label">Dữ liệu Thị trường</div>
+      <div class="dq-value" style="color:var(--warning)">TRUNG BÌNH</div>
+      <div class="dq-desc">Navigos/Talentnet — khu vực phía Bắc chung</div>
+    </div>
+    <div class="dq-card">
+      <div class="dq-icon">🟤</div>
+      <div class="dq-label">Dữ liệu ISC Nội bộ</div>
+      <div class="dq-value" style="color:var(--warning)">CẦN XÁC MINH</div>
+      <div class="dq-desc">Lương tuần / 8–10M xác nhận qua kênh địa phương</div>
+    </div>
+  </div>
+
+  <div class="callout callout-warn">
+    <div><strong>Lưu ý quan trọng:</strong> Ô <strong>❓</strong> trong báo cáo = chưa xác minh nội bộ. HR ISC cần cung cấp bảng lương thực tế để điền vào các ô này và hoàn tất phân tích khoảng cách chính xác.</div>
+  </div>
+</div>
+
+<!-- ══════════════ SECTION II — ISC COMPETITIVE POSITION ══════════════ -->
+<div class="section" id="s-isc">
+  <div class="sec-header">
+    <span class="sec-num">II</span>
+    <h2>ISC — Vị thế Cạnh tranh Thực tế <span class="sec-en">ISC Real Competitive Position</span></h2>
+  </div>
+
+  <p class="prose">Dữ liệu bên dưới thu thập từ <strong>kênh địa phương thực tế</strong> (Facebook groups tuyển dụng Vĩnh Bảo, VFIC Manpower) ngày 18/03/2026 — đây là dữ liệu tin cậy nhất hiện có về ISC vì ISC không đăng tin tuyển dụng công khai trên các job board lớn.</p>
+
+  <div class="isc-box">
+    <h3>⭐ ISC — Công ty TNHH Văn phòng phẩm Quốc Tế (MST: 0200990273)</h3>
+    <p style="color:rgba(255,255,255,0.7); font-size:14px; margin-bottom:0; font-weight: 500;">Lô CN12–13 · ~1.000 nhân sự · JV Axus / M&amp;G Group (Fortune 500 Trung Quốc) · Xuất khẩu sang 50+ quốc gia</p>
+    <div class="isc-row">
+      <div class="isc-kv">
+        <div class="isc-kv-label">Lương CN phổ thông</div>
+        <div class="isc-kv-value gold">8.000.000 – 10.000.000 VNĐ/tháng</div>
+      </div>
+      <div class="isc-kv">
+        <div class="isc-kv-label">Chu kỳ trả lương</div>
+        <div class="isc-kv-value green">🟢 LƯƠNG TUẦN — Độc đáo tại cụm CN</div>
+      </div>
+      <div class="isc-kv">
+        <div class="isc-kv-label">Bữa ăn</div>
+        <div class="isc-kv-value green">✅ Cơm ca miễn phí</div>
+      </div>
+      <div class="isc-kv">
+        <div class="isc-kv-label">Bảo hiểm</div>
+        <div class="isc-kv-value">✅ BHXH / BHYT / BHTN đầy đủ</div>
+      </div>
+      <div class="isc-kv">
+        <div class="isc-kv-label">Lịch ca</div>
+        <div class="isc-kv-value">Xoay ca 1 tuần / Ca ngày + Ca đêm</div>
+      </div>
+      <div class="isc-kv">
+        <div class="isc-kv-label">Tuyển dụng qua</div>
+        <div class="isc-kv-value">VFIC Manpower + Facebook Vĩnh Bảo</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="subsec-title">Biểu giá Ca làm việc thực tế ISC</div>
+  <div class="shift-grid">
+    <div class="shift-card day">
+      <div class="shift-type">Ca ngày thường</div>
+      <div class="shift-val">264k – 462k</div>
+      <div class="shift-sub">8h – 11h làm việc</div>
+    </div>
+    <div class="shift-card night">
+      <div class="shift-type">Ca đêm thường</div>
+      <div class="shift-val">343k – 541k</div>
+      <div class="shift-sub">8h – 11h làm việc</div>
+    </div>
+    <div class="shift-card weekend">
+      <div class="shift-type">Chủ nhật ca ngày</div>
+      <div class="shift-val">792k</div>
+      <div class="shift-sub">11h làm việc</div>
+    </div>
+    <div class="shift-card holiday">
+      <div class="shift-type">Chủ nhật ca đêm / Lễ</div>
+      <div class="shift-val">976k – 1.296k</div>
+      <div class="shift-sub">11h làm việc</div>
+    </div>
+  </div>
+
+  <div class="callout callout-gold">
+    <div><strong>💡 Lợi thế chiến lược:</strong> Lương tuần (weekly pay) là <strong>đặc điểm hiếm gặp</strong> tại các KCN Vĩnh Bảo. Đây là công cụ duy trì dòng tiền hiệu quả cho lao động nhập cư và là yếu tố tuyển dụng cần được truyền thông mạnh mẽ hơn trên Facebook và các kênh địa phương.</div>
+  </div>
+
+  <div class="callout callout-danger">
+    <div><strong>❗ Khoảng cách nhận diện:</strong> Với 8–10M VNĐ/tháng, ISC đang ở <strong>vùng thấp của FDI Đài/Trung</strong> và <strong>thấp hơn FDI Nhật ~20–25%</strong> (IWAHASHI Brushes ước tính 9–13M cùng vị trí). Nếu không kèm theo lợi thế lương tuần + cơm miễn phí trong truyền thông tuyển dụng, ISC sẽ bất lợi rõ rệt khi so sánh số tuyệt đối.</div>
+  </div>
+</div>
+
+<!-- ══════════════ SECTION III — COMPANY LIST ══════════════ -->
+<div class="section" id="s2">
+  <div class="sec-header">
+    <span class="sec-num">III</span>
+    <h2>Danh sách Công ty Khảo sát <span class="sec-en">Surveyed Companies</span></h2>
+  </div>
+
+  <p class="prose">Cụm CN Tân Liên A (xã Tân Liên, huyện Vĩnh Bảo, TP. Hải Phòng) diện tích <strong>68,2 ha</strong>, <strong>lấp đầy 100%</strong>. Tổng hợp từ: cumcongnghiephaiphong.vn <sup class="cit"><a href="#ref-10">[10]</a></sup>, thongtindoanhnghiep.co, tratencongty.com <sup class="cit"><a href="#ref-11">[11]</a></sup>, masothue.com và thực địa.</p>
+
+  <!-- GROUP A -->
+  <div class="subsec-title">Nhóm A — May mặc &amp; Dệt may</div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Lô CN</th><th>Tên công ty</th><th>Ngành</th><th>Loại hình</th><th>Quy mô</th><th>Ưu tiên</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="td-mono">CN07</td>
+          <td class="td-label">WESTFIELD Việt Nam<br><span class="td-dim" style="font-size:12px;font-weight:500;font-family:var(--body)">MST: 0200850276</span></td>
+          <td>May mặc xuất khẩu</td>
+          <td><span class="badge badge-fdi">FDI</span></td>
+          <td>201–500</td>
+          <td><span class="badge badge-ok">ƯU TIÊN CAO</span></td>
+        </tr>
+        <tr>
+          <td class="td-mono">—</td>
+          <td class="td-label">May Xuất Khẩu Tân Dương</td>
+          <td>May trang phục xuất khẩu</td>
+          <td><span class="badge badge-fdi">FDI</span></td>
+          <td>201–500</td>
+          <td><span class="badge badge-ok">ƯU TIÊN CAO</span></td>
+        </tr>
+        <tr>
+          <td class="td-mono">—</td>
+          <td class="td-label">Thương mại Sao Mai</td>
+          <td>May gia công xuất khẩu</td>
+          <td><span class="badge badge-sme">Việt Nam</span></td>
+          <td>51–200</td>
+          <td><span class="badge badge-ok">ƯU TIÊN CAO</span></td>
+        </tr>
+        <tr>
+          <td class="td-mono">—</td>
+          <td class="td-label">Vinatex Quốc tế – CN Hải Phòng</td>
+          <td>Dệt may (Tập đoàn Nhà nước)</td>
+          <td><span class="badge badge-soe">Nhà nước</span></td>
+          <td>201–500</td>
+          <td><span class="badge badge-ok">ƯU TIÊN CAO</span></td>
+        </tr>
+        <tr>
+          <td class="td-mono">—</td>
+          <td class="td-label">Cổ phần May Hai</td>
+          <td>May mặc</td>
+          <td><span class="badge badge-sme">Việt Nam</span></td>
+          <td>51–200</td>
+          <td><span class="badge badge-ref">THAM KHẢO</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- GROUP B -->
+  <div class="subsec-title">Nhóm B — Bao bì, Đồ chơi, Giày &amp; Sản xuất nhẹ</div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Lô CN</th><th>Tên công ty</th><th>Ngành</th><th>Loại hình</th><th>Quy mô</th><th>Ưu tiên</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="td-mono">CN08–09</td>
+          <td class="td-label">Bao bì Hạo Hãn<br><span class="td-dim" style="font-size:12px;font-weight:500;font-family:var(--body)">MST: 0202255191 · Đại diện: Chen Yu-Tsang</span></td>
+          <td>SX, gia công, in ấn bao bì</td>
+          <td><span class="badge badge-fdi">FDI Đài Loan</span></td>
+          <td>51–200</td>
+          <td><span class="badge badge-ok">ƯU TIÊN CAO</span></td>
+        </tr>
+        <tr>
+          <td class="td-mono">CN11</td>
+          <td class="td-label">V&amp;L Packaging Việt Nam</td>
+          <td>Sản xuất hộp giấy / bao bì</td>
+          <td><span class="badge badge-fdi">FDI</span></td>
+          <td>51–200</td>
+          <td><span class="badge badge-ok">ƯU TIÊN CAO</span></td>
+        </tr>
+        <tr>
+          <td class="td-mono">—</td>
+          <td class="td-label">Well Power (Việt Nam)<br><span class="td-dim" style="font-size:12px;font-weight:500;font-family:var(--body)">MST: 0200864487</span></td>
+          <td>SX &amp; gia công đồ chơi nhựa</td>
+          <td><span class="badge badge-fdi">FDI Đài Loan</span></td>
+          <td>51–200</td>
+          <td><span class="badge badge-ok">ƯU TIÊN CAO</span></td>
+        </tr>
+        <tr>
+          <td class="td-mono">CN16</td>
+          <td class="td-label">Forever True Vĩnh Bảo Việt Nam</td>
+          <td>Sản xuất đồ chơi, trò chơi</td>
+          <td><span class="badge badge-fdi">FDI</span></td>
+          <td>51–200</td>
+          <td><span class="badge badge-ok">ƯU TIÊN CAO</span></td>
+        </tr>
+        <tr>
+          <td class="td-mono">—</td>
+          <td class="td-label">EASILY</td>
+          <td>Sản xuất đế giày &amp; khuôn đế giày</td>
+          <td><span class="badge badge-fdi">FDI</span></td>
+          <td>51–200</td>
+          <td><span class="badge badge-ok">ƯU TIÊN CAO</span></td>
+        </tr>
+        <tr>
+          <td class="td-mono">—</td>
+          <td class="td-label">Thiên Phúc</td>
+          <td>Gia công giấy vàng mã</td>
+          <td><span class="badge badge-sme">Việt Nam</span></td>
+          <td>1–50</td>
+          <td><span class="badge badge-ref">THAM KHẢO</span></td>
+        </tr>
+        <tr>
+          <td class="td-mono">—</td>
+          <td class="td-label">Sunmax Việt Nam</td>
+          <td>SX (cần xác minh)</td>
+          <td><span class="badge badge-unk">Chưa rõ</span></td>
+          <td>1–50</td>
+          <td><span class="badge badge-ref">THAM KHẢO</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- GROUP C -->
+  <div class="subsec-title">Nhóm C — Văn phòng phẩm, Cơ khí &amp; Kỹ thuật cao</div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Lô CN</th><th>Tên công ty</th><th>Ngành</th><th>Loại hình</th><th>Quy mô</th><th>Ưu tiên</th></tr></thead>
+      <tbody>
+        <tr style="background:#F0F9FF;">
+          <td class="td-mono" style="color:var(--info);font-weight:700">CN12–13</td>
+          <td class="td-label" style="color:var(--info)">⭐ ISC — Văn Phòng Phẩm Quốc Tế<br><span style="color:var(--text-muted);font-size:12px;font-weight:500;font-family:var(--body)">MST: 0200990273 · isconline.vn · ~1.000 NV · Axus/M&amp;G Group</span></td>
+          <td>Sản xuất bút chì gỗ, VPP xuất khẩu</td>
+          <td><span class="badge badge-jv">JV (Axus/M&amp;G)</span></td>
+          <td>501–1000</td>
+          <td><span class="badge badge-anchor">ANCHOR</span></td>
+        </tr>
+        <tr>
+          <td class="td-mono">CN02</td>
+          <td class="td-label">ACROSS<br><span class="td-dim" style="font-size:12px;font-weight:500;font-family:var(--body)">MST: 0201152475</span></td>
+          <td>Sản xuất gỗ dán, ván ép</td>
+          <td><span class="badge badge-sme">Việt Nam/JV</span></td>
+          <td>51–200</td>
+          <td><span class="badge badge-ok">ƯU TIÊN CAO</span></td>
+        </tr>
+        <tr>
+          <td class="td-mono">CN03–04</td>
+          <td class="td-label">Giant Max Việt Nam</td>
+          <td>Sản xuất chính xác (TBC)</td>
+          <td><span class="badge badge-fdi">FDI</span></td>
+          <td>51–200</td>
+          <td><span class="badge badge-ok">ƯU TIÊN CAO</span></td>
+        </tr>
+        <tr>
+          <td class="td-mono">—</td>
+          <td class="td-label">IWAHASHI Brushes Việt Nam</td>
+          <td>Sản xuất bàn chải</td>
+          <td><span class="badge badge-fdi">FDI Nhật Bản</span></td>
+          <td>51–200</td>
+          <td><span class="badge badge-ok">ƯU TIÊN CAO</span></td>
+        </tr>
+        <tr>
+          <td class="td-mono">CN10</td>
+          <td class="td-label">Công nghệ cao Rui Peng Fei VN</td>
+          <td>Công nghệ cao / sản xuất chính xác</td>
+          <td><span class="badge badge-fdi">FDI Trung Quốc</span></td>
+          <td>51–200</td>
+          <td><span class="badge badge-ref">THAM KHẢO</span></td>
+        </tr>
+        <tr>
+          <td class="td-mono">CN06</td>
+          <td class="td-label">Vonfram Á Châu Việt Nam<br><span class="td-dim" style="font-size:12px;font-weight:500;font-family:var(--body)">MST: 0201037472</span></td>
+          <td>SX &amp; gia công hợp kim Wolfram</td>
+          <td><span class="badge badge-fdi">FDI</span></td>
+          <td>51–200</td>
+          <td><span class="badge badge-ref">THAM KHẢO</span></td>
+        </tr>
+        <tr>
+          <td class="td-mono">CN02</td>
+          <td class="td-label">CP Đầu tư &amp; DV Vĩnh An</td>
+          <td>SX đồ gỗ, VLXD / cưa xẻ gỗ</td>
+          <td><span class="badge badge-sme">Việt Nam</span></td>
+          <td>1–50</td>
+          <td><span class="badge badge-ref">THAM KHẢO</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- GROUP D -->
+  <div class="subsec-title">Nhóm D — Logistics, Dịch vụ &amp; Quản lý cụm CN</div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Lô CN</th><th>Tên công ty</th><th>Ngành nghề</th><th>Ưu tiên Benchmark</th></tr></thead>
+      <tbody>
+        <tr><td class="td-mono">CN05</td><td class="td-label">Giao nhận Vận tải Kim Tân</td><td class="td-dim">Vận tải / giao nhận</td><td><span class="badge badge-low">Không áp dụng</span></td></tr>
+        <tr><td class="td-mono">CN07</td><td class="td-label">CP Đầu tư &amp; PT Tân Liên</td><td class="td-dim">Quản lý hạ tầng cụm CN</td><td><span class="badge badge-low">Không áp dụng</span></td></tr>
+        <tr><td class="td-mono">—</td><td class="td-label">Chi nhánh Vĩnh Bảo – CP ĐT &amp; TM An Thắng</td><td class="td-dim">Thương mại, đầu tư</td><td><span class="badge badge-low">Không áp dụng</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout-success">
+    <div><strong>Tổng kết:</strong> Xác định ~21 doanh nghiệp, trong đó <strong>14–15 công ty sản xuất</strong> có giá trị benchmark. Ngành chủ đạo: May mặc (5 đơn vị), SX nhẹ/bao bì/đồ chơi (7 đơn vị), VPP/Cơ khí/KT cao (4 đơn vị). Nguồn: <sup class="cit"><a href="#ref-10">[10]</a></sup> <sup class="cit"><a href="#ref-11">[11]</a></sup></div>
+  </div>
+</div>
+
+<!-- ══════════════ SECTION IV — CLUSTER MAP ══════════════ -->
+<div class="section" id="s2b">
+  <div class="sec-header">
+    <span class="sec-num">IV</span>
+    <h2>Bản đồ Lô Công nghiệp <span class="sec-en">Industrial Lot Map</span></h2>
+  </div>
+
+  <p class="prose">Sơ đồ minh họa vị trí các lô trong Cụm CN Tân Liên A. ISC chiếm <strong>Lô CN12–13</strong> (liền nhau) — lô lớn nhất với ~1.000 nhân sự. Quản lý cụm CN: Công ty CP Đầu tư &amp; PT Tân Liên (Lô CN07).</p>
+
+  <div class="cluster-map">
+    <div class="cluster-title">📍 SƠ ĐỒ CỤM CN TÂN LIÊN A — Vĩnh Bảo, Hải Phòng (68,2 ha · Lấp đầy 100%)</div>
+    <div class="cluster-road">🛣️ <strong>Đường vào Cụm CN:</strong>&nbsp; Quốc lộ 10 → Đường Tân Liên → Cổng vào Cụm CN</div>
+    <div class="cluster-grid">
+      <!-- Row 1 -->
+      <div class="lot lot-empty"><div class="lot-num">CN01</div><div class="lot-name">Chưa xác định</div></div>
+      <div class="lot lot-svc"><div class="lot-num">CN02</div><div class="lot-name">ACROSS &amp; Vĩnh An</div><div class="lot-tag">Gỗ / VLXD</div></div>
+      <div class="lot lot-fdi lot-span2"><div class="lot-num">CN03 – 04</div><div class="lot-name">GIANT MAX VN</div><div class="lot-tag">FDI · SX chính xác</div></div>
+      <div class="lot lot-svc"><div class="lot-num">CN05</div><div class="lot-name">Kim Tân</div><div class="lot-tag">Logistics</div></div>
+      <div class="lot lot-fdi"><div class="lot-num">CN06</div><div class="lot-name">VONFRAM Á Châu</div><div class="lot-tag">FDI · Kim loại</div></div>
+      <div class="lot lot-garment"><div class="lot-num">CN07</div><div class="lot-name">WESTFIELD VN</div><div class="lot-tag">FDI · May mặc</div></div>
+      <div class="lot lot-empty"><div class="lot-num">—</div><div class="lot-name">Đầu tư Tân Liên</div><div class="lot-tag">Quản lý cụm</div></div>
+      <!-- Row 2 -->
+      <div class="lot lot-empty"><div class="lot-num">—</div><div class="lot-name">Chưa xác định</div></div>
+      <div class="lot lot-pkg lot-span2"><div class="lot-num">CN08 – 09</div><div class="lot-name">BAO BÌ HẠO HÃN &amp; Thiên Phúc</div><div class="lot-tag">FDI ĐL · Bao bì · In ấn</div></div>
+      <div class="lot lot-fdi"><div class="lot-num">CN10</div><div class="lot-name">RUI PENG FEI</div><div class="lot-tag">FDI TQ · KT cao</div></div>
+      <div class="lot lot-pkg"><div class="lot-num">CN11</div><div class="lot-name">V&amp;L PACKAGING</div><div class="lot-tag">FDI · Hộp giấy</div></div>
+      <div class="lot lot-isc lot-span2" style="min-height:90px">
+        <div class="lot-num">CN12 – 13 ⭐</div>
+        <div class="lot-name">ISC</div>
+        <div class="lot-tag">JV · Bút chì · ~1.000 NV</div>
+      </div>
+      <div class="lot lot-empty"><div class="lot-num">—</div><div class="lot-name">Chưa xác định</div></div>
+      <!-- Row 3 -->
+      <div class="lot lot-fdi"><div class="lot-num">—</div><div class="lot-name">IWAHASHI Brushes</div><div class="lot-tag">FDI Nhật · Bàn chải</div></div>
+      <div class="lot lot-fdi"><div class="lot-num">—</div><div class="lot-name">WELL POWER VN</div><div class="lot-tag">FDI ĐL · Đồ chơi</div></div>
+      <div class="lot lot-fdi"><div class="lot-num">—</div><div class="lot-name">EASILY</div><div class="lot-tag">FDI · Đế giày</div></div>
+      <div class="lot lot-garment"><div class="lot-num">—</div><div class="lot-name">Tân Dương &amp; Sao Mai</div><div class="lot-tag">May mặc XK</div></div>
+      <div class="lot lot-garment"><div class="lot-num">—</div><div class="lot-name">VINATEX HP &amp; May Hai</div><div class="lot-tag">SOE + VN · Dệt may</div></div>
+      <div class="lot lot-fdi"><div class="lot-num">CN16</div><div class="lot-name">FOREVER TRUE VB</div><div class="lot-tag">FDI · Đồ chơi</div></div>
+      <div class="lot lot-empty"><div class="lot-num">—</div><div class="lot-name">Sunmax VN</div><div class="lot-tag">Chưa xác minh</div></div>
+      <div class="lot lot-empty"><div class="lot-num">—</div><div class="lot-name">Chưa xác định</div></div>
+    </div>
+    <div class="cluster-legend">
+      <div class="leg-item"><div class="leg-dot" style="background:linear-gradient(135deg, #1E293B, #0F172A)"></div> ISC (Anchor)</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#FFF7ED;border:1px solid #FED7AA"></div> May mặc</div>
+      <div class="leg-item"><div class="leg-dot" style="background:var(--info-bg);border:1px solid #BAE6FD"></div> Bao bì / Nhựa</div>
+      <div class="leg-item"><div class="leg-dot" style="background:var(--success-bg);border:1px solid #A7F3D0"></div> FDI SX nhẹ</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#F8FAFC;border:1px solid var(--border)"></div> Logistics / DV</div>
+      <div class="leg-item"><div class="leg-dot" style="background:transparent;border:1px dashed #CBD5E1"></div> Chưa xác định</div>
+    </div>
+    <div class="cluster-note">⚠️ Sơ đồ mang tính minh họa, không theo tỷ lệ thực tế. Xác minh vị trí chính xác với Ban QLCCN hoặc Google Maps: "Cụm công nghiệp Tân Liên Vĩnh Bảo Hải Phòng".</div>
+  </div>
+</div>
+
+<!-- ══════════════ SECTION V — SALARY BENCHMARKS ══════════════ -->
+<div class="section" id="s3">
+  <div class="sec-header">
+    <span class="sec-num">V</span>
+    <h2>Mặt bằng Lương theo Cấp bậc <span class="sec-en">Salary Benchmarks by Level</span></h2>
+  </div>
+
+  <p class="prose">Lương <strong>cơ bản tháng</strong> và <strong>tổng thu nhập tháng</strong> (bao gồm phụ cấp thường xuyên). Nguồn: Navigos Talent Guide 2026 <sup class="cit"><a href="#ref-3">[3]</a></sup>, Talentnet Q1/2025 <sup class="cit"><a href="#ref-4">[4]</a></sup>, tin tuyển dụng thực tế VietnamWorks &amp; TopCV. Điều chỉnh khu vực phía Bắc (Hải Phòng ≈ –8–10% so với TP.HCM) <sup class="cit"><a href="#ref-3">[3]</a></sup>.</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Vị trí</th>
+          <th>Lương CB — Thị trường</th>
+          <th>Tổng TN — Thị trường</th>
+          <th>Dải Lương (Trực quan)</th>
+          <th>Điểm tham chiếu</th>
+          <th>Nguồn</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-label">Công nhân phổ thông<br><span class="td-dim" style="font-weight:500;font-size:12px;font-family:var(--body)">General worker / Line operator</span></td>
+          <td class="td-mono">7,0M – 9,5M</td>
+          <td class="td-mono td-green">9,0M – 14,0M</td>
+          <td><div class="salary-range"><span class="sal-min">9M</span><div class="sal-bar-wrap"><div class="sal-bar" data-pct="64"></div></div><span class="sal-max">14M</span></div></td>
+          <td><span style="color:var(--info);font-size:13px;font-weight:600">VSIP HP avg: <strong>10,26M</strong> <sup class="cit"><a href="#ref-5">[5]</a></sup></span></td>
+          <td class="td-dim"><sup class="cit"><a href="#ref-3">[3]</a></sup> <sup class="cit"><a href="#ref-4">[4]</a></sup></td>
+        </tr>
+        <tr>
+          <td class="td-label">Công nhân kỹ thuật<br><span class="td-dim" style="font-weight:500;font-size:12px;font-family:var(--body)">Thợ hàn, thợ máy, kỹ thuật viên</span></td>
+          <td class="td-mono">12,0M – 18,0M</td>
+          <td class="td-mono td-green">14,0M – 20,0M</td>
+          <td><div class="salary-range"><span class="sal-min">14M</span><div class="sal-bar-wrap"><div class="sal-bar green" data-pct="70"></div></div><span class="sal-max">20M</span></div></td>
+          <td><span style="color:var(--warning);font-size:13px;font-weight:600">+ Phụ cấp tay nghề: 500k–2M</span></td>
+          <td class="td-dim"><sup class="cit"><a href="#ref-3">[3]</a></sup></td>
+        </tr>
+        <tr>
+          <td class="td-label">Tổ trưởng / Line supervisor<br><span class="td-dim" style="font-weight:500;font-size:12px;font-family:var(--body)">Quản lý ca, trưởng chuyền</span></td>
+          <td class="td-mono">10,0M – 15,0M</td>
+          <td class="td-mono td-green">12,0M – 18,0M</td>
+          <td><div class="salary-range"><span class="sal-min">12M</span><div class="sal-bar-wrap"><div class="sal-bar" data-pct="67"></div></div><span class="sal-max">18M</span></div></td>
+          <td><span style="color:var(--warning);font-size:13px;font-weight:600">+ Phụ cấp trách nhiệm: 1–2M</span></td>
+          <td class="td-dim"><sup class="cit"><a href="#ref-3">[3]</a></sup></td>
+        </tr>
+        <tr>
+          <td class="td-label">Nhân viên VP nhà máy<br><span class="td-dim" style="font-weight:500;font-size:12px;font-family:var(--body)">Kế toán, hành chính, KCS</span></td>
+          <td class="td-mono">10,0M – 16,0M</td>
+          <td class="td-mono td-green">12,0M – 18,0M</td>
+          <td><div class="salary-range"><span class="sal-min">12M</span><div class="sal-bar-wrap"><div class="sal-bar gold" data-pct="67"></div></div><span class="sal-max">18M</span></div></td>
+          <td><span style="color:var(--warning);font-size:13px;font-weight:600">Thưởng KPI: +1–3M/tháng</span></td>
+          <td class="td-dim"><sup class="cit"><a href="#ref-3">[3]</a></sup></td>
+        </tr>
+        <tr>
+          <td class="td-label">Quản lý cấp trung<br><span class="td-dim" style="font-weight:500;font-size:12px;font-family:var(--body)">Trưởng phòng, quản đốc</span></td>
+          <td class="td-mono">20,0M – 40,0M</td>
+          <td class="td-mono td-green">25,0M – 50,0M</td>
+          <td><div class="salary-range"><span class="sal-min">25M</span><div class="sal-bar-wrap"><div class="sal-bar green" data-pct="50"></div></div><span class="sal-max">50M</span></div></td>
+          <td><span style="color:var(--warning);font-size:13px;font-weight:600">Thưởng hiệu suất: 20–30% lương</span></td>
+          <td class="td-dim"><sup class="cit"><a href="#ref-3">[3]</a></sup> <sup class="cit"><a href="#ref-4">[4]</a></sup></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout-success">
+    <div><strong>Lương tối thiểu Vùng I (Hải Phòng):</strong> 5.310.000 VNĐ/tháng theo Nghị định 293/2025/NĐ-CP, hiệu lực 01/01/2026 <sup class="cit"><a href="#ref-1">[1]</a></sup> — tăng ~7,2% so với 2025. Lương thực trả tại KCN thường cao hơn 30–70% so với lương tối thiểu.</div>
+  </div>
+</div>
+
+<!-- ══════════════ SECTION V-B — JOB BOARD DATA ══════════════ -->
+<div class="section" id="s3b">
+  <div class="sec-header">
+    <span class="sec-num">V-B</span>
+    <h2>Dữ liệu Tin Tuyển Dụng Thực Tế <span class="sec-en">Live Job Board Data</span></h2>
+  </div>
+
+  <p class="prose">Thu thập từ VietnamWorks, TopCV, JobsGO, Vieclam24h ngày <strong>18/03/2026</strong>. Đây là dữ liệu <strong>độ tin cậy CAO</strong> — lương công bố công khai. <em>Không có công ty nào trong Cụm CN Tân Liên A đăng tin tuyển dụng công khai</em> tại thời điểm khảo sát — các mức dưới đây là proxy thị trường Hải Phòng.</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>#</th><th>Vị trí</th><th>Công ty / Khu vực</th><th>Lương công bố</th><th>Phúc lợi nổi bật</th><th>Loại hình</th><th>Tin cậy</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-mono td-dim">VW-002</td>
+          <td class="td-label">Kỹ sư Bảo trì Điện SX (3 ca)</td>
+          <td>Shin-Etsu Việt Nam (Đình Vũ)</td>
+          <td class="td-mono td-green">≤ 20.000.000</td>
+          <td class="td-dim">Chuyên cần, xăng xe, nhà ở, ĐT, ca 3 &amp; tuân thủ (3,5–5M)</td>
+          <td><span class="badge badge-fdi">FDI Nhật</span></td>
+          <td><span class="badge badge-high">CAO</span></td>
+        </tr>
+        <tr>
+          <td class="td-mono td-dim">VW-008</td>
+          <td class="td-label">Nhân viên Vận hành Máy SMT</td>
+          <td>Top-Chip Electronics VN</td>
+          <td class="td-mono td-gold">9.000.000 – 15.000.000</td>
+          <td class="td-dim">Phụ cấp ca, phụ cấp kỹ thuật, thưởng năng suất</td>
+          <td><span class="badge badge-fdi">FDI</span></td>
+          <td><span class="badge badge-high">CAO</span></td>
+        </tr>
+        <tr>
+          <td class="td-mono td-dim">TCV-003</td>
+          <td class="td-label">Nhân viên Sản xuất</td>
+          <td>All Victory Grass VN</td>
+          <td class="td-mono td-gold">9.000.000 – 15.000.000</td>
+          <td class="td-dim">Ăn ca, chuyên cần, BHXH/BHYT, thưởng hiệu quả</td>
+          <td><span class="badge badge-fdi">FDI</span></td>
+          <td><span class="badge badge-high">CAO</span></td>
+        </tr>
+        <tr>
+          <td class="td-mono td-dim">TCV-007</td>
+          <td class="td-label">Kế toán Sản xuất</td>
+          <td>SADO Corp (HP)</td>
+          <td class="td-mono td-green">15.000.000 – 20.000.000</td>
+          <td class="td-dim">Phụ cấp cơm trưa, thưởng lễ Tết</td>
+          <td><span class="badge badge-sme">SME</span></td>
+          <td><span class="badge badge-high">CAO</span></td>
+        </tr>
+        <tr>
+          <td class="td-mono td-dim">VW-004</td>
+          <td class="td-label">Kế toán Trưởng Nhà máy</td>
+          <td>Navigos Search Client</td>
+          <td class="td-mono td-green">$2.000 – $3.000/tháng</td>
+          <td class="td-dim">Thưởng quản lý, xe đưa đón, full benefits</td>
+          <td><span class="badge badge-fdi">FDI ẩn danh</span></td>
+          <td><span class="badge badge-high">CAO</span></td>
+        </tr>
+        <tr>
+          <td class="td-mono td-dim">P1-F</td>
+          <td class="td-label">Công nhân SX bút chì — ISC</td>
+          <td>ISC / VFIC (Vĩnh Bảo)</td>
+          <td class="td-mono td-gold">8.000.000 – 10.000.000</td>
+          <td class="td-dim">Cơm ca miễn phí, lương tuần, ca xoay</td>
+          <td><span class="badge badge-isc">ISC JV</span></td>
+          <td><span class="badge badge-high">CAO</span></td>
+        </tr>
+        <tr>
+          <td class="td-mono td-dim">P1-F</td>
+          <td class="td-label">Công nhân Bao bì — Hạo Hãn</td>
+          <td>Bao bì Hạo Hãn (Tân Liên)</td>
+          <td class="td-mono td-dim">Lương TT Vùng + phụ cấp</td>
+          <td class="td-dim">Chuyên cần + Năng suất; tuyển sự kiện 16/03/2026</td>
+          <td><span class="badge badge-fdi">FDI Đài</span></td>
+          <td><span class="badge badge-high">CAO</span></td>
+        </tr>
+        <tr>
+          <td class="td-mono td-dim">GEN-002</td>
+          <td class="td-label">Công nhân SX bút chì (snippet)</td>
+          <td>Khu vực Hải Phòng</td>
+          <td class="td-mono td-gold">≤ 10.000.000</td>
+          <td class="td-dim">Dữ liệu sơ bộ — snippet tìm kiếm</td>
+          <td><span class="badge badge-sme">SX nhẹ</span></td>
+          <td><span class="badge badge-low">THẤP</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout-info">
+    <div><strong>Phát hiện quan trọng từ P1-F (Facebook/Local):</strong> Thu nhập bình quân nhà máy HP năm 2025 ≈ <strong>9.970.000 VNĐ/tháng</strong>. Lao động tự do địa phương: 29.000 VNĐ/giờ (bình thường), 33.000 VNĐ/giờ (OT). Tuyển dụng tại Vĩnh Bảo diễn ra <strong>chủ yếu qua Facebook</strong> (nhóm "HỘI TÌM KIẾM VIỆC LÀM VĨNH BẢO-HP") thay vì job board quốc gia — chiến lược tuyển dụng của ISC cần tập trung vào kênh này.</div>
+  </div>
+</div>
+
+<!-- ══════════════ SECTION V-C — PER-COMPANY SALARY ESTIMATES ══════════════ -->
+<div class="section" id="s3c">
+  <div class="sec-header">
+    <span class="sec-num">V-C</span>
+    <h2>Ước tính Lương theo Từng Công ty <span class="sec-en">Per-Company Estimates</span></h2>
+  </div>
+
+  <p class="prose">Bảng dưới là <strong>ước tính</strong> dựa trên loại hình FDI/SME, ngành nghề và proxy thị trường — <span class="badge badge-warn">ĐỘ TIN CẬY THẤP–TRUNG BÌNH</span>. Theo Navigos &amp; DEEP-C <sup class="cit"><a href="#ref-3">[3]</a></sup><sup class="cit"><a href="#ref-7">[7]</a></sup>: FDI Nhật/Hàn trả cao hơn SME VN 15–25%; FDI Đài/Trung cao hơn 8–15%.</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Công ty</th><th>Loại hình</th><th>Ngành</th>
+          <th>CN phổ thông<br>(tổng TN/tháng)</th>
+          <th>CN kỹ thuật<br>(tổng TN/tháng)</th>
+          <th>Tổ trưởng<br>(tổng TN/tháng)</th>
+          <th>Điều chỉnh</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#FFF7ED">
+          <td colspan="7" style="padding:10px 20px;font-size:11.5px;font-weight:800;letter-spacing:0.1em;color:#C2410C;text-transform:uppercase">Nhóm May mặc</td>
+        </tr>
+        <tr>
+          <td class="td-label">WESTFIELD Việt Nam</td>
+          <td><span class="badge badge-fdi">FDI</span></td><td>May mặc XK</td>
+          <td class="td-mono">8.0M – 11.0M</td><td class="td-mono td-dim">N/A</td>
+          <td class="td-mono">11.0M – 15.0M</td>
+          <td><span class="badge badge-med">+10–15%</span></td>
+        </tr>
+        <tr>
+          <td class="td-label">May xuất khẩu Tân Dương</td>
+          <td><span class="badge badge-fdi">FDI</span></td><td>May XK</td>
+          <td class="td-mono">7.5M – 10.0M</td><td class="td-mono td-dim">N/A</td>
+          <td class="td-mono">10.0M – 13.0M</td>
+          <td><span class="badge badge-med">+8–12%</span></td>
+        </tr>
+        <tr>
+          <td class="td-label">Sao Mai</td>
+          <td><span class="badge badge-sme">Việt Nam</span></td><td>May XK</td>
+          <td class="td-mono">7.0M – 9.0M</td><td class="td-mono td-dim">N/A</td>
+          <td class="td-mono">9.0M – 12.0M</td>
+          <td>Chuẩn thị trường</td>
+        </tr>
+        <tr>
+          <td class="td-label">Vinatex HP</td>
+          <td><span class="badge badge-soe">Nhà nước</span></td><td>Dệt may</td>
+          <td class="td-mono">7.5M – 10.0M</td><td class="td-mono td-dim">N/A</td>
+          <td class="td-mono">10.0M – 14.0M</td>
+          <td>Chuẩn SOE</td>
+        </tr>
+        <tr>
+          <td class="td-label">May Hai</td>
+          <td><span class="badge badge-sme">Việt Nam</span></td><td>May mặc</td>
+          <td class="td-mono">6.5M – 9.0M</td><td class="td-mono td-dim">N/A</td>
+          <td class="td-mono">9.0M – 12.0M</td>
+          <td>Chuẩn SME</td>
+        </tr>
+        <tr style="background:#ECFDF5">
+          <td colspan="7" style="padding:10px 20px;font-size:11.5px;font-weight:800;letter-spacing:0.1em;color:#047857;text-transform:uppercase">Nhóm Bao bì, Đồ chơi, Giày &amp; SX nhẹ</td>
+        </tr>
+        <tr>
+          <td class="td-label">Bao bì Hạo Hãn</td>
+          <td><span class="badge badge-fdi">FDI Đài Loan</span></td><td>Bao bì in ấn</td>
+          <td class="td-mono">8.0M – 11.0M</td><td class="td-mono">11.0M – 15.0M</td>
+          <td class="td-mono">12.0M – 16.0M</td>
+          <td><span class="badge badge-med">+10–15%</span></td>
+        </tr>
+        <tr>
+          <td class="td-label">V&amp;L Packaging VN</td>
+          <td><span class="badge badge-fdi">FDI</span></td><td>Hộp giấy</td>
+          <td class="td-mono">8.0M – 11.5M</td><td class="td-mono">11.0M – 15.5M</td>
+          <td class="td-mono">12.0M – 17.0M</td>
+          <td><span class="badge badge-med">+10–15%</span></td>
+        </tr>
+        <tr>
+          <td class="td-label">Well Power (Đồ chơi)</td>
+          <td><span class="badge badge-fdi">FDI Đài Loan</span></td><td>Đồ chơi nhựa</td>
+          <td class="td-mono">8.0M – 11.0M</td><td class="td-mono">10.0M – 14.0M</td>
+          <td class="td-mono">11.0M – 15.0M</td>
+          <td><span class="badge badge-med">+10–15%</span></td>
+        </tr>
+        <tr>
+          <td class="td-label">EASILY (Đế giày)</td>
+          <td><span class="badge badge-fdi">FDI</span></td><td>Đế giày</td>
+          <td class="td-mono">7.5M – 11.0M</td><td class="td-mono">10.0M – 14.0M</td>
+          <td class="td-mono">11.0M – 15.0M</td>
+          <td><span class="badge badge-med">+8–12%</span></td>
+        </tr>
+        <tr style="background:#F1F5F9">
+          <td colspan="7" style="padding:10px 20px;font-size:11.5px;font-weight:800;letter-spacing:0.1em;color:var(--navy);text-transform:uppercase">Nhóm VPP, Cơ khí &amp; Kỹ thuật (Cùng nhóm với ISC)</td>
+        </tr>
+        <tr style="background:#E0F2FE">
+          <td class="td-label" style="color:var(--info)">⭐ <strong>ISC</strong> — Bút chì XK<br><span style="font-weight:500;font-size:12px;color:var(--text-muted)">Xác nhận từ kênh địa phương</span></td>
+          <td><span class="badge badge-jv">JV M&amp;G</span></td><td>Bút chì XK</td>
+          <td class="td-mono" style="color:var(--info);font-weight:700">8.0M – 10.5M ✅</td>
+          <td class="td-mono" style="color:var(--info)">11.0M – 15.0M ❓</td>
+          <td class="td-mono" style="color:var(--info)">12.0M – 17.0M ❓</td>
+          <td><span class="badge badge-isc">+ Lương tuần / Cơm</span></td>
+        </tr>
+        <tr>
+          <td class="td-label">IWAHASHI Brushes VN</td>
+          <td><span class="badge badge-fdi">FDI Nhật</span></td><td>Bàn chải</td>
+          <td class="td-mono td-green">9.0M – 13.0M</td>
+          <td class="td-mono td-green">13.0M – 19.0M</td>
+          <td class="td-mono td-green">14.0M – 20.0M</td>
+          <td><span class="badge badge-high">+18–25% Nhật</span></td>
+        </tr>
+        <tr>
+          <td class="td-label">ACROSS (Gỗ dán)</td>
+          <td><span class="badge badge-sme">Việt Nam</span></td><td>Gỗ công nghiệp</td>
+          <td class="td-mono">7.0M – 9.5M</td>
+          <td class="td-mono">9.5M – 13.0M</td>
+          <td class="td-mono">10.0M – 14.0M</td>
+          <td>Chuẩn SME</td>
+        </tr>
+        <tr>
+          <td class="td-label">Giant Max Việt Nam</td>
+          <td><span class="badge badge-fdi">FDI</span></td><td>SX chính xác</td>
+          <td class="td-mono">8.5M – 12.0M</td>
+          <td class="td-mono">11.0M – 16.0M</td>
+          <td class="td-mono">13.0M – 18.0M</td>
+          <td><span class="badge badge-med">+10–15%</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout-danger">
+    <div><strong>❗ Kết luận chiến lược:</strong> ISC ở mức 8–10,5M (CN phổ thông) đang <strong>thấp hơn IWAHASHI Brushes ~20–25%</strong> cho cùng khu vực. Tuy nhiên, lợi thế lương tuần + cơm miễn phí tạo giá trị phi tiền mặt đáng kể. ISC cần truyền thông rõ <strong>tổng giá trị đãi ngộ</strong> thay vì chỉ so sánh lương cơ bản. <strong>Bước tiếp theo:</strong> HR ISC cung cấp bảng lương chính thức để lấp đầy ô ❓.</div>
+  </div>
+</div>
+
+<!-- ══════════════ SECTION VI — ALLOWANCES ══════════════ -->
+<div class="section" id="s4">
+  <div class="sec-header">
+    <span class="sec-num">VI</span>
+    <h2>Các Khoản Phụ cấp Thường gặp <span class="sec-en">Common Allowances</span></h2>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Loại phụ cấp</th><th>Mức phổ biến</th><th>Tỷ lệ áp dụng</th><th>Ghi chú</th><th>Nguồn</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-label">Ăn ca (bữa ăn)</td>
+          <td class="td-mono">25.000–40.000đ/bữa<br><span class="td-dim" style="font-size:12px;font-weight:500;font-family:var(--body)">≈ 750k–1.200k/tháng</span></td>
+          <td><span class="badge badge-ok">~100% SME lớn</span></td>
+          <td class="td-dim">ISC cung cấp cơm miễn phí ✅ — lợi thế so với SME nhỏ chỉ trả tiền mặt.</td>
+          <td class="td-dim"><sup class="cit"><a href="#ref-3">[3]</a></sup><sup class="cit"><a href="#ref-6">[6]</a></sup></td>
+        </tr>
+        <tr>
+          <td class="td-label">Xe đưa đón (shuttle)</td>
+          <td class="td-mono">300k–500k/tháng<br><span class="td-dim" style="font-size:12px;font-weight:500;font-family:var(--body)">hoặc xe miễn phí</span></td>
+          <td><span class="badge badge-ok">&gt;70% KCN</span></td>
+          <td class="td-dim">Rất quan trọng tại Vĩnh Bảo — KCN nông thôn xa trung tâm, nhiều lao động nhập cư.</td>
+          <td class="td-dim"><sup class="cit"><a href="#ref-5">[5]</a></sup></td>
+        </tr>
+        <tr>
+          <td class="td-label">Phụ cấp Chuyên cần</td>
+          <td class="td-mono">200k–500k/tháng</td>
+          <td><span class="badge badge-ok">Phổ biến</span></td>
+          <td class="td-dim">Chia bậc: không nghỉ / không đi muộn → nhận đủ. Giảm tỷ lệ vắng mặt rất hiệu quả.</td>
+          <td class="td-dim"><sup class="cit"><a href="#ref-4">[4]</a></sup></td>
+        </tr>
+        <tr>
+          <td class="td-label">Phụ cấp Thâm niên</td>
+          <td class="td-mono">100k–200k/năm làm<br><span class="td-dim" style="font-size:12px;font-weight:500;font-family:var(--body)">Tối đa 600k–1M sau 5–10 năm</span></td>
+          <td><span class="badge badge-warn">~50–60% SME</span></td>
+          <td class="td-dim">Bắt buộc sau thử việc theo BLLĐ 2019. Mức SME: 5–10% lương cơ bản.</td>
+          <td class="td-dim"><sup class="cit"><a href="#ref-8">[8]</a></sup></td>
+        </tr>
+        <tr>
+          <td class="td-label">Phụ cấp Tay nghề</td>
+          <td class="td-mono">500k–2.000k/tháng</td>
+          <td><span class="badge badge-warn">~40% SME</span></td>
+          <td class="td-dim">Áp dụng cho thợ kỹ thuật (hàn, CNC, QC). Công cụ giữ chân thợ lành nghề hiệu quả.</td>
+          <td class="td-dim"><sup class="cit"><a href="#ref-3">[3]</a></sup></td>
+        </tr>
+        <tr>
+          <td class="td-label">Phụ cấp Trách nhiệm</td>
+          <td class="td-mono">1.000k–2.000k/tháng</td>
+          <td><span class="badge badge-ok">Phổ biến</span></td>
+          <td class="td-dim">Cộng thêm vào lương cơ bản của tổ trưởng / trưởng ca.</td>
+          <td class="td-dim"><sup class="cit"><a href="#ref-3">[3]</a></sup></td>
+        </tr>
+        <tr>
+          <td class="td-label">Phụ cấp Điện thoại / Xăng xe</td>
+          <td class="td-mono">300k–700k/tháng</td>
+          <td><span class="badge badge-warn">~60% NV VP</span></td>
+          <td class="td-dim">Dành cho nhân viên văn phòng, kinh doanh trong nhà máy.</td>
+          <td class="td-dim"><sup class="cit"><a href="#ref-4">[4]</a></sup></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ══════════════ SECTION VII — BENEFITS ══════════════ -->
+<div class="section" id="s5">
+  <div class="sec-header">
+    <span class="sec-num">VII</span>
+    <h2>Chế độ &amp; Phúc lợi <span class="sec-en">Benefits &amp; Welfare</span></h2>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Phúc lợi</th><th>Tỷ lệ thị trường (SME phía Bắc)</th><th>Phân loại</th><th>Ước tính ISC</th><th>Đề xuất</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-label">BHXH / BHYT / BHTN đầy đủ</td>
+          <td>~95%+ DN <sup class="cit"><a href="#ref-2">[2]</a></sup></td>
+          <td><span class="badge badge-ok">Bắt buộc</span></td>
+          <td><span class="badge badge-ok">✅ Đã xác nhận</span></td>
+          <td class="td-dim">NSD đóng 21,5% + NLĐ 10,5% lương BHXH. Duy trì đóng đúng.</td>
+        </tr>
+        <tr>
+          <td class="td-label">Ăn ca miễn phí</td>
+          <td>~70% KCN lớn</td>
+          <td><span class="badge badge-ok">Chuẩn KCN</span></td>
+          <td><span class="badge badge-ok">✅ ISC cung cấp</span></td>
+          <td class="td-dim">Lợi thế cụ thể — nêu rõ trong mọi tin tuyển dụng.</td>
+        </tr>
+        <tr>
+          <td class="td-label">Lương tháng 13</td>
+          <td>~90%+ DN <sup class="cit"><a href="#ref-6">[6]</a></sup></td>
+          <td><span class="badge badge-ok">Chuẩn thị trường</span></td>
+          <td><span class="badge badge-warn">Chưa xác nhận ❓</span></td>
+          <td class="td-dim">Cam kết không điều kiện — điểm cộng mạnh khi tuyển dụng.</td>
+        </tr>
+        <tr>
+          <td class="td-label">Thưởng Tết</td>
+          <td>0,5–2 tháng lương; TB 5–7M/người <sup class="cit"><a href="#ref-3">[3]</a></sup></td>
+          <td><span class="badge badge-ok">Chuẩn thị trường</span></td>
+          <td><span class="badge badge-warn">Không rõ ❓</span></td>
+          <td class="td-dim">Mức &lt;0,5 tháng = rủi ro nghỉ việc sau Tết rất cao. Tối thiểu 1 tháng lương.</td>
+        </tr>
+        <tr>
+          <td class="td-label">Tăng lương hàng năm</td>
+          <td>TB 7–8%, 2026 <sup class="cit"><a href="#ref-3">[3]</a></sup></td>
+          <td><span class="badge badge-ok">Chuẩn thị trường</span></td>
+          <td><span class="badge badge-warn">Không rõ ❓</span></td>
+          <td class="td-dim">Tối thiểu +7,2% (theo lương tối thiểu vùng 2026). Không tăng = thực tế giảm lương.</td>
+        </tr>
+        <tr>
+          <td class="td-label">Khám sức khỏe định kỳ</td>
+          <td>~70–80% SME <sup class="cit"><a href="#ref-6">[6]</a></sup></td>
+          <td><span class="badge badge-warn">Bán phổ biến</span></td>
+          <td><span class="badge badge-ok">✅ Đã xác nhận</span></td>
+          <td class="td-dim">ISC đã có — truyền thông rõ hơn trong tuyển dụng.</td>
+        </tr>
+        <tr>
+          <td class="td-label">Du lịch / Teambuilding</td>
+          <td>50–70% SME; 1–3M/người <sup class="cit"><a href="#ref-3">[3]</a></sup></td>
+          <td><span class="badge badge-warn">Bán phổ biến</span></td>
+          <td><span class="badge badge-warn">Chưa xác minh ❓</span></td>
+          <td class="td-dim">Phúc lợi phi tiền mặt tạo gắn kết — nên duy trì &amp; tăng ngân sách.</td>
+        </tr>
+        <tr>
+          <td class="td-label">Hỗ trợ nhà ở / Ký túc xá</td>
+          <td>~80% KCN nông thôn xa TT <sup class="cit"><a href="#ref-7">[7]</a></sup></td>
+          <td><span class="badge badge-warn">Tùy địa điểm</span></td>
+          <td><span class="badge badge-warn">Không rõ ❓</span></td>
+          <td class="td-dim">Với lao động từ xa — hỗ trợ nhà ở là lợi thế tuyển dụng đáng kể tại Vĩnh Bảo.</td>
+        </tr>
+        <tr>
+          <td class="td-label">Bảo hiểm sức khỏe tư nhân</td>
+          <td>Chỉ 20–30% SME <sup class="cit"><a href="#ref-3">[3]</a></sup></td>
+          <td><span class="badge badge-warn">Thiểu số</span></td>
+          <td><span class="badge badge-warn">Không rõ ❓</span></td>
+          <td class="td-dim">Điểm khác biệt mạnh với NV văn phòng &amp; quản lý — nên triển khai.</td>
+        </tr>
+        <tr>
+          <td class="td-label">Thưởng năng suất / KPI</td>
+          <td>Phổ biến trong SX <sup class="cit"><a href="#ref-4">[4]</a></sup></td>
+          <td><span class="badge badge-ok">Chuẩn thị trường</span></td>
+          <td><span class="badge badge-warn">Không rõ ❓</span></td>
+          <td class="td-dim">Thiết kế rõ ràng, đo lường được — tránh bất mãn do chỉ tiêu mơ hồ.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ══════════════ SECTION VIII — FDI VS SME ══════════════ -->
+<div class="section" id="s6">
+  <div class="sec-header">
+    <span class="sec-num">VIII</span>
+    <h2>Động lực Cạnh tranh: FDI vs. SME <span class="sec-en">Competitive Dynamics</span></h2>
+  </div>
+
+  <p class="prose">Hiểu sự khác biệt theo loại hình sở hữu giúp ISC xác định đúng đối thủ cạnh tranh trong từng phân khúc lao động và định vị chính sách đãi ngộ phù hợp.</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Tiêu chí</th><th>FDI Nhật/Hàn (cao nhất)</th><th>FDI Đài/TQ (trung bình)</th><th>SME Việt Nam (thấp nhất)</th><th>⭐ ISC (JV M&amp;G)</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-label">Lương CN phổ thông</td>
+          <td class="td-green">9–14M/tháng</td>
+          <td class="td-gold">8–12M/tháng</td>
+          <td class="td-dim">6,5–9M/tháng</td>
+          <td class="td-navy">8–10,5M ✅<br><span style="font-size:12px;color:var(--gold);font-weight:600">+ Lương tuần + Cơm</span></td>
+        </tr>
+        <tr>
+          <td class="td-label">Lương tháng 13</td>
+          <td class="td-green">✅ 100%</td>
+          <td class="td-green">✅ ~90%</td>
+          <td class="td-dim">~70–80%</td>
+          <td><span class="badge badge-warn">Chưa rõ ❓</span></td>
+        </tr>
+        <tr>
+          <td class="td-label">Thưởng Tết</td>
+          <td class="td-green">1–3 tháng lương</td>
+          <td class="td-gold">0,5–2 tháng</td>
+          <td class="td-dim">0,5–1 tháng</td>
+          <td><span class="badge badge-warn">Chưa rõ ❓</span></td>
+        </tr>
+        <tr>
+          <td class="td-label">Xe đưa đón</td>
+          <td class="td-green">✅ Miễn phí</td>
+          <td class="td-gold">✅ Miễn phí / HT</td>
+          <td class="td-dim">~50%</td>
+          <td><span class="badge badge-warn">Chưa rõ ❓</span></td>
+        </tr>
+        <tr>
+          <td class="td-label">BHSK tư nhân thêm</td>
+          <td class="td-green">✅ ~80%</td>
+          <td class="td-gold">~40%</td>
+          <td class="td-dim">~20%</td>
+          <td><span class="badge badge-warn">Chưa rõ ❓</span></td>
+        </tr>
+        <tr>
+          <td class="td-label">Tăng lương hàng năm</td>
+          <td class="td-green">8–12%</td>
+          <td class="td-gold">6–10%</td>
+          <td class="td-dim">5–7%</td>
+          <td><span class="badge badge-warn">Chưa rõ ❓</span></td>
+        </tr>
+        <tr>
+          <td class="td-label">Chu kỳ trả lương</td>
+          <td class="td-dim">Tháng</td>
+          <td class="td-dim">Tháng</td>
+          <td class="td-dim">Tháng</td>
+          <td class="td-navy"><span class="badge badge-weekly">✅ TUẦN — Độc đáo</span></td>
+        </tr>
+        <tr>
+          <td class="td-label">Ăn ca / Bữa ăn</td>
+          <td class="td-green">✅ Căng tin miễn phí</td>
+          <td class="td-gold">✅ Phụ cấp tiền</td>
+          <td class="td-dim">Tùy DN</td>
+          <td class="td-navy"><span class="badge badge-ok">✅ Cơm miễn phí</span></td>
+        </tr>
+        <tr>
+          <td class="td-label">Môi trường &amp; Branding</td>
+          <td class="td-green">Rất cao — thương hiệu quốc tế</td>
+          <td class="td-gold">Trung bình–cao</td>
+          <td class="td-dim">Trung bình</td>
+          <td class="td-navy">Cao — M&amp;G Global / ESG / 50+ quốc gia</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout-success">
+    <div><strong>💡 Lợi thế ISC chưa khai thác:</strong> ISC là một trong số rất ít DN tại Cụm CN Tân Liên A có câu chuyện thuyết phục: <em>"Sản phẩm của bạn đến tay học sinh toàn cầu — xuất khẩu sang 50+ quốc gia."</em> Đây là employer branding phi tiền mặt giá trị cao. Thương hiệu M&amp;G (Fortune 500, dẫn đầu thị trường bút chì toàn cầu) là tài sản chưa được tận dụng trong tuyển dụng.</div>
+  </div>
+</div>
+
+<!-- ══════════════ SECTION IX — HR RISKS ══════════════ -->
+<div class="section" id="s7">
+  <div class="sec-header">
+    <span class="sec-num">IX</span>
+    <h2>Rủi ro Nhân sự &amp; Biến động Lao động <span class="sec-en">HR Risks &amp; Labor Volatility</span></h2>
+  </div>
+
+  <div class="risk-row"><div class="risk-icon">🔴</div><div class="risk-body"><strong>Rủi ro Sau Tết — Cao nhất năm</strong><p>Tháng 1–2 là thời điểm lao động so sánh thưởng Tết và quyết định chuyển việc. Tỷ lệ nghỉ việc sau Tết ngành SX nhẹ Hải Phòng có thể lên đến 10–15% tổng nhân sự trong một tháng <sup class="cit"><a href="#ref-6">[6]</a></sup>. Thưởng Tết thấp hơn kỳ vọng là trigger chính.</p></div></div>
+
+  <div class="risk-row"><div class="risk-icon">🔴</div><div class="risk-body"><strong>FDI Mới Gia nhập — "Trả cao để giật quân"</strong><p>FDI Nhật/Hàn mới thường chào lương cao hơn 10–20% thị trường trong 6–12 tháng đầu để nhanh đủ nhân sự. ISC đã ổn định lâu năm không có lợi thế chào hàng này. Mỗi nhà máy FDI mới là một mối đe dọa mất lao động trực tiếp.</p></div></div>
+
+  <div class="risk-row"><div class="risk-icon">🟡</div><div class="risk-body"><strong>Tỷ lệ Nghỉ việc Ngành SX nhẹ 15–25%/năm</strong><p>Với ~1.000 nhân sự, tỷ lệ 15% = 150 người/năm cần thay thế. Chi phí tuyển dụng + đào tạo ước 2–4 tháng lương/người → chi phí thay thế tiềm ẩn: <strong>300M–600M VNĐ/năm</strong> <sup class="cit"><a href="#ref-3">[3]</a></sup>.</p></div></div>
+
+  <div class="risk-row"><div class="risk-icon">🟡</div><div class="risk-body"><strong>Cụm CN Lấp đầy 100% — Không có Lao động mới đổ vào</strong><p>Khi cụm đã lấp đầy, không có làn sóng lao động nhập cư mới. Cạnh tranh là luân chuyển giữa các nhà máy hiện có — mỗi người rời ISC chuyển thẳng sang đối thủ ngay bên cạnh với kỹ năng sẵn có. Pool lao động cố định = thị trường zero-sum.</p></div></div>
+
+  <div class="risk-row"><div class="risk-icon">🟡</div><div class="risk-body"><strong>Thiếu Thông tin Công khai ISC — Bất lợi Tuyển dụng</strong><p>ISC không có tin tuyển dụng hoặc đánh giá nhân viên trên VietnamWorks/TopCV/Glassdoor. Ứng viên không biết ISC trả lương bao nhiêu — mặc định nghi ngờ. FDI có hồ sơ công khai rõ ràng sẽ được ưu tiên hơn trong quyết định nộp hồ sơ.</p></div></div>
+
+  <div class="risk-row"><div class="risk-icon">🟢</div><div class="risk-body"><strong>Lợi thế: ~1.000 NV — Nền tảng Phúc lợi Tập thể</strong><p>Quy mô đủ lớn để triển khai bảo hiểm sức khỏe tập thể (giá ưu đãi hơn), căng tin đạt chuẩn, xe đưa đón tuyến ổn định, và chương trình đào tạo/phát triển nội bộ với chi phí hiệu quả <sup class="cit"><a href="#ref-5">[5]</a></sup>.</p></div></div>
+
+  <div class="risk-row"><div class="risk-icon">🟢</div><div class="risk-body"><strong>Lợi thế: Lương Tuần — Rào cản Chuyển việc Tâm lý</strong><p>Lương tuần tạo "hiệu ứng neo" tài chính — người lao động quen với dòng tiền hàng tuần ít có xu hướng chuyển sang công ty trả lương hàng tháng dù mức lương tháng cao hơn một chút. Đây là công cụ giữ chân độc đáo cần được khai thác tối đa.</p></div></div>
+</div>
+
+<!-- ══════════════ SECTION X — RECOMMENDATIONS ══════════════ -->
+<div class="section" id="s8">
+  <div class="sec-header">
+    <span class="sec-num">X</span>
+    <h2>Phân tích Khoảng cách &amp; Đề xuất Hành động <span class="sec-en">Gap Analysis &amp; Action Items</span></h2>
+  </div>
+
+  <p class="prose">Dựa trên dữ liệu thị trường, các khoảng cách tiềm năng và hành động ưu tiên cho Ban Lãnh đạo ISC:</p>
+
+  <div class="gap-cards">
+    <div class="gap-card" style="border-top: 4px solid var(--danger)">
+      <div class="gap-card-top">
+        <span class="badge badge-gap">ƯU TIÊN CAO — Ngay lập tức</span>
+        <h4>Xác minh Mức lương ISC vs Thị trường</h4>
+      </div>
+      <div class="gap-lbl">Vấn đề</div>
+      <p>Báo cáo hiện chỉ xác nhận CN phổ thông 8–10M qua kênh Facebook/VFIC. Chưa có dữ liệu chính thức cho kỹ thuật viên, tổ trưởng, VP nhà máy, quản lý.</p>
+      <div class="gap-lbl">Hành động</div>
+      <p>HR ISC cung cấp: (1) bảng lương theo vị trí, (2) tổng thu nhập bình quân, (3) cơ cấu phụ cấp + thưởng. Đối chiếu với bảng III-C để xác định khoảng cách chính xác.</p>
+    </div>
+
+    <div class="gap-card" style="border-top: 4px solid var(--warning)">
+      <div class="gap-card-top">
+        <span class="badge badge-warn">CẦN KIỂM TRA</span>
+        <h4>Thưởng Tết &amp; Lương tháng 13</h4>
+      </div>
+      <div class="gap-lbl">Bằng chứng thị trường</div>
+      <p>90%+ DN có lương tháng 13. Thưởng Tết chuẩn: 0,5–2 tháng; TB 5–7M/người <sup class="cit"><a href="#ref-3">[3]</a></sup>. Đây là quyết định nghỉ việc quan trọng nhất của lao động sau Tết.</p>
+      <div class="gap-lbl">Đề xuất</div>
+      <p>Cam kết lương tháng 13 không điều kiện + thưởng Tết tối thiểu 1 tháng lương. Công bố nội bộ trước tháng 11 để NLĐ có kỳ vọng ổn định.</p>
+    </div>
+
+    <div class="gap-card" style="border-top: 4px solid var(--warning)">
+      <div class="gap-card-top">
+        <span class="badge badge-warn">CẦN KIỂM TRA</span>
+        <h4>Lộ trình Tăng lương Kỹ thuật Chuyên biệt</h4>
+      </div>
+      <div class="gap-lbl">Bằng chứng thị trường</div>
+      <p>Lương kỹ thuật: 12–18M cơ bản. Phụ cấp tay nghề: 500k–2M/tháng. FDI Nhật (IWAHASHI) trả cao hơn ~20% cho cùng vị trí kỹ thuật <sup class="cit"><a href="#ref-13">[13]</a></sup>.</p>
+      <div class="gap-lbl">Đề xuất</div>
+      <p>Xây dựng thang lương kỹ thuật riêng (level 1/2/3), gắn với chứng chỉ hoặc năng lực đánh giá nội bộ. Tách biệt khỏi thang CN phổ thông.</p>
+    </div>
+
+    <div class="gap-card" style="border-top: 4px solid var(--warning)">
+      <div class="gap-card-top">
+        <span class="badge badge-warn">CẦN KIỂM TRA</span>
+        <h4>Xe đưa đón &amp; Chất lượng Bữa ăn</h4>
+      </div>
+      <div class="gap-lbl">Bằng chứng thị trường</div>
+      <p>&gt;70% KCN có xe miễn phí <sup class="cit"><a href="#ref-5">[5]</a></sup>. Ăn ca chuẩn: 750k–1,2M/tháng. Với KCN nông thôn Vĩnh Bảo, xe đưa đón là yếu tố tuyển dụng quyết định.</p>
+      <div class="gap-lbl">Đề xuất</div>
+      <p>Đánh giá phạm vi tuyến xe hiện tại và chất lượng cơm ca. Nếu chưa đủ, nâng phụ cấp bữa ăn lên ≥35.000đ/bữa và mở rộng tuyến xe về trung tâm Vĩnh Bảo.</p>
+    </div>
+
+    <div class="gap-card" style="border-top: 4px solid var(--success)">
+      <div class="gap-card-top">
+        <span class="badge badge-ok">LỢI THẾ — Khai thác ngay</span>
+        <h4>Employer Branding — Lương tuần + M&amp;G Global</h4>
+      </div>
+      <div class="gap-lbl">Cơ hội</div>
+      <p>Lương tuần + cơm miễn phí là tổ hợp đãi ngộ độc đáo tại Vĩnh Bảo. Thương hiệu M&amp;G (Fortune 500, bút chì xuất khẩu 50+ quốc gia) là câu chuyện nhân sự hấp dẫn chưa được kể.</p>
+      <div class="gap-lbl">Đề xuất</div>
+      <p>Đăng bài tuyển dụng định kỳ trên Facebook "HỘI TÌM KIẾM VIỆC LÀM VĨNH BẢO-HP" với tagline: <em>"Lương tuần — Cơm miễn phí — Sản phẩm đến tay học sinh 50 quốc gia."</em> Chi phí gần như bằng 0.</p>
+    </div>
+
+    <div class="gap-card" style="border-top: 4px solid var(--warning)">
+      <div class="gap-card-top">
+        <span class="badge badge-warn">CẦN KIỂM TRA</span>
+        <h4>Chu kỳ &amp; Tỷ lệ Tăng lương Định kỳ</h4>
+      </div>
+      <div class="gap-lbl">Bằng chứng thị trường</div>
+      <p>Mức tăng chuẩn 2026: 6–10%, TB 7–8% <sup class="cit"><a href="#ref-3">[3]</a></sup>. Lương tối thiểu tăng 7,2% năm 2026. Không tăng lương = thực chất giảm lương tương đối so với thị trường.</p>
+      <div class="gap-lbl">Đề xuất</div>
+      <p>Ban hành chính sách xét tăng lương định kỳ tháng 7 hàng năm (sau điều chỉnh lương tối thiểu). Công bố lịch nội bộ để NLĐ có kỳ vọng rõ ràng và giảm lo lắng.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ SECTION XI — LIMITATIONS ══════════════ -->
+<div class="section" id="s9">
+  <div class="sec-header">
+    <span class="sec-num">XI</span>
+    <h2>Hạn chế Nghiên cứu &amp; Lưu ý Xác minh <span class="sec-en">Research Limitations</span></h2>
+  </div>
+
+  <div class="callout callout-info">
+    <div><strong>Minh bạch dữ liệu:</strong> Đây là báo cáo dựa trên nguồn công khai và kênh địa phương (Giai đoạn 0–1). Các hạn chế dưới đây cần được xử lý trước khi dùng báo cáo này để đưa ra quyết định lương thưởng chính thức.</div>
+  </div>
+
+  <div class="tbl-wrap" style="margin-top:24px">
+    <table>
+      <thead><tr><th>Hạn chế</th><th>Mức độ ảnh hưởng</th><th>Hành động khuyến nghị</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="td-label">Không có bảng lương nội bộ ISC chính thức</td>
+          <td><span class="badge badge-gap">CAO</span></td>
+          <td class="td-dim">HR ISC cung cấp bảng lương theo vị trí. Exit interview để hiểu lý do nghỉ việc thực tế.</td>
+        </tr>
+        <tr>
+          <td class="td-label">Không có tin tuyển dụng từ CT nào trong Cụm CN trên job board lớn</td>
+          <td><span class="badge badge-gap">CAO</span></td>
+          <td class="td-dim">Khảo sát trực tiếp 5–10 lao động từ các công ty lân cận để xác minh mức lương thực tế.</td>
+        </tr>
+        <tr>
+          <td class="td-label">Dữ liệu Navigos/Talentnet là toàn quốc — chưa đặc thù Cụm CN Tân Liên</td>
+          <td><span class="badge badge-warn">TRUNG BÌNH</span></td>
+          <td class="td-dim">Hải Phòng ≈ –8–10% TP.HCM. Vĩnh Bảo (ngoại thành) có thể thấp hơn nội thành HP thêm 5–8%.</td>
+        </tr>
+        <tr>
+          <td class="td-label">Dữ liệu phụ cấp &amp; phúc lợi SME — nhiều CT không công bố</td>
+          <td><span class="badge badge-warn">TRUNG BÌNH</span></td>
+          <td class="td-dim">Tham khảo thêm jobsgo.vn / vieclam24h.vn khu vực Hải Phòng để bổ sung dữ liệu phụ cấp.</td>
+        </tr>
+        <tr>
+          <td class="td-label">Tỷ lệ nghỉ việc 15–25% là ước tính ngành — chưa có số liệu đặc thù</td>
+          <td><span class="badge badge-low">THẤP</span></td>
+          <td class="td-dim">ISC theo dõi turnover rate nội bộ hàng tháng để so sánh. Nên công bố định kỳ nội bộ.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ══════════════ REFERENCES ══════════════ -->
+<div class="section" id="refs">
+  <div class="sec-header">
+    <span class="sec-num">REF</span>
+    <h2>Tài liệu Tham khảo <span class="sec-en">References</span></h2>
+  </div>
+
+  <p class="prose" style="margin-bottom:24px">Tất cả tài liệu được trích dẫn nội tuyến (<span style="font-family:var(--mono);background:var(--info-bg);color:var(--info);padding:2px 6px;border-radius:4px;font-size:12px;font-weight:700">[N]</span>) xuyên suốt báo cáo. <span class="badge badge-high">CAO</span> = nguồn chính thức; <span class="badge badge-med">TRUNG BÌNH</span> = báo cáo thị trường; <span class="badge badge-low">THẤP</span> = snippet/suy luận.</p>
+
+  <ul class="ref-list">
+    <li id="ref-1"><div><strong>Nghị định 293/2025/NĐ-CP</strong> — Lương tối thiểu vùng 2026. Vùng I (Hải Phòng): 5.310.000 VNĐ/tháng. Hiệu lực 01/01/2026.<span class="ref-conf badge badge-high">CAO</span><br><a href="https://vanban.chinhphu.vn/?pageid=27160&docid=215832" target="_blank">vanban.chinhphu.vn</a></div></li>
+    <li id="ref-2"><div><strong>MOLISA — Tỷ lệ đóng BHXH/BHYT/BHTN 2026</strong> — NSD: 21,5%; NLĐ: 10,5%.<span class="ref-conf badge badge-high">CAO</span><br><a href="https://quanhelaodong.molisa.gov.vn/?p=13768" target="_blank">quanhelaodong.molisa.gov.vn</a></div></li>
+    <li id="ref-3"><div><strong>Navigos Group — Talent Guide 2026</strong> — Khảo sát lương ngành sản xuất, phiên bản 2026. Tham chiếu mức lương phía Bắc, tỷ lệ tăng lương, cơ cấu thưởng.<span class="ref-conf badge badge-med">TRUNG BÌNH</span><br><a href="https://www.scribd.com/document/989576586/Vie-Navigos-Group-Talent-Guide-2026-1" target="_blank">scribd.com/Navigos-Talent-Guide-2026</a></div></li>
+    <li id="ref-4"><div><strong>Talentnet — Phân tích lương công nhân nhà máy Việt Nam</strong> — Q1/2025; mức lương trung bình theo vùng và ngành.<span class="ref-conf badge badge-med">TRUNG BÌNH</span><br><a href="https://www.talentnetgroup.com/vn/vi/phan-tich-chuyen-sau/luong-cong-nhan-nha-may-viet-nam" target="_blank">talentnetgroup.com</a></div></li>
+    <li id="ref-5"><div><strong>Báo Hải Phòng — Thu nhập người lao động KCN VSIP Hải Phòng</strong> — Thu nhập bình quân CN VSIP HP: 10,26M VNĐ/tháng (2025).<span class="ref-conf badge badge-high">CAO</span><br><a href="https://baohaiphong.vn/nguoi-lao-dong-khu-cong-nghiep-vsip-hai-phong-duoc-huong-nhieu-phuc-loi-cao-hon-muc-chung-520753.html" target="_blank">baohaiphong.vn</a></div></li>
+    <li id="ref-6"><div><strong>Báo Lao Động — Hải Phòng giải quyết việc làm 38.300 lượt lao động H1/2025</strong> — Thị trường việc làm Hải Phòng; xu hướng tuyển dụng KCN.<span class="ref-conf badge badge-high">CAO</span><br><a href="https://news.laodong.vn/cong-doan/hai-phong-giai-quyet-viec-lam-38300-luot-lao-dong-nua-dau-2025-1535115.ldo" target="_blank">news.laodong.vn</a></div></li>
+    <li id="ref-7"><div><strong>DEEP-C Industrial Zones — Hai Phong External Report</strong> — Phân tích thị trường lao động và điều kiện SME tại Hải Phòng (2021).<span class="ref-conf badge badge-med">TRUNG BÌNH</span><br><a href="https://www.deepc.vn/images/Report/DEEP_C_Hai_Phong_External_Report_24092021.pdf" target="_blank">deepc.vn</a></div></li>
+    <li id="ref-8"><div><strong>Bộ Luật Lao động 2019</strong> — Điều 98: OT ngày thường 150%, cuối tuần 200%, lễ/đêm 300%. Điều 107–108: giới hạn tăng ca 200h/năm.<span class="ref-conf badge badge-high">CAO</span><br><a href="https://thuvienphapluat.vn" target="_blank">thuvienphapluat.vn</a></div></li>
+    <li id="ref-9"><div><strong>Cổng thông tin điện tử huyện Vĩnh Bảo</strong> — Thông tin nhu cầu tuyển dụng lao động KCN khu vực Vĩnh Bảo.<span class="ref-conf badge badge-med">TRUNG BÌNH</span><br><a href="https://vinhbao.haiphong.gov.vn" target="_blank">vinhbao.haiphong.gov.vn</a></div></li>
+    <li id="ref-10"><div><strong>thongtindoanhnghiep.co — Danh sách doanh nghiệp Cụm CN Tân Liên</strong> — Tra cứu đăng ký DN theo địa chỉ xã Tân Liên, huyện Vĩnh Bảo.<span class="ref-conf badge badge-med">TRUNG BÌNH</span><br><a href="https://thongtindoanhnghiep.co/hai-phong/huyen-vinh-bao/cum-cong-nghiep-tan-lien" target="_blank">thongtindoanhnghiep.co</a></div></li>
+    <li id="ref-11"><div><strong>tratencongty.com — Công ty tại Xã Tân Liên, Huyện Vĩnh Bảo</strong> — Danh bạ doanh nghiệp đăng ký theo địa chỉ xã Tân Liên.<span class="ref-conf badge badge-med">TRUNG BÌNH</span><br><a href="https://www.tratencongty.com/thanh-pho-hai-phong/huyen-vinh-bao/xa-tan-lien/" target="_blank">tratencongty.com</a></div></li>
+    <li id="ref-12"><div><strong>TopCV — Nhân viên Sản xuất, All Victory Grass VN (Hải Phòng)</strong> — Tin tuyển dụng 18/03/2026. Lương: 9–15M VNĐ/tháng.<span class="ref-conf badge badge-high">CAO</span><br><a href="https://www.topcv.vn/viec-lam/nhan-vien-san-xuat-thu-nhap-tu-9-15-trieu-tai-hai-phong/2021286.html" target="_blank">topcv.vn</a></div></li>
+    <li id="ref-13"><div><strong>VietnamWorks — Kỹ sư Bảo trì Điện SX (3 ca), Shin-Etsu VN (Đình Vũ, HP)</strong> — Tin 18/03/2026. Lương: lên đến 20M + phụ cấp 3,5–5M. FDI Nhật.<span class="ref-conf badge badge-high">CAO</span><br><a href="https://www.vietnamworks.com/ky-su-bao-tri-dien-san-xuat-3-ca-salary-up-to-20-trieu-2029412-jv" target="_blank">vietnamworks.com</a></div></li>
+    <li id="ref-14"><div><strong>VietnamWorks — Nhân viên Vận hành Máy SMT, Top-Chip Electronics VN (HP)</strong> — Tin 18/03/2026. Lương: 9–15M. Phụ cấp ca, kỹ thuật, năng suất.<span class="ref-conf badge badge-high">CAO</span><br><a href="https://www.vietnamworks.com/tuyen-nhan-vien-van-hanh-may-smt-hai-phong-2028412-jv" target="_blank">vietnamworks.com</a></div></li>
+    <li id="ref-15"><div><strong>TopCV — Kế toán Sản xuất, SADO Corp (Hải Phòng)</strong> — Tin 18/03/2026. Lương: 15–20M. Phụ cấp cơm trưa, thưởng lễ Tết.<span class="ref-conf badge badge-high">CAO</span><br><a href="https://www.topcv.vn/viec-lam/chuyen-vien-ke-toan-gia-thanh-ke-toan-san-xuat-2-nam-kinh-nghiem-muc-luong-15-20-trieu/1956699.html" target="_blank">topcv.vn</a></div></li>
+  </ul>
+</div>
+
+</div><!-- /body-wrap -->
+
+<!-- ═══ FOOTER ═══ -->
+<div class="footer">
+  <span><strong>ISC Smart Factory</strong> · HR Intelligence Report 2026 · Gravity Research Pipeline</span>
+  <span>Kính trình CEO Kent · Ngày lập: 18/03/2026 · Deadline: 29/04/2026</span>
+  <span>BẢO MẬT — Lưu hành nội bộ ISC · <strong>V3.1 Premium</strong></span>
+</div>
+
+<script>
+// ISC HR Intelligence Report 2026 — V3.1 JavaScript
+// Premium interactive features & scroll animations
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  // ── Print button ──
+  document.querySelectorAll('.btn-print').forEach(btn => {
+    btn.addEventListener('click', () => window.print());
+  });
+
+  // ── Active TOC highlighting on scroll ──
+  const sections = document.querySelectorAll('.section[id]');
+  const tocLinks = document.querySelectorAll('.toc-bar a[href^="#"]');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        tocLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+
+  sections.forEach(sec => observer.observe(sec));
+
+  // ── Section Reveal Animation ──
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.05, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.section').forEach(sec => revealObserver.observe(sec));
+
+  // ── Salary bar widths animation on scroll ──
+  const barObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const bar = entry.target;
+        bar.style.width = bar.getAttribute('data-pct') + '%';
+        barObserver.unobserve(bar);
+      }
+    });
+  }, { threshold: 0.1 });
+  
+  document.querySelectorAll('.sal-bar[data-pct]').forEach(bar => {
+    barObserver.observe(bar);
+  });
+
+  // ── Tooltip on cit links ──
+  document.querySelectorAll('sup.cit a').forEach(a => {
+    a.setAttribute('role', 'button');
+    a.setAttribute('tabindex', '0');
+  });
+
+});
+</script>
+</body>
+</html>
