@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Executive Summary | ISC OpenClaw Analysis</title>
+  <meta name="description" content="DK Nguyen's full analysis of OpenClaw AI for ISC — prepared for CEO Kent. Should ISC adopt OpenClaw?">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=DM+Sans:wght@300;400;500;600&family=Fira+Code:wght@400;500&display=swap">
+  <link rel="stylesheet" href="Style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .page-hero { --hero-glow: rgba(232,160,32,0.09); }
+  </style>
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-logo">ISC</span>
+      <span class="brand-sub">OpenClaw Analysis Report</span>
+      <span class="brand-meta">CEO Kent · Q2 2026</span>
+    </div>
+    <nav>
+      <a href="index.html" class="active"><i class="fa-solid fa-file-lines"></i> <span class="nav-label">Executive Summary</span></a>
+      <a href="features.html"><i class="fa-solid fa-robot"></i> <span class="nav-label">What is OpenClaw?</span></a>
+      <a href="isc_integration.html"><i class="fa-solid fa-shield-halved"></i> <span class="nav-label">The 3 Critical Risks</span></a>
+      <a href="risks_costs.html"><i class="fa-solid fa-scale-balanced"></i> <span class="nav-label">OpenClaw vs Gemini</span></a>
+      <a href="roadmap.html"><i class="fa-solid fa-building"></i> <span class="nav-label">Can ISC Use It?</span></a>
+      <a href="analysis.html"><i class="fa-solid fa-chart-gantt"></i> <span class="nav-label">Our Alternative</span></a>
+      <a href="comparison.html"><i class="fa-solid fa-table-cells"></i> <span class="nav-label">5W-2H Framework</span></a>
+      <a href="conclusion.html"><i class="fa-solid fa-flag-checkered"></i> <span class="nav-label">Recommendation</span></a>
+    </nav>
+    <div class="sidebar-progress-dots">
+      <span class="pdot pdot-0 active"></span>
+      <span class="pdot pdot-1"></span>
+      <span class="pdot pdot-2"></span>
+      <span class="pdot pdot-3"></span>
+      <span class="pdot pdot-4"></span>
+      <span class="pdot pdot-5"></span>
+      <span class="pdot pdot-6"></span>
+      <span class="pdot pdot-7"></span>
+    </div>
+    <div class="sidebar-footer">
+      ISC Digital Transformation · 2026
+    </div>
+  </aside>
+
+  <!-- PAGE CONTENT -->
+  <main class="main-content">
+
+    <!-- HERO -->
+    <div class="page-hero">
+      <span class="eyebrow"><i class="fa-solid fa-file-contract" style="margin-right:0.4rem;"></i>Strategic Analysis · March 2026</span>
+      <h1>OpenClaw: Opportunity<br>or Risk for ISC?</h1>
+      <p class="hero-subtitle">A Data Engineer's Full Analysis — Prepared for CEO Kent's Review</p>
+      <div class="badges">
+        <span class="badge badge-glass"><i class="fa-solid fa-user"></i> By: DK Nguyen, Data Engineer</span>
+        <span class="badge badge-gold"><i class="fa-solid fa-calendar"></i> March 2026</span>
+        <span class="badge badge-glass"><i class="fa-solid fa-building"></i> ISC Company · Confidential</span>
+      </div>
+    </div>
+
+    <!-- WHY THIS REPORT EXISTS -->
+    <div class="section-container">
+      <div class="card card-gold" style="margin-bottom:2rem;">
+        <div style="display:flex;align-items:flex-start;gap:1.25rem;">
+          <div class="card-icon card-icon-gold" style="flex-shrink:0;"><i class="fa-solid fa-lightbulb"></i></div>
+          <div>
+            <h3 style="margin-bottom:0.75rem;">Why This Report Exists</h3>
+            <p>In early 2026, OpenClaw caught your attention as a promising AI tool that could automate office work 24/7 for free. You asked your Data Engineer (DK) to evaluate whether ISC should adopt it. <strong style="color:var(--text-heading);">This report is that answer</strong> — honest, data-backed, and written in plain language.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- THE SHORT ANSWER -->
+      <div class="section-header">
+        <h2><i class="fa-solid fa-bullseye"></i> The Short Answer</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="verdict-grid" style="margin-bottom:3rem;">
+        <div class="verdict-card card-danger">
+          <div class="verdict-icon" style="color:var(--red);">✗</div>
+          <div class="verdict-label" style="color:var(--red);">Verdict: Do Not Deploy</div>
+          <p class="verdict-text">OpenClaw is not safe for ISC's enterprise environment right now.</p>
+        </div>
+        <div class="verdict-card" style="border-left:4px solid var(--yellow);">
+          <div class="verdict-icon" style="color:var(--yellow);">~</div>
+          <div class="verdict-label" style="color:var(--yellow);">Interesting Technology</div>
+          <p class="verdict-text">OpenClaw is a genuinely exciting innovation worth watching.</p>
+        </div>
+        <div class="verdict-card card-success">
+          <div class="verdict-icon" style="color:var(--green);">✓</div>
+          <div class="verdict-label" style="color:var(--green);">Better Alternative Exists</div>
+          <p class="verdict-text">ISC already has a safer, more powerful approach in place.</p>
+        </div>
+      </div>
+
+      <!-- 3 QUESTION SUMMARY -->
+      <div class="section-header">
+        <h2><i class="fa-solid fa-circle-question"></i> The 3-Question Summary</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:3rem;">
+        <div class="card" style="display:flex;align-items:flex-start;gap:1.25rem;">
+          <div style="background:rgba(87,203,255,0.12);color:var(--blue-accent);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;">Q1</div>
+          <div>
+            <strong style="color:var(--text-heading);display:block;margin-bottom:0.25rem;">What is OpenClaw?</strong>
+            <p style="margin:0;">An AI that can operate your computer automatically, 24/7 — opening programs, reading emails, filling forms, and running reports without human input.</p>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:flex-start;gap:1.25rem;">
+          <div style="background:rgba(255,107,107,0.12);color:var(--red);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;">Q2</div>
+          <div>
+            <strong style="color:var(--text-heading);display:block;margin-bottom:0.25rem;">Why can't we use it?</strong>
+            <p style="margin:0;">3 critical risks: <strong style="color:var(--red);">Data Security</strong> (unaudited access to ISC systems), <strong style="color:var(--orange);">Hardware Cost</strong> ($2k–$5k+ isolated setup), and <strong style="color:var(--yellow);">Unpredictable API Bills</strong> ($500–$3,000/month).</p>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:flex-start;gap:1.25rem;">
+          <div style="background:rgba(100,255,218,0.1);color:var(--green);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;">Q3</div>
+          <div>
+            <strong style="color:var(--text-heading);display:block;margin-bottom:0.25rem;">What should we do instead?</strong>
+            <p style="margin:0;">Accelerate ISC's structured Data Automation roadmap using Google BigQuery + Apps Script + Gemini — already live, already saving <strong style="color:var(--green);">14+ hours per week</strong> in Supply Chain alone.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- NAVIGATION PROMPT -->
+      <div class="cta-box" style="text-align:center;">
+        <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:0.75rem;">READ THE FULL ANALYSIS</p>
+        <h3 style="margin-bottom:1.25rem;font-size:1.3rem;">Start with Page 1: What is OpenClaw?</h3>
+        <a href="features.html" class="btn btn-primary-glow">
+          <i class="fa-solid fa-arrow-right"></i> <span class="nav-label">Begin Full Report
+        </span></a>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="assets/shared.js"></script>
+</body>
+</html>
