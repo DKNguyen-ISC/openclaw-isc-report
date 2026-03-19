@@ -1,416 +1,168 @@
-// Shared JS for OpenClaw Report - CEO Kent Version
-// Features: scrollspy nav, section animations, mobile hamburger, accessibility, print
+// ISC OpenClaw & AI Agent Analysis Report V2
+// Scroll-based single-page interactions
+// Features: scroll-reveal, TOC highlighting, smooth scroll, keyboard nav, print
 
-document.addEventListener('DOMContentLoaded', function() {
-  // Intersection Observer for animations
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
+document.addEventListener('DOMContentLoaded', function () {
 
-  const observer = new IntersectionObserver((entries) => {
+  // ── Section Reveal Animation (IntersectionObserver) ──
+  const revealObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
+        entry.target.classList.add('reveal');
+        revealObserver.unobserve(entry.target);
       }
     });
-  }, observerOptions);
+  }, { threshold: 0.05, rootMargin: '0px 0px -60px 0px' });
 
-  document.querySelectorAll('.section-container').forEach(el => {
-    el.classList.add('animate-on-scroll');
-    observer.observe(el);
-  });
+  document.querySelectorAll('.section').forEach(sec => revealObserver.observe(sec));
 
-  // Scrollspy for nav active states
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('nav a[href^=\"#"]');
+  // ── Active TOC highlighting on scroll ──
+  const sections = document.querySelectorAll('.section[id]');
+  const tocLinks = document.querySelectorAll('.toc-bar a[href^="#"]');
 
-  function updateActiveNav() {
-    let current = '';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      if (scrollY >= sectionTop - 200) {
-        current = section.getAttribute('id');
+  const tocObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        tocLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+        });
       }
     });
+  }, { rootMargin: '-25% 0px -65% 0px' });
 
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active');
-      }
-    });
-  }
+  sections.forEach(sec => tocObserver.observe(sec));
 
-  window.addEventListener('scroll', updateActiveNav);
-  updateActiveNav(); // Initial
-
-  // Smooth internal links
-  document.querySelectorAll('a[href^=\"#"]').forEach(anchor => {
+  // ── Smooth scroll for TOC links ──
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
       if (target) {
-        target.scrollIntoView({ 
-          behavior: 'smooth',
-          block: 'start'
-        });
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Update URL without scroll jump
+        history.pushState(null, '', this.getAttribute('href'));
       }
     });
   });
 
-  // Mobile hamburger menu
-  const hamburger = document.createElement('button');
-  hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
-  hamburger.className = 'mobile-menu-btn';
-  hamburger.setAttribute('aria-label', 'Toggle navigation');
-  hamburger.style.cssText = `
-    position: fixed; top: 1rem; left: 1rem; z-index: 200;
-    background: var(--bg-surface); color: var(--text-main);
-    border: 1px solid var(--border); border-radius: var(--radius-sm);
-    padding: 0.75rem; font-size: 1.25rem; cursor: pointer;
-    display: none;
-  `;
+  // ── Keyboard Navigation (Arrow keys for sections) ──
+  const sectionIds = Array.from(sections).map(s => s.id);
 
-  document.body.appendChild(hamburger);
-
-  window.addEventListener('resize', toggleMobileMenu);
-  toggleMobileMenu();
-
-  function toggleMobileMenu() {
-    const isMobile = window.innerWidth < 850;
-    const sidebar = document.querySelector('.sidebar');
-    
-    if (isMobile) {
-      hamburger.style.display = 'block';
-      document.body.style.paddingLeft = '0';
-      sidebar.style.transform = 'translateX(-100%)';
-      sidebar.style.position = 'fixed';
-      
-      hamburger.onclick = () => {
-        sidebar.classList.toggle('mobile-open');
-        sidebar.style.transform = sidebar.classList.contains('mobile-open') ? 'translateX(0)' : 'translateX(-100%)';
-      };
-    } else {
-      hamburger.style.display = 'none';
-      document.body.style.paddingLeft = '280px';
-      sidebar.style.transform = 'none';
-      sidebar.classList.remove('mobile-open');
-    }
-  }
-
-  // Desktop Sidebar Collapse Toggle
-  function initSidebarCollapse() {
-    const sidebar = document.querySelector('.sidebar');
-    if (!sidebar) return;
-
-    // Restore saved state
-    if (localStorage.getItem('isc_sidebar_collapsed') === 'true') {
-      sidebar.classList.add('collapsed');
-      document.body.classList.add('sidebar-collapsed');
-    }
-
-    // Create toggle button
-    const collapseBtn = document.createElement('button');
-    collapseBtn.className = 'sidebar-collapse-btn';
-    collapseBtn.setAttribute('aria-label', 'Toggle sidebar');
-    collapseBtn.title = 'Collapse sidebar';
-    collapseBtn.innerHTML = '<i class="fa-solid fa-chevron-left"></i>';
-    sidebar.style.position = 'fixed'; // ensure relative for button
-    sidebar.appendChild(collapseBtn);
-
-    collapseBtn.addEventListener('click', () => {
-      const isCollapsed = sidebar.classList.toggle('collapsed');
-      document.body.classList.toggle('sidebar-collapsed', isCollapsed);
-      localStorage.setItem('isc_sidebar_collapsed', isCollapsed);
+  function getCurrentSectionIndex() {
+    let current = 0;
+    sections.forEach((sec, i) => {
+      if (window.scrollY >= sec.offsetTop - 200) {
+        current = i;
+      }
     });
+    return current;
   }
 
-  // Only run on desktop
-  if (window.innerWidth >= 850) {
-    initSidebarCollapse();
-  }
-
-  // Keyboard accessibility
-  document.querySelectorAll('nav a, .btn-primary-glow, .btn-gold').forEach(el => {
-    el.setAttribute('tabindex', '0');
-    el.onkeydown = (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        el.click();
-      }
-    };
-  });
-
-  // Print styles trigger
-  window.matchMedia('print').addEventListener('change', (mql) => {
-    if (mql.matches) {
-      document.querySelector('.sidebar').style.display = 'none';
-      document.body.style.paddingLeft = '0';
-    }
-  });
-
-  // Reduced motion respect
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.documentElement.style.setProperty('--transition', 'none');
-  }
-
-  // Seamless Page Navigation via Keyboard (Up/Down/Left/Right) and Scroll
-  const pages = [
-    'index.html',
-    'features.html',
-    'isc_integration.html',
-    'risks_costs.html',
-    'roadmap.html',
-    'analysis.html',
-    'comparison.html',
-    'conclusion.html'
-  ];
-
-  function getPageIndex() {
-    const currentPath = window.location.pathname;
-    const pageName = currentPath.split('/').pop() || 'index.html';
-    return pages.indexOf(pageName);
-  }
-
-  // Create progress bar element
-  const progressBar = document.createElement('div');
-  progressBar.id = 'page-transition-bar';
-  document.body.appendChild(progressBar);
-
-  function showProgress() {
-    progressBar.style.width = '70%';
-    progressBar.style.opacity = '1';
-  }
-  function completeProgress() {
-    progressBar.style.width = '100%';
-    setTimeout(() => { progressBar.style.opacity = '0'; progressBar.style.width = '0%'; }, 200);
-  }
-
-  // On page enter: complete the bar
-  window.addEventListener('load', completeProgress);
-
-  // ── SPA Page Loader ──
-  let isNavigating = false;
-
-  async function loadPage(href, isPopState = false) {
-    if (isNavigating || href === window.location.pathname.split('/').pop()) return;
-    isNavigating = true;
-
-    // 1. Animate current content OUT
-    const main = document.querySelector('.main-content');
-    if (main) {
-      main.style.transition = 'opacity 0.15s ease, transform 0.15s ease';
-      main.style.opacity = '0';
-      main.style.transform = 'translateY(-8px)';
-    }
-
-    // 2. Fetch the new page HTML
-    showProgress();
-    try {
-      const res = await fetch(href);
-      if (!res.ok) throw new Error('Network response was not ok');
-      const html = await res.text();
-
-      // 3. Parse & extract the new <main> content
-      const doc = new DOMParser().parseFromString(html, 'text/html');
-      const newMain = doc.querySelector('.main-content');
-      const newTitle = doc.querySelector('title') ? doc.querySelector('title').innerText : document.title;
-
-      // Wait a tiny bit for exit animation to feel smooth
-      await new Promise(r => setTimeout(r, 150));
-
-      // 4. Swap content + update URL
-      if (main && newMain) {
-        main.innerHTML = newMain.innerHTML;
-      }
-      document.title = newTitle;
-      
-      if (!isPopState) {
-        history.pushState({}, '', href);
-      }
-
-      // 5. Update sidebar active state
-      document.querySelectorAll('.sidebar nav a').forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === href) {
-          link.classList.add('active');
-        }
-      });
-
-      // 6. Animate content IN
-      if (main) {
-        main.style.transform = 'translateY(18px)';
-        // Force reflow
-        void main.offsetWidth;
-        main.style.transition = 'opacity 0.55s cubic-bezier(0.16,1,0.3,1), transform 0.55s cubic-bezier(0.16,1,0.3,1)';
-        main.style.opacity = '1';
-        main.style.transform = 'translateY(0)';
-      }
-
-      // 7. Scroll to top and complete
-      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-      completeProgress();
-      prefetchAdjacentPages(); 
-      
-      // 8. Re-initialize scroll animations for new content
-      const newSections = document.querySelectorAll('.section-container');
-      newSections.forEach(el => {
-        el.classList.add('animate-on-scroll');
-        observer.observe(el);
-      });
-
-      // 9. Rebind next/prev internal links inside the new content
-      bindInternalLinks();
-
-    } catch (e) {
-      console.error('SPA Load Failed, falling back to traditional navigation', e);
-      window.location.href = href;
-    } finally {
-      isNavigating = false;
-    }
-  }
-
-  // Handle browser Back/Forward buttons
-  window.addEventListener('popstate', () => {
-    const href = window.location.pathname.split('/').pop() || 'index.html';
-    loadPage(href, true);
-  });
-
-  function navigateTo(direction) {
-    const currentIndex = getPageIndex();
-    if (currentIndex === -1) return;
-    let nextIndex = currentIndex + direction;
-    if (nextIndex >= 0 && nextIndex < pages.length) {
-      loadPage(pages[nextIndex]);
-    }
-  }
-
-  // Intercept links to keep SPA experience
-  function bindInternalLinks() {
-    document.querySelectorAll('a').forEach(link => {
-      // Avoid binding multiple times
-      if (link.dataset.spaBound) return;
-      
-      link.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        if (href && !href.startsWith('#') && !href.startsWith('http') && href.endsWith('.html')) {
-          e.preventDefault();
-          loadPage(href);
-        }
-      });
-      link.dataset.spaBound = 'true';
-    });
-  }
-  
-  bindInternalLinks();
-
-  // Prefetch adjacent pages for faster navigation
-  function prefetchAdjacentPages() {
-    const currentIndex = getPageIndex();
-    if (currentIndex === -1) return;
-
-    const toPrefetch = [];
-    if (currentIndex + 1 < pages.length) toPrefetch.push(pages[currentIndex + 1]);
-    if (currentIndex - 1 >= 0) toPrefetch.push(pages[currentIndex - 1]);
-
-    // Clear old prefetches
-    document.querySelectorAll('link[rel="prefetch"]').forEach(l => l.remove());
-
-    toPrefetch.forEach(page => {
-      const link = document.createElement('link');
-      link.rel = 'prefetch';
-      link.href = page;
-      document.head.appendChild(link);
-    });
-  }
-  
-  prefetchAdjacentPages();
-
-  let arrowNavTimeout;
-  let arrowNavReady = false;
-
-  // Keyboard Navigation (Arrows)
   document.addEventListener('keydown', (e) => {
-    // Prevent navigation if user is typing in an input/textarea (though not present here, good practice)
     if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
 
-    if (e.key === 'ArrowRight') {
-      if (!e.repeat) navigateTo(1);
-    } else if (e.key === 'ArrowLeft') {
-      if (!e.repeat) navigateTo(-1);
-    } else if (e.key === 'ArrowDown') {
-      const isAtBottom = Math.ceil(window.innerHeight + window.scrollY) >= document.body.offsetHeight - 5;
-      
-      if (!isAtBottom) {
-        // Let the browser handle standard smooth scrolling naturally.
-        arrowNavReady = false;
-      } else {
-        // At the bottom boundary
-        e.preventDefault(); // Stop native behavior to avoid jumping
-        
-        // Require a firm, distinct key press to navigate (ignore if key is held down)
-        if (!e.repeat) {
-          if (arrowNavReady) {
-            navigateTo(1);
-            arrowNavReady = false;
-          } else {
-            arrowNavReady = true;
-            clearTimeout(arrowNavTimeout);
-            arrowNavTimeout = setTimeout(() => { arrowNavReady = false; }, 2000);
-          }
-        }
-      }
-    } else if (e.key === 'ArrowUp') {
-      const isAtTop = window.scrollY <= 5;
-      
-      if (!isAtTop) {
-        // Let the browser handle standard smooth scrolling naturally.
-        arrowNavReady = false;
-      } else {
-        // At the top boundary
-        e.preventDefault(); // Stop native behavior
-        
-        if (!e.repeat) {
-          if (arrowNavReady) {
-            navigateTo(-1);
-            arrowNavReady = false;
-          } else {
-            arrowNavReady = true;
-            clearTimeout(arrowNavTimeout);
-            arrowNavTimeout = setTimeout(() => { arrowNavReady = false; }, 2000);
-          }
-        }
-      }
+    if (e.key === 'ArrowRight' && !e.repeat) {
+      const next = Math.min(getCurrentSectionIndex() + 1, sections.length - 1);
+      sections[next].scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else if (e.key === 'ArrowLeft' && !e.repeat) {
+      const prev = Math.max(getCurrentSectionIndex() - 1, 0);
+      sections[prev].scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
 
-  // Scroll to Transition (Bottom of page to next)
-  let wheelTimeout;
-  window.addEventListener('wheel', (e) => {
-    // Only trigger if scrolling down
-    if (e.deltaY > 0) {
-      // Check if we hit the very bottom
-      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 2) {
-        // Debounce to prevent rapid transitions
-        if (!wheelTimeout) {
-          wheelTimeout = setTimeout(() => {
-            navigateTo(1);
-            wheelTimeout = null;
-          }, 800);
-        }
+  // ── Staggered card reveal ──
+  const cardObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const cards = entry.target.querySelectorAll(
+          '.feature-card, .verdict-card, .qa-card, .gap-card, .insight-card, .analogy-card, .step-card, .st-phase, .kpi-cell'
+        );
+        cards.forEach((card, i) => {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(16px)';
+          card.style.transition = `opacity 0.45s ease ${i * 0.07}s, transform 0.45s ease ${i * 0.07}s`;
+          // Trigger reflow then animate in
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            });
+          });
+        });
+        cardObserver.unobserve(entry.target);
       }
-    } else if (e.deltaY < 0) {
-      // Check if we hit the very top
-      if (window.scrollY === 0) {
-        if (!wheelTimeout) {
-          wheelTimeout = setTimeout(() => {
-            navigateTo(-1);
-            wheelTimeout = null;
-          }, 800);
-        }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.section, .kpi-ribbon').forEach(sec => cardObserver.observe(sec));
+
+  // ── Table row animation ──
+  const tableObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const rows = entry.target.querySelectorAll('tbody tr');
+        rows.forEach((row, i) => {
+          row.style.opacity = '0';
+          row.style.transform = 'translateX(-8px)';
+          row.style.transition = `opacity 0.35s ease ${i * 0.04}s, transform 0.35s ease ${i * 0.04}s`;
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              row.style.opacity = '1';
+              row.style.transform = 'translateX(0)';
+            });
+          });
+        });
+        tableObserver.unobserve(entry.target);
       }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.tbl-wrap').forEach(tbl => tableObserver.observe(tbl));
+
+  // ── Reading progress bar ──
+  const progressBar = document.createElement('div');
+  progressBar.style.cssText = `
+    position: fixed; top: 0; left: 0; height: 2px; width: 0%;
+    background: linear-gradient(90deg, var(--gold), var(--gold-bright), var(--gold));
+    z-index: 9999; pointer-events: none;
+    transition: width 0.1s linear;
+  `;
+  document.body.appendChild(progressBar);
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    progressBar.style.width = progress + '%';
+  }, { passive: true });
+
+  // ── Mobile hamburger for TOC ──
+  if (window.innerWidth < 768) {
+    const tocBar = document.querySelector('.toc-bar');
+    if (tocBar) {
+      tocBar.style.overflowX = 'auto';
+      tocBar.style.flexWrap = 'nowrap';
+      tocBar.style.borderRadius = '12px';
+      tocBar.style.justifyContent = 'flex-start';
     }
+  }
+
+  // ── Print button ──
+  document.querySelectorAll('[onclick*="print"]').forEach(btn => {
+    // Already handled via inline onclick, but ensure no double-bind
   });
+
+  // ── Reduced motion respect ──
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.section').forEach(sec => {
+      sec.classList.add('reveal');
+    });
+  }
+
+  // ── Keyboard accessibility ──
+  document.querySelectorAll('.toc-bar a, .btn-top').forEach(el => {
+    el.setAttribute('tabindex', '0');
+  });
+
 });
-
