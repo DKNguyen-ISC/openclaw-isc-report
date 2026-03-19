@@ -196,10 +196,10 @@ document.addEventListener('DOMContentLoaded', function() {
     let nextIndex = currentIndex + direction;
     if (nextIndex >= 0 && nextIndex < pages.length) {
       showProgress();
-      document.querySelector('.main-content').classList.add('page-exit');
+      document.body.classList.add('page-exit');
       setTimeout(() => {
         window.location.href = pages[nextIndex];
-      }, 180); // Reduced from 280ms
+      }, 180);
     }
   }
 
@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (href && !href.startsWith('#')) {
         e.preventDefault();
         showProgress();
-        document.querySelector('.main-content').classList.add('page-exit');
+        document.body.classList.add('page-exit');
         setTimeout(() => { window.location.href = href; }, 180);
       }
     });
