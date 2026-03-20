@@ -2,6 +2,40 @@
 
 All notable changes to the ISC OpenClaw Analysis Report are documented here.
 
+## V2.2 — 2026-03-20 (Multi-Dept Day in Life, Claude Upgrade, Honest Numbers)
+
+### Content Fixes (Data Integrity)
+- **Hours claim corrected:** 53 hrs/wk → 10–15 hrs/wk (pilot testing); disclaimer added to Kaizen table
+- **Cost claim corrected:** $61k+ ROI removed; replaced with "$8–15k/yr (pilot est.)" with testing disclaimer
+- **KPI ribbon updated:** ISC Automation shows "Pilot"; ROI cell shows "TBD — Savings pending validation"
+- **Kaizen badges:** SC Shortage and PO Matching changed from ✅ Live → ⚙️ Pilot (badge-amber)
+- **Pull quote updated:** Reflects honest pilot-phase framing, augmentation not replacement
+
+### New Content
+- **Multi-department "Day in the Life":** Replaced 4-item generic timeline with 4 department cards (SC, CS, MPL, PRD), each with 4–6 realistic time-stamped steps, color-coded capability tags, confidence badges, and "Human focus" footer
+- **Capability tag system:** 5 color-coded tags (🌐 Browser, ⚡ Shell, 📁 File, 💬 Messaging, ✉️ Email) based on OpenClaw's verified real capabilities
+- **Augmentation framing:** Each dept card ends with "Human focus" (gold accent) — positions AI as freeing people for higher-value work, not replacing them
+
+### Claude Section Upgrades
+- **Real Claude logo:** Replaced fake "A" letter SVG with official starburst/pinwheel logo, brand color #C15F3C (Crail rust-orange), 48px size
+- **Claude vs OpenClaw comparison table:** Side-by-side security, hosting, ISC fit, enterprise support comparison
+- **Expanded scenario:** 4-step ISC+Claude scenario expanded to 6 steps (added ERP update and "Done" confirmation)
+- **Claude-rec-block:** New "DK's #1 Pick" recommendation block with visual prominence
+
+### Visual Upgrades
+- **Hero gold orb:** Enlarged from 500×500 to 700×700px, opacity 0.18→0.28 (much richer gold)
+- **Second gold orb:** Added `orb-gold2` (320px, bottom-right of hero, alternate-reverse animation)
+- **Gold hairline:** Fixed `body::before` gold gradient at very top of viewport
+- **Denser dot grid:** `background-size` 32px→24px for richer texture
+- **Enhanced card hover glows:** KPI cells, feature/gap/insight/verdict cards get gold glow on hover
+- **Table row hover:** Subtle gold highlight on tbody row hover
+- **Maturity dial infographic:** CSS conic-gradient ring showing ISC at L1 of 5 (animates 0→20% on scroll)
+- **Roadmap timeline infographic:** Horizontal Q1–Q4 2026 timeline with filled dots and gold connecting lines
+- **Reading progress bar:** Thickened 2px→3px, added gold glow shadow
+
+### Git
+- Tag: `v2.2`
+
 ## V2.1 — 2026-03-20 (Luxury Polish & Content Expansion)
 
 ### New Content
