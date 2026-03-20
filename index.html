@@ -7,7 +7,7 @@
 <meta name="description" content="DK Nguyen's full analysis of OpenClaw AI and the AI agent landscape for ISC — prepared for CEO Kent. Balanced assessment, strategic recommendations.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=DM+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600;1,700&family=DM+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="Style.css">
 </head>
@@ -17,13 +17,13 @@
 <div class="top-bar">
   <span class="top-brand">ISC</span>
   <span class="top-sep">/</span>
-  <span>OpenClaw & AI Agent Analysis</span>
+  <span>OpenClaw &amp; AI Agent Analysis</span>
   <span class="top-sep">/</span>
   <span class="top-status-dot"></span>
   <span>CEO Kent · Confidential</span>
   <div class="top-actions">
     <button class="btn-top" onclick="window.print()"><i class="fa-solid fa-print"></i> Print / PDF</button>
-    <button class="btn-top btn-top-gold">V2.0 — 19/03/2026</button>
+    <button class="btn-top btn-top-gold">V2.1 — 20/03/2026</button>
   </div>
 </div>
 
@@ -32,9 +32,13 @@
   <div class="cover-deco c1"></div>
   <div class="cover-deco c2"></div>
   <div class="cover-gold-line"></div>
+  <!-- Animated orb background -->
+  <div class="hero-orb orb-gold"></div>
+  <div class="hero-orb orb-blue"></div>
+  <div class="hero-orb orb-green"></div>
 
   <div class="cover-eyebrow"><i class="fa-solid fa-file-contract"></i> Strategic Analysis · March 2026</div>
-  <h1>OpenClaw & The AI Agent Landscape:<br>Opportunity, Risk, and ISC's Path Forward</h1>
+  <h1>OpenClaw &amp; The AI Agent Landscape:<br>Opportunity, Risk, and ISC's Path Forward</h1>
   <p class="cover-subtitle">A Data Engineer's Balanced Assessment — Prepared for CEO Kent's Review</p>
 
   <div class="cover-meta">
@@ -49,33 +53,33 @@
 <div class="kpi-container">
   <div class="kpi-ribbon">
     <div class="kpi-cell kpi-gold">
-      <div class="kpi-label">Assessment</div>
-      <div class="kpi-value">Monitor</div>
-      <div class="kpi-sub">Observe & Build Readiness</div>
+      <div class="kpi-label">📊 Assessment</div>
+      <div class="kpi-value" data-target="Monitor" data-type="text">Monitor</div>
+      <div class="kpi-sub">Observe &amp; Build Readiness</div>
     </div>
     <div class="kpi-cell">
-      <div class="kpi-label">OpenClaw Maturity</div>
-      <div class="kpi-value">Early</div>
+      <div class="kpi-label">🦀 OpenClaw Maturity</div>
+      <div class="kpi-value" data-target="Early" data-type="text">Early</div>
       <div class="kpi-sub">Development Phase</div>
     </div>
     <div class="kpi-cell kpi-highlight">
-      <div class="kpi-label">ISC Automation</div>
-      <div class="kpi-value">Live</div>
+      <div class="kpi-label">⚡ ISC Automation</div>
+      <div class="kpi-value" data-target="Live" data-type="text">Live</div>
       <div class="kpi-sub">14+ hrs/week saved</div>
     </div>
     <div class="kpi-cell">
-      <div class="kpi-label">AI Agent Trend</div>
-      <div class="kpi-value">Rising</div>
+      <div class="kpi-label">📈 AI Agent Trend</div>
+      <div class="kpi-value" data-target="Rising" data-type="text">Rising</div>
       <div class="kpi-sub">Claude, GPT, Gemini, Nvidia</div>
     </div>
     <div class="kpi-cell">
-      <div class="kpi-label">ISC Readiness</div>
-      <div class="kpi-value">Strong</div>
+      <div class="kpi-label">🏗️ ISC Readiness</div>
+      <div class="kpi-value" data-target="Strong" data-type="text">Strong</div>
       <div class="kpi-sub">BigQuery foundation built</div>
     </div>
     <div class="kpi-cell kpi-gold">
-      <div class="kpi-label">2026 ROI Target</div>
-      <div class="kpi-value">$61k+</div>
+      <div class="kpi-label">💰 2026 ROI Target</div>
+      <div class="kpi-value" data-target="61" data-type="currency" data-suffix="k+">$61k+</div>
       <div class="kpi-sub">Annual labor savings</div>
     </div>
   </div>
@@ -84,15 +88,16 @@
 <!-- ═══ FLOATING TOC ═══ -->
 <div class="toc-wrapper">
   <nav class="toc-bar">
-    <a href="#s0">Summary</a>
-    <a href="#s1">What is OpenClaw?</a>
-    <a href="#s2">AI Agent Landscape</a>
-    <a href="#s3">3 Gaps to Close</a>
-    <a href="#s4">OpenClaw vs Gemini</a>
-    <a href="#s5">Can ISC Use It?</a>
-    <a href="#s6">Our Proven Path</a>
-    <a href="#s7">5W-2H Framework</a>
-    <a href="#s8">Recommendation</a>
+    <a href="#s0">📋 Summary</a>
+    <a href="#s1">🦀 OpenClaw</a>
+    <a href="#s2">🌐 AI Landscape</a>
+    <a href="#s3">🔒 3 Gaps</a>
+    <a href="#s4">⚖️ vs Gemini</a>
+    <a href="#s5">🏢 Departments</a>
+    <a href="#s6">✅ Our Path</a>
+    <a href="#s65">🏭 Dark Office</a>
+    <a href="#s7">📐 5W-2H</a>
+    <a href="#s8">🚀 Recommendation</a>
   </nav>
 </div>
 
@@ -103,13 +108,15 @@
      SECTION 0 — EXECUTIVE SUMMARY
      ══════════════════════════════════════════════════════════════ -->
 <section class="section" id="s0">
+  <div class="chapter-div"><span>Chapter 1 of 9 · The Short Answer</span></div>
   <div class="sec-header">
     <span class="sec-num">0</span>
     <h2><i class="fa-solid fa-file-lines"></i> Executive Summary</h2>
   </div>
 
   <div class="exec-box">
-    <p>In early 2026, OpenClaw caught your attention as a promising AI tool that could automate office work 24/7 for free. You asked your Data Engineer (DK) to evaluate whether ISC should adopt it. <strong>This report is that answer</strong> — honest, balanced, and written in plain language.</p>
+    <p>In early 2026, a tool called <strong>OpenClaw</strong> caught your attention — an AI that could automate office work around the clock, seemingly for free. You asked your Data Engineer (DK) to evaluate whether ISC should adopt it. <strong>This report is that answer</strong> — written honestly, without hype in either direction.</p>
+    <p>You've been asking the right questions about AI, Kaizen, and eliminating the 7-Wastes. This report will show you that <strong>ISC is already on the right path</strong> — and explain exactly where OpenClaw fits in the bigger picture of where office automation is heading.</p>
     <p>The short version: OpenClaw is a <strong>genuinely exciting innovation</strong> in a rapidly growing field. However, it is currently in early development — more vision than production-ready tool. For ISC's enterprise needs today, our existing data automation approach is safer, cheaper, and already delivering results. But the AI agent trend is real, and ISC should be ready when mature solutions arrive.</p>
   </div>
 
@@ -117,14 +124,14 @@
     <div class="verdict-card verdict-amber">
       <div class="verdict-icon"><i class="fa-solid fa-binoculars"></i></div>
       <div class="verdict-label">OpenClaw Status</div>
-      <div class="verdict-title">Monitor & Observe</div>
-      <p class="verdict-text">Exciting technology, not yet enterprise-ready. Watch the space actively.</p>
+      <div class="verdict-title">Monitor &amp; Observe</div>
+      <p class="verdict-text">Exciting technology, not yet enterprise-ready. Watch the space actively — things are moving fast.</p>
     </div>
     <div class="verdict-card verdict-blue">
       <div class="verdict-icon"><i class="fa-solid fa-rocket"></i></div>
       <div class="verdict-label">AI Agent Trend</div>
       <div class="verdict-title">Growing Fast</div>
-      <p class="verdict-text">Claude, OpenAI, Gemini, Nvidia are all building similar capabilities. Enterprise-grade versions are coming.</p>
+      <p class="verdict-text">Claude, OpenAI, Gemini, Nvidia are all building similar capabilities. Enterprise-grade versions are 12–24 months away.</p>
     </div>
     <div class="verdict-card verdict-green">
       <div class="verdict-icon"><i class="fa-solid fa-check-double"></i></div>
@@ -142,71 +149,80 @@
       <div class="qa-num qa-blue">Q1</div>
       <div>
         <strong>What is OpenClaw?</strong>
-        <p>An open-source AI agent that can operate your computer automatically — opening programs, reading data, filling forms, running reports. It represents a new category of AI tools called "computer-use agents."</p>
+        <p>An open-source AI agent that can operate your computer automatically — opening programs, reading data, filling forms, running reports. It represents a new category of AI tools called <strong>"computer-use agents"</strong> — and every major tech company is now racing to build their version.</p>
       </div>
     </div>
     <div class="qa-card">
       <div class="qa-num qa-amber">Q2</div>
       <div>
         <strong>Why not adopt it now?</strong>
-        <p>Three gaps need to close first: <strong>security auditing</strong> (no enterprise audit exists), <strong>cost predictability</strong> (API bills are variable), and <strong>reliability</strong> (errors compound without supervision). These are solvable — just not solved yet.</p>
+        <p>Three gaps need to close first: <strong>🔒 security auditing</strong> (no enterprise audit exists yet), <strong>💸 cost predictability</strong> (API bills are variable), and <strong>⚠️ reliability</strong> (errors compound without supervision). These are solvable — just not solved yet.</p>
       </div>
     </div>
     <div class="qa-card">
       <div class="qa-num qa-green">Q3</div>
       <div>
         <strong>What should ISC do?</strong>
-        <p>Accelerate our proven data automation roadmap (BigQuery + Gemini + Apps Script). Monitor the AI agent ecosystem. When enterprise-ready agents arrive, our data foundation means <strong>instant integration capability.</strong></p>
+        <p>Accelerate our proven data automation roadmap (BigQuery + Gemini + Apps Script). Monitor the AI agent ecosystem. When enterprise-ready agents arrive, our data foundation means <strong>instant integration capability.</strong> We're not waiting — we're preparing.</p>
       </div>
     </div>
   </div>
+
+  <div class="section-hook">
+    <i class="fa-solid fa-arrow-down hook-arrow"></i>
+    <em>But to truly understand why — we first need to understand what OpenClaw actually is, and why the world's most talented engineers are completely obsessed with it.</em>
+  </div>
 </section>
+
+<!-- chapter divider handled inline above each section -->
 
 <!-- ══════════════════════════════════════════════════════════════
      SECTION 1 — WHAT IS OPENCLAW?
      ══════════════════════════════════════════════════════════════ -->
 <section class="section" id="s1">
+  <div class="chapter-div"><span>Chapter 2 of 9 · The Technology</span></div>
   <div class="sec-header">
     <span class="sec-num">1</span>
-    <h2><i class="fa-solid fa-robot"></i> What Is OpenClaw?</h2>
+    <h2><i class="fa-solid fa-robot"></i> What Is OpenClaw? 🦀</h2>
   </div>
 
   <div class="callout callout-gold">
-    <div><strong>The Innovation:</strong> OpenClaw is an <strong>open-source AI agent</strong> — a program that can operate a computer entirely by itself. No human clicking required. This is a genuine technological step forward, and the concept has enormous potential for the future of office automation.</div>
+    <div><strong>💡 The Innovation:</strong> OpenClaw is an <strong>open-source AI agent</strong> — a program that can operate a computer entirely by itself. No human clicking required. This is a genuine technological step forward, and the concept has enormous potential for the future of office automation.</div>
   </div>
 
-  <h3 class="subsec-title"><i class="fa-solid fa-fire"></i> What Makes It Exciting</h3>
+  <h3 class="subsec-title"><i class="fa-solid fa-fire"></i> What Makes It Genuinely Exciting</h3>
 
   <div class="feature-grid">
     <div class="feature-card">
-      <div class="fc-icon"><i class="fa-solid fa-mouse-pointer"></i></div>
+      <div class="fc-icon">🖱️</div>
       <h4>Autonomous Computer Operation</h4>
-      <p>Can open software, navigate interfaces, click buttons, and fill forms — all without a human at the keyboard.</p>
+      <p>Can open software, navigate interfaces, click buttons, and fill forms — all without a human at the keyboard. It's like hiring a robot employee for routine tasks.</p>
     </div>
     <div class="feature-card">
-      <div class="fc-icon"><i class="fa-solid fa-clock"></i></div>
+      <div class="fc-icon">🌙</div>
       <h4>24/7 Operation Potential</h4>
-      <p>Can run tasks overnight, on weekends, during holidays — the promise of "always-on" automation.</p>
+      <p>Can run tasks overnight, on weekends, during holidays — the promise of "always-on" automation. Your office works even when nobody is there.</p>
     </div>
     <div class="feature-card">
-      <div class="fc-icon"><i class="fa-solid fa-code-branch"></i></div>
-      <h4>Open-Source & Community-Driven</h4>
-      <p>Free to use, transparent code, active developer community. Innovation happens fast in open-source.</p>
+      <div class="fc-icon">🔓</div>
+      <h4>Open-Source &amp; Community-Driven</h4>
+      <p>Free to use, transparent code, active developer community. Innovation happens fast in open-source — this tool improves weekly.</p>
     </div>
     <div class="feature-card">
-      <div class="fc-icon"><i class="fa-solid fa-puzzle-piece"></i></div>
+      <div class="fc-icon">🧩</div>
       <h4>Works With Any Software</h4>
-      <p>Unlike API-only tools, OpenClaw can interact with legacy software that has no API — old ERP systems, desktop apps, government portals.</p>
+      <p>Unlike API-only tools, OpenClaw can interact with <strong>legacy software that has no API</strong> — old ERP systems, desktop apps, government portals. This is its biggest competitive advantage.</p>
     </div>
   </div>
 
   <!-- A Day in the Life -->
-  <h3 class="subsec-title"><i class="fa-solid fa-calendar-day"></i> A Day in the Life of OpenClaw</h3>
+  <h3 class="subsec-title"><i class="fa-solid fa-calendar-day"></i> A Day in the Life of OpenClaw at ISC</h3>
+  <p class="prose" style="margin-bottom:1.5rem;">Imagine it works perfectly. Here's what a day could look like:</p>
   <div class="timeline">
-    <div class="tl-item"><span class="tl-time">06:00</span><div class="tl-dot"></div><div class="tl-body"><strong>Morning Email Review</strong><p>Reads incoming emails, flags urgent supplier messages, categorizes by department</p></div></div>
-    <div class="tl-item"><span class="tl-time">08:30</span><div class="tl-dot"></div><div class="tl-body"><strong>ERP Login & Data Pull</strong><p>Logs into ERP system autonomously, extracts production schedule data</p></div></div>
-    <div class="tl-item"><span class="tl-time">12:00</span><div class="tl-dot"></div><div class="tl-body"><strong>Shortage Report Compilation</strong><p>Cross-references demand vs. stock across multiple sheets, compiles shortage list</p></div></div>
-    <div class="tl-item"><span class="tl-time">17:00</span><div class="tl-dot"></div><div class="tl-body"><strong>Auto Summary Email</strong><p>Drafts and sends daily summary report to manager — runs while the team is already home</p></div></div>
+    <div class="tl-item"><span class="tl-time">06:00</span><div class="tl-dot"></div><div class="tl-body"><strong>📧 Morning Email Review</strong><p>Reads incoming emails, flags urgent supplier messages, categorizes by department — before anyone arrives at the office.</p></div></div>
+    <div class="tl-item"><span class="tl-time">08:30</span><div class="tl-dot"></div><div class="tl-body"><strong>🗄️ ERP Login &amp; Data Pull</strong><p>Logs into ERP system autonomously, extracts production schedule data, cross-references with demand plan.</p></div></div>
+    <div class="tl-item"><span class="tl-time">12:00</span><div class="tl-dot"></div><div class="tl-body"><strong>📊 Shortage Report Compilation</strong><p>Cross-references demand vs. stock across multiple sheets, compiles shortage list, flags critical items automatically.</p></div></div>
+    <div class="tl-item"><span class="tl-time">17:00</span><div class="tl-dot"></div><div class="tl-body"><strong>📬 Auto Summary Email</strong><p>Drafts and sends daily summary report to manager — runs while the team is already home with their families.</p></div></div>
   </div>
 
   <!-- How It Works -->
@@ -218,25 +234,29 @@
     <div class="arch-col">
       <div class="arch-emoji">🦀</div>
       <strong>OpenClaw Agent</strong>
-      <p>The "hands" — clicks, types, navigates UI</p>
+      <p>The "hands" — clicks, types, navigates any UI</p>
     </div>
     <div class="arch-arrow">↔</div>
     <div class="arch-col arch-gold">
       <div class="arch-emoji">🧠</div>
-      <strong>AI Brain (Gemini / GPT / Llama)</strong>
-      <p>The "intelligence" — understands and decides</p>
+      <strong>AI Brain (Claude / Gemini / GPT)</strong>
+      <p>The "intelligence" — understands context and decides</p>
     </div>
     <div class="arch-arrow">↔</div>
     <div class="arch-col">
       <div class="arch-emoji">💻</div>
-      <strong>Your Computer & Data</strong>
-      <p>The "environment" — files, apps, networks</p>
+      <strong>Your Computer &amp; Data</strong>
+      <p>The "environment" — files, apps, databases, network</p>
     </div>
   </div>
-  <p class="text-muted text-sm" style="margin-top:1rem;">Powerful AI brains (Gemini, GPT-4) cost money per use. Free brains (Llama, Mistral) require expensive GPU hardware. The choice of "brain" determines the cost-quality balance.</p>
+  <p class="text-muted text-sm" style="margin-top:1rem;">⚠️ Powerful AI brains (Claude, Gemini, GPT-4) cost money per use. Free brains (Llama, Mistral) require expensive GPU hardware on-premise. The choice of "brain" determines the cost-quality balance — and this is one of the three gaps we'll cover shortly.</p>
 
   <!-- Promise vs Reality -->
   <h3 class="subsec-title"><i class="fa-solid fa-balance-scale"></i> Current State: Promise vs. Reality</h3>
+
+  <div class="pull-quote">
+    "This technology is real. The hype is justified. The only question is: <em>is it ready for enterprise use today?</em>"
+  </div>
 
   <div class="tbl-wrap">
     <table>
@@ -247,7 +267,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td>"Automate any task without coding"</td><td>Still requires technical setup & ongoing configuration</td></tr>
+        <tr><td>"Automate any task without coding"</td><td>Still requires technical setup &amp; ongoing configuration</td></tr>
         <tr><td>"Free and open-source"</td><td>Software is free; AI API costs underneath are not</td></tr>
         <tr><td>"Works like a human employee"</td><td>Current accuracy requires human verification for critical tasks</td></tr>
         <tr><td>"Runs 24/7 autonomously"</td><td>Autonomous operation is improving but not yet enterprise-grade</td></tr>
@@ -257,21 +277,27 @@
   </div>
 
   <div class="callout callout-info">
-    <div><strong>Balanced View:</strong> OpenClaw represents a real technological step forward. The question isn't whether this technology will matter — it will. The question is <strong>whether it's ready for ISC's specific operational environment today.</strong> The answer is: not yet, but it's worth watching closely.</div>
+    <div><strong>✅ Balanced View:</strong> OpenClaw represents a real technological step forward. The question isn't whether this technology will matter — it will. The question is <strong>whether it's ready for ISC's specific operational environment today.</strong> The answer is: not yet, but it's worth watching closely.</div>
+  </div>
+
+  <div class="section-hook">
+    <i class="fa-solid fa-arrow-down hook-arrow"></i>
+    <em>Here's the part that surprised even DK: OpenClaw isn't alone. Every major tech company on the planet is quietly building the exact same thing — and some are already ahead.</em>
   </div>
 </section>
 
 <!-- ══════════════════════════════════════════════════════════════
-     SECTION 2 — AI AGENT LANDSCAPE (NEW)
+     SECTION 2 — AI AGENT LANDSCAPE (+ CLAUDE SPOTLIGHT)
      ══════════════════════════════════════════════════════════════ -->
 <section class="section" id="s2">
+  <div class="chapter-div"><span>Chapter 3 of 9 · The Full Picture</span></div>
   <div class="sec-header">
     <span class="sec-num">2</span>
-    <h2><i class="fa-solid fa-globe"></i> The AI Agent Landscape</h2>
+    <h2><i class="fa-solid fa-globe"></i> The AI Agent Landscape 🌐</h2>
   </div>
 
   <div class="exec-box">
-    <p>OpenClaw is not an isolated experiment. It's part of a <strong>major industry trend</strong> — every major AI company is building "computer-use agents" that can operate software autonomously. Understanding this landscape is essential for ISC's long-term technology strategy.</p>
+    <p>OpenClaw is not an isolated experiment. It's part of a <strong>major industry trend</strong> — every major AI company is building "computer-use agents" that can operate software autonomously. Understanding this landscape is essential for ISC's long-term technology strategy. And this is precisely why the OpenClaw discussion matters beyond the tool itself.</p>
   </div>
 
   <h3 class="subsec-title"><i class="fa-solid fa-chess"></i> Who's Building What</h3>
@@ -289,46 +315,105 @@
       </thead>
       <tbody>
         <tr>
-          <td><strong>OpenClaw</strong></td>
+          <td>
+            <div class="brand-cell">
+              <span class="brand-logo brand-openclaw">🦀</span>
+              <strong>OpenClaw</strong>
+            </div>
+          </td>
           <td>OpenClaw Agent</td>
           <td><span class="badge badge-green">Open Source</span></td>
           <td><span class="badge badge-amber">Early</span></td>
           <td><span class="badge badge-amber">Not Yet</span></td>
         </tr>
-        <tr>
-          <td><strong>Anthropic (Claude)</strong></td>
+        <tr class="row-highlight-claude">
+          <td>
+            <div class="brand-cell">
+              <span class="brand-logo brand-anthropic">
+                <!-- Anthropic "A" geometric mark -->
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.28 3L14.5 15h-2.3l-.9-2.7H6.7L5.8 15H3.5L7.72 3h2.56zm-1.28 2.8L7.4 10.5h3.2L9 5.8z" fill="#D4730A"/>
+                </svg>
+              </span>
+              <strong>Anthropic (Claude)</strong>
+            </div>
+          </td>
           <td>Computer Use API</td>
           <td><span class="badge badge-blue">Commercial</span></td>
           <td><span class="badge badge-amber">Beta</span></td>
           <td><span class="badge badge-amber">Approaching</span></td>
         </tr>
         <tr>
-          <td><strong>OpenAI</strong></td>
+          <td>
+            <div class="brand-cell">
+              <span class="brand-logo brand-openai">
+                <!-- OpenAI logo mark -->
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16.1 7.3a4.1 4.1 0 00-.28-3.37A4.27 4.27 0 0011.1 2a4.27 4.27 0 00-3.2 1.44A4.1 4.1 0 004.67 4.9a4.27 4.27 0 00-2.83 2.07 4.1 4.1 0 00.5 4.78 4.1 4.1 0 00.28 3.37A4.27 4.27 0 006.9 16a4.26 4.26 0 003.19-1.44 4.1 4.1 0 003.24-1.46 4.27 4.27 0 002.83-2.07 4.1 4.1 0 00-.5-4.78l.44.05zM9 14.5a3.06 3.06 0 01-1.97-.7l.1-.05 3.26-1.88a.54.54 0 00.27-.47V7.54l1.38.8a.05.05 0 01.03.04v3.8A3.1 3.1 0 019 14.5zm-6.6-2.84a3.06 3.06 0 01-.37-2.07l.1.06L5.4 11.5a.54.54 0 00.54 0l3.98-2.3v1.59a.05.05 0 01-.02.04L6.6 12.73a3.1 3.1 0 01-4.2-1.07zm-.86-7.2A3.06 3.06 0 013.16 3l-.01.1v3.77a.54.54 0 00.27.47l3.98 2.3-1.38.8a.05.05 0 01-.05 0L2.69 8.55a3.1 3.1 0 01-.14-4.1zm11.4 2.65L9.96 4.82 11.34 4a.05.05 0 01.05 0l3.29 1.9a3.1 3.1 0 01-.47 5.59V7.73a.54.54 0 00-.27-.47v-.05zm1.37-2.08l-.1-.06-3.26-1.88a.54.54 0 00-.54 0L6.43 5.3V3.71a.05.05 0 01.02-.04l3.28-1.9a3.1 3.1 0 014.58 3.26zm-8.63 2.84l-1.38-.8a.05.05 0 01-.03-.04v-3.8a3.1 3.1 0 015.07-2.38l-.1.05-3.26 1.88a.54.54 0 00-.27.47v4.62H5.68zm.75-1.61L9 7.5l2.57 1.48v2.96L9 13.42 6.43 11.94V9.26z" fill="#fff"/>
+                </svg>
+              </span>
+              <strong>OpenAI</strong>
+            </div>
+          </td>
           <td>Operator / CUA</td>
           <td><span class="badge badge-blue">Commercial</span></td>
           <td><span class="badge badge-amber">Beta</span></td>
           <td><span class="badge badge-amber">Approaching</span></td>
         </tr>
         <tr>
-          <td><strong>Google (Gemini)</strong></td>
+          <td>
+            <div class="brand-cell">
+              <span class="brand-logo brand-google">
+                <!-- Gemini star-burst icon -->
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 1C9 5.4 5.4 9 1 9c4.4 0 8 3.6 8 8 0-4.4 3.6-8 8-8-4.4 0-8-3.6-8-8z" fill="url(#gemini-grad)"/>
+                  <defs>
+                    <linearGradient id="gemini-grad" x1="1" y1="1" x2="17" y2="17" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#4285F4"/>
+                      <stop offset="1" stop-color="#34A853"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </span>
+              <strong>Google (Gemini)</strong>
+            </div>
+          </td>
           <td>Agent Capabilities</td>
           <td><span class="badge badge-blue">Commercial</span></td>
           <td><span class="badge badge-green">Growing</span></td>
-          <td><span class="badge badge-green">Partial (API-level)</span></td>
+          <td><span class="badge badge-green">Partial (API)</span></td>
         </tr>
         <tr>
-          <td><strong>Nvidia</strong></td>
+          <td>
+            <div class="brand-cell">
+              <span class="brand-logo brand-nvidia" style="background:#76b900;color:#000;font-size:9px;font-weight:900;letter-spacing:-.5px;">NVDA</span>
+              <strong>Nvidia</strong>
+            </div>
+          </td>
           <td>AI Agent Infrastructure</td>
           <td><span class="badge badge-blue">Commercial</span></td>
           <td><span class="badge badge-amber">Early</span></td>
           <td><span class="badge badge-amber">Infrastructure Layer</span></td>
         </tr>
         <tr>
-          <td><strong>Microsoft</strong></td>
+          <td>
+            <div class="brand-cell">
+              <span class="brand-logo brand-microsoft">
+                <!-- Microsoft 4-square logo -->
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="1" y="1" width="7.5" height="7.5" fill="#F25022"/>
+                  <rect x="9.5" y="1" width="7.5" height="7.5" fill="#7FBA00"/>
+                  <rect x="1" y="9.5" width="7.5" height="7.5" fill="#00A4EF"/>
+                  <rect x="9.5" y="9.5" width="7.5" height="7.5" fill="#FFB900"/>
+                </svg>
+              </span>
+              <strong>Microsoft</strong>
+            </div>
+          </td>
           <td>Copilot Actions</td>
           <td><span class="badge badge-blue">Commercial</span></td>
           <td><span class="badge badge-green">Growing</span></td>
-          <td><span class="badge badge-green">Yes (M365 ecosystem)</span></td>
+          <td><span class="badge badge-green">Yes (M365)</span></td>
         </tr>
       </tbody>
     </table>
@@ -336,19 +421,103 @@
 
   <div class="insight-grid">
     <div class="insight-card">
-      <div class="ic-icon" style="color:var(--gold);"><i class="fa-solid fa-lightbulb"></i></div>
+      <div class="ic-icon" style="color:var(--gold);">💡</div>
       <h4>Why This Matters for ISC</h4>
-      <p>The AI agent concept that OpenClaw pioneered as open-source is now being built by the world's most reputable tech companies. Within 1-2 years, enterprise-grade, security-audited versions of this technology will exist from trusted vendors like Google, Microsoft, and Anthropic.</p>
+      <p>The AI agent concept that OpenClaw pioneered as open-source is now being built by the world's most reputable tech companies with billion-dollar budgets. Within 1-2 years, enterprise-grade, security-audited versions of this technology will exist from trusted vendors like Google, Microsoft, and Anthropic.</p>
     </div>
     <div class="insight-card">
-      <div class="ic-icon" style="color:var(--green);"><i class="fa-solid fa-shield-halved"></i></div>
+      <div class="ic-icon" style="color:var(--green);">🏗️</div>
       <h4>ISC's Strategic Position</h4>
-      <p>By building our data foundation on BigQuery now, ISC is creating <strong>AI-readiness</strong>. When enterprise AI agents mature, our clean data schema means instant integration capability. We're not waiting — we're preparing.</p>
+      <p>By building our data foundation on BigQuery now, ISC is creating <strong>AI-readiness</strong>. When enterprise AI agents mature, our clean data schema means instant integration capability. We're not waiting — we're preparing. And that preparation has a real dollar value.</p>
     </div>
   </div>
 
-  <div class="callout callout-gold">
-    <div><strong>DK's Assessment:</strong> OpenClaw deserves credit as an open-source pioneer. But for ISC's enterprise needs, we should wait for the big players (Claude, Gemini, OpenAI) to deliver security-audited, enterprise-grade versions of this concept. That's likely 12-24 months away. In the meantime, our current automation approach is the right path.</div>
+  <!-- ── CLAUDE SPOTLIGHT ── -->
+  <div class="claude-spotlight">
+    <div class="cs-header">
+      <div class="cs-logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16.44 4.67L22.25 22.75H18.67L17.27 18.5H10.73L9.33 22.75H5.75L11.56 4.67h4.88zm-2.44 4.2L11.5 15.6h5L14 8.87z" fill="#D4730A"/>
+        </svg>
+        <span>Claude Computer Use</span>
+        <span class="cs-badge">Special Focus</span>
+      </div>
+      <h3>Why Claude Deserves Kent's Attention 🔦</h3>
+    </div>
+
+    <p class="prose">Of all the companies building AI agents, <strong>Anthropic's Claude</strong> is the one DK recommends ISC watch most closely. Here's why it's different from the others:</p>
+
+    <div class="feature-grid cols-2" style="margin-top:1.5rem;">
+      <div class="feature-card">
+        <div class="fc-icon" style="color:#D4730A;">🔗</div>
+        <h4>Native Google Stack Integration</h4>
+        <p>Claude integrates directly with Google Workspace APIs — the same stack ISC already uses. Claude can read from BigQuery, write to Sheets, send via Gmail, and query your data without any middleware.</p>
+      </div>
+      <div class="feature-card">
+        <div class="fc-icon" style="color:#D4730A;">🛡️</div>
+        <h4>Best-in-Class Safety Research</h4>
+        <p>Anthropic was founded specifically to build safe AI. Their enterprise security practices are among the most rigorous in the industry — critical for a company like ISC handling supplier and customer data.</p>
+      </div>
+      <div class="feature-card">
+        <div class="fc-icon" style="color:#D4730A;">💬</div>
+        <h4>Long-Form Reasoning</h4>
+        <p>Claude excels at reading complex documents, understanding context, and making nuanced decisions — exactly what ISC needs for supply chain analysis and exception handling.</p>
+      </div>
+      <div class="feature-card">
+        <div class="fc-icon" style="color:#D4730A;">🏢</div>
+        <h4>Enterprise Deployment Path</h4>
+        <p>Anthropic offers enterprise contracts with SOC 2 compliance, custom data residency, and dedicated support — the compliance checklist ISC will need when deploying AI agents at scale.</p>
+      </div>
+    </div>
+
+    <h4 class="subsec-title" style="margin-top:2rem;"><i class="fa-solid fa-play-circle"></i> What ISC + Claude Could Look Like (2027 Scenario)</h4>
+
+    <div class="scenario-flow">
+      <div class="sf-step">
+        <div class="sf-num">1</div>
+        <div class="sf-body">
+          <strong>06:00 · BigQuery Query</strong>
+          <p>Claude queries ISC's BigQuery warehouse, identifies 3 shortage items exceeding threshold</p>
+        </div>
+      </div>
+      <div class="sf-arrow">→</div>
+      <div class="sf-step">
+        <div class="sf-num">2</div>
+        <div class="sf-body">
+          <strong>06:05 · Decision Made</strong>
+          <p>Claude cross-references supplier lead times, selects optimal PO quantities for each shortage</p>
+        </div>
+      </div>
+      <div class="sf-arrow">→</div>
+      <div class="sf-step">
+        <div class="sf-num">3</div>
+        <div class="sf-body">
+          <strong>06:10 · Draft Created</strong>
+          <p>Claude drafts PO request email in Vietnamese, attaches shortage report, flags for human approval</p>
+        </div>
+      </div>
+      <div class="sf-arrow">→</div>
+      <div class="sf-step">
+        <div class="sf-num">4</div>
+        <div class="sf-body">
+          <strong>07:00 · Human Reviews</strong>
+          <p>Purchasing manager reviews 3 items, approves with one click — before morning coffee is finished</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout callout-gold" style="margin-top:1.5rem;">
+      <div><strong>🎯 DK's Recommendation:</strong> When ISC evaluates enterprise AI agents in 2027, <strong>Claude should be the first pilot candidate</strong> — given ISC's existing Google infrastructure, Claude's native compatibility means the fastest path from "pilot" to "production." DK will track Anthropic's enterprise roadmap in weekly reports.</div>
+    </div>
+  </div>
+
+  <div class="callout callout-gold" style="margin-top:1.5rem;">
+    <div><strong>📌 DK's Assessment:</strong> OpenClaw deserves credit as an open-source pioneer. But for ISC's enterprise needs, we should wait for the big players (Claude, Gemini, OpenAI) to deliver security-audited, enterprise-grade versions. That's likely 12–24 months away. In the meantime, our current automation approach is the right path.</div>
+  </div>
+
+  <div class="section-hook">
+    <i class="fa-solid fa-arrow-down hook-arrow"></i>
+    <em>So if this technology is this powerful, and this many serious companies are building it — why can't ISC use it today? Three specific, solvable reasons.</em>
   </div>
 </section>
 
@@ -356,13 +525,14 @@
      SECTION 3 — 3 GAPS TO CLOSE
      ══════════════════════════════════════════════════════════════ -->
 <section class="section" id="s3">
+  <div class="chapter-div"><span>Chapter 4 of 9 · The Honest Assessment</span></div>
   <div class="sec-header">
     <span class="sec-num">3</span>
-    <h2><i class="fa-solid fa-shield-halved"></i> 3 Gaps That Need to Close</h2>
+    <h2><i class="fa-solid fa-shield-halved"></i> 3 Gaps That Need to Close 🔒</h2>
   </div>
 
   <div class="exec-box">
-    <p>These are not permanent dealbreakers — they are <strong>gaps that the industry is actively working to close.</strong> Each one maps directly to ISC's current infrastructure, data sensitivity, and operational scale. When these gaps are resolved, our assessment will change.</p>
+    <p>These are not permanent dealbreakers — they are <strong>gaps that the industry is actively working to close.</strong> Each one maps directly to ISC's current infrastructure, data sensitivity, and operational scale. When these gaps are resolved, our assessment will change — and DK will report it immediately.</p>
   </div>
 
   <!-- GAP 1 -->
@@ -380,17 +550,17 @@
         <p>To automate tasks, OpenClaw needs deep access to your computer — files, email, databases. ISC's M1-M4 SCM system holds pricing logic, customer data, and supplier relationships. Any tool with this level of access needs a proven security track record.</p>
       </div>
       <div class="gap-col">
-        <h4>What's Missing</h4>
+        <h4>What's Currently Missing</h4>
         <ul>
-          <li>No SOC 2 or ISO 27001 certification</li>
-          <li>No third-party security audit published</li>
-          <li>Open-source code is transparent but unaudited for enterprise deployment</li>
-          <li>No formal data handling guarantees</li>
+          <li>❌ No SOC 2 or ISO 27001 certification</li>
+          <li>❌ No third-party security audit published</li>
+          <li>❌ Open-source code is transparent but unaudited</li>
+          <li>❌ No formal data handling guarantees</li>
         </ul>
       </div>
     </div>
     <div class="gap-resolve">
-      <strong><i class="fa-solid fa-arrow-right"></i> What would change our assessment:</strong> An enterprise security audit (SOC 2 / ISO 27001), or a major corporation publicly deploying it with documented security review.
+      <strong><i class="fa-solid fa-arrow-right"></i> What would change our assessment:</strong> An enterprise security audit (SOC 2 / ISO 27001), or a major corporation publicly deploying it with documented security review. DK is monitoring this.
     </div>
   </div>
 
@@ -411,15 +581,15 @@
       <div class="gap-col">
         <h4>What ISC Would Need</h4>
         <ul>
-          <li>1 dedicated isolated server or workstation</li>
-          <li>Network isolation setup (firewall, separate VLAN)</li>
-          <li>IT maintenance for the isolated environment</li>
-          <li>Estimated: $2,000-$5,000 USD upfront</li>
+          <li>🖥️ 1 dedicated isolated server or workstation</li>
+          <li>🔐 Network isolation (firewall, separate VLAN)</li>
+          <li>🛠️ IT maintenance for the isolated environment</li>
+          <li>💵 Estimated: $2,000–$5,000 USD upfront</li>
         </ul>
       </div>
     </div>
     <div class="gap-resolve">
-      <strong><i class="fa-solid fa-arrow-right"></i> What would change our assessment:</strong> Cloud-hosted AI agent services (like Gemini or Claude offering managed agent environments) would eliminate the hardware requirement entirely.
+      <strong><i class="fa-solid fa-arrow-right"></i> What would change our assessment:</strong> Cloud-hosted AI agent services (like Gemini or Claude offering managed agent environments) would eliminate the hardware requirement entirely. This is already happening.
     </div>
   </div>
 
@@ -436,28 +606,28 @@
       <div class="gap-col">
         <h4>Option A — Pay-per-use AI</h4>
         <ul>
-          <li>Every task calls an AI API — billed per 1,000 tokens</li>
-          <li>24/7 operation = thousands of calls/day</li>
-          <li>Monthly estimate: <strong>$500-$3,000+ USD</strong></li>
-          <li>Cost depends on task complexity — hard to predict</li>
+          <li>📊 Every task calls an AI API — billed per token</li>
+          <li>⏰ 24/7 operation = thousands of calls/day</li>
+          <li>💰 Monthly estimate: <strong>$500–$3,000+ USD</strong></li>
+          <li>❓ Cost depends on task complexity — unpredictable</li>
         </ul>
       </div>
       <div class="gap-col">
         <h4>Option B — Free Local AI</h4>
         <ul>
-          <li>No API cost, but GPU server needed: <strong>$3,000-$8,000</strong></li>
-          <li>Current free models lack accuracy for SCM data</li>
-          <li>Risk of logic errors in critical calculations</li>
-          <li>Improving rapidly — this gap is shrinking</li>
+          <li>✅ No API cost — but GPU server needed: <strong>$3,000–$8,000</strong></li>
+          <li>⚠️ Current free models lack accuracy for SCM data</li>
+          <li>📉 Risk of logic errors in critical calculations</li>
+          <li>📈 Improving rapidly — this gap is actively shrinking</li>
         </ul>
       </div>
     </div>
     <div class="gap-resolve">
-      <strong><i class="fa-solid fa-arrow-right"></i> What would change our assessment:</strong> Fixed-price enterprise subscriptions from AI vendors, or local models reaching sufficient accuracy for SCM calculations.
+      <strong><i class="fa-solid fa-arrow-right"></i> What would change our assessment:</strong> Fixed-price enterprise subscriptions from AI vendors, or local models reaching sufficient accuracy for SCM calculations. Both are expected within 12–18 months.
     </div>
   </div>
 
-  <!-- Risk Matrix -->
+  <!-- Gap Summary Matrix -->
   <h3 class="subsec-title"><i class="fa-solid fa-table"></i> Gap Summary Matrix</h3>
   <div class="tbl-wrap">
     <table>
@@ -465,11 +635,16 @@
         <tr><th>Gap Area</th><th>Current Status</th><th>ISC Impact</th><th>Likely Resolution</th></tr>
       </thead>
       <tbody>
-        <tr><td><strong>Security Audit</strong></td><td><span class="badge badge-red">Unresolved</span></td><td>Cannot connect to ISC systems</td><td>12-18 months (enterprise vendors)</td></tr>
-        <tr><td><strong>Infrastructure</strong></td><td><span class="badge badge-amber">Solvable</span></td><td>$2k-$5k hardware cost</td><td>Cloud-hosted agents emerging</td></tr>
-        <tr><td><strong>Cost Control</strong></td><td><span class="badge badge-amber">Solvable</span></td><td>Unpredictable monthly spend</td><td>Fixed-price plans coming</td></tr>
+        <tr><td><strong>🔒 Security Audit</strong></td><td><span class="badge badge-red">Unresolved</span></td><td>Cannot connect to ISC systems</td><td>12–18 months (enterprise vendors)</td></tr>
+        <tr><td><strong>🖥️ Infrastructure</strong></td><td><span class="badge badge-amber">Solvable</span></td><td>$2k–$5k hardware cost</td><td>Cloud-hosted agents emerging now</td></tr>
+        <tr><td><strong>💸 Cost Control</strong></td><td><span class="badge badge-amber">Solvable</span></td><td>Unpredictable monthly spend</td><td>Fixed-price plans coming in 2026</td></tr>
       </tbody>
     </table>
+  </div>
+
+  <div class="section-hook">
+    <i class="fa-solid fa-arrow-down hook-arrow"></i>
+    <em>Now that we understand the gaps — how does OpenClaw compare to what ISC already has running today? The comparison is more nuanced than you might expect.</em>
   </div>
 </section>
 
@@ -477,25 +652,30 @@
      SECTION 4 — OPENCLAW VS GEMINI
      ══════════════════════════════════════════════════════════════ -->
 <section class="section" id="s4">
+  <div class="chapter-div"><span>Chapter 5 of 9 · The Fair Comparison</span></div>
   <div class="sec-header">
     <span class="sec-num">4</span>
-    <h2><i class="fa-solid fa-scale-balanced"></i> OpenClaw vs. Gemini: A Fair Comparison</h2>
+    <h2><i class="fa-solid fa-scale-balanced"></i> OpenClaw vs. Gemini: A Fair Comparison ⚖️</h2>
   </div>
 
-  <p class="prose">OpenClaw and Gemini serve fundamentally different roles. Comparing them is like comparing a robot arm to an analyst — both useful, but for different tasks. Understanding this distinction is key to ISC's technology strategy.</p>
+  <p class="prose">OpenClaw and Gemini serve fundamentally different roles. Comparing them is like comparing a robot arm to an analyst — both useful, but for different jobs. Understanding this distinction is key to ISC's technology strategy.</p>
 
   <!-- Analogy -->
   <div class="analogy-grid">
     <div class="analogy-card">
       <div class="analogy-emoji">✨</div>
-      <strong>Gemini = A skilled analyst</strong>
-      <p>Sitting at a desk, following precise instructions. You give Gemini data, it calculates the answer, delivers results. Fast, reliable, affordable.</p>
+      <strong>Gemini = A Skilled Analyst</strong>
+      <p>Sitting at a desk with your data. You give Gemini structured data, it runs calculations, delivers structured results. Fast, reliable, and extremely affordable for ISC's current needs.</p>
     </div>
     <div class="analogy-card">
       <div class="analogy-emoji">🦀</div>
-      <strong>OpenClaw = A robot assistant</strong>
-      <p>Can physically operate any computer interface. Adds GUI interaction capabilities, but also complexity and risk. Powerful for legacy systems.</p>
+      <strong>OpenClaw = A Robot Assistant</strong>
+      <p>Can physically operate any computer interface. Adds GUI interaction capability, but also complexity and risk. Most powerful for legacy systems with no API access.</p>
     </div>
+  </div>
+
+  <div class="pull-quote">
+    "OpenClaw and Gemini don't compete — they complement. The question is which ISC needs <em>right now</em>."
   </div>
 
   <!-- Comparison Table -->
@@ -503,35 +683,40 @@
   <div class="tbl-wrap">
     <table>
       <thead>
-        <tr><th>Criterion</th><th>OpenClaw Agent</th><th>Gemini Direct</th><th>Future Potential</th></tr>
+        <tr><th>Criterion</th><th>🦀 OpenClaw Agent</th><th>✨ Gemini Direct</th><th>🔮 Future Potential</th></tr>
       </thead>
       <tbody>
-        <tr><td><strong>Purpose</strong></td><td>Automate GUI / visual tasks</td><td class="td-green">Process data & logic tasks</td><td>Converging — both expanding</td></tr>
+        <tr><td><strong>Purpose</strong></td><td>Automate GUI / visual tasks</td><td class="td-green">Process data &amp; logic tasks</td><td>Converging — both expanding</td></tr>
         <tr><td><strong>Best For</strong></td><td class="td-green">Legacy software with no API</td><td class="td-green">Deterministic calculations</td><td>AI agents will handle both</td></tr>
         <tr><td><strong>ISC Use Case Fit</strong></td><td>Low today — our tasks are data-focused</td><td class="td-green">High — matches our needs now</td><td>Could become relevant when mature</td></tr>
-        <tr><td><strong>Security Model</strong></td><td>Needs full system access</td><td class="td-green">API call only — data stays in DB</td><td>Enterprise sandboxing improving</td></tr>
+        <tr><td><strong>Security Model</strong></td><td>Needs full system access</td><td class="td-green">API call only — data in DB</td><td>Enterprise sandboxing improving</td></tr>
         <tr><td><strong>Enterprise Audit</strong></td><td>None available yet</td><td class="td-green">SOC 2, GDPR compliant</td><td>Expected from major vendors</td></tr>
-        <tr><td><strong>ISC Monthly Cost</strong></td><td>$500-$3,000+ (variable)</td><td class="td-green">~$10-$30 (actual usage)</td><td>Prices dropping industrywide</td></tr>
+        <tr><td><strong>ISC Monthly Cost</strong></td><td>$500–$3,000+ (variable)</td><td class="td-green">~$10–$30 (actual usage)</td><td>Prices dropping industrywide</td></tr>
         <tr><td><strong>Error Handling</strong></td><td>Can fail silently</td><td class="td-green">Returns structured error codes</td><td>Improving with each release</td></tr>
         <tr><td><strong>Open Source</strong></td><td class="td-green">Yes — community innovation</td><td>No — vendor controlled</td><td>Both models have value</td></tr>
-        <tr><td><strong>Legacy System Access</strong></td><td class="td-green">Yes — can operate any GUI</td><td>No — needs API or data export</td><td>Key differentiator for OpenClaw</td></tr>
-        <tr><td><strong>Already at ISC?</strong></td><td>Not deployed</td><td class="td-green">Running in production</td><td>—</td></tr>
+        <tr><td><strong>Legacy System Access</strong></td><td class="td-green">Yes — operates any GUI</td><td>No — needs API or data export</td><td>Key differentiator for OpenClaw</td></tr>
+        <tr><td><strong>Already at ISC?</strong></td><td>Not deployed</td><td class="td-green">✅ Running in production</td><td>—</td></tr>
       </tbody>
     </table>
   </div>
 
   <!-- Where OpenClaw Shines -->
   <h3 class="subsec-title"><i class="fa-solid fa-star"></i> Where OpenClaw Would Actually Excel</h3>
-  <p class="prose">Fairness requires acknowledging OpenClaw's genuine strengths:</p>
+  <p class="prose">Fairness requires acknowledging OpenClaw's genuine strengths. These are real:</p>
   <div class="feature-grid cols-2">
     <div class="step-card"><i class="fa-solid fa-check" style="color:var(--green);"></i> Navigating <strong>legacy software</strong> with no API (old ERP systems, government portals)</div>
-    <div class="step-card"><i class="fa-solid fa-check" style="color:var(--green);"></i> One-time <strong>data migration</strong> from outdated Windows applications</div>
-    <div class="step-card"><i class="fa-solid fa-check" style="color:var(--green);"></i> <strong>Personal productivity</strong> — automating repetitive desktop tasks for individuals</div>
-    <div class="step-card"><i class="fa-solid fa-check" style="color:var(--green);"></i> <strong>QA testing</strong> teams who need to simulate user interactions with UIs</div>
+    <div class="step-card"><i class="fa-solid fa-check" style="color:var(--green);"></i> One-time <strong>data migration</strong> from outdated Windows applications to modern systems</div>
+    <div class="step-card"><i class="fa-solid fa-check" style="color:var(--green);"></i> <strong>Personal productivity</strong> — automating repetitive desktop tasks for individuals (non-sensitive data)</div>
+    <div class="step-card"><i class="fa-solid fa-check" style="color:var(--green);"></i> <strong>QA testing</strong> teams who need to simulate user interactions across many scenarios</div>
   </div>
 
   <div class="callout callout-info">
     <div>None of these match ISC's current automation priorities. Our data already lives in BigQuery — a modern, API-accessible system that Gemini can reach directly. But if ISC ever needs to automate legacy systems that lack APIs, this category of tool will be the answer.</div>
+  </div>
+
+  <div class="section-hook">
+    <i class="fa-solid fa-arrow-down hook-arrow"></i>
+    <em>That's the head-to-head comparison. But can any of this realistically help ISC's actual departments today — Supply Chain, Production, Finance? Let's look department by department.</em>
   </div>
 </section>
 
@@ -539,16 +724,17 @@
      SECTION 5 — CAN ISC USE IT?
      ══════════════════════════════════════════════════════════════ -->
 <section class="section" id="s5">
+  <div class="chapter-div"><span>Chapter 6 of 9 · The Practical Answer</span></div>
   <div class="sec-header">
     <span class="sec-num">5</span>
-    <h2><i class="fa-solid fa-building"></i> Can Our Teams Use OpenClaw?</h2>
+    <h2><i class="fa-solid fa-building"></i> Can Our Teams Use OpenClaw? 🏢</h2>
   </div>
 
   <div class="callout callout-gold">
-    <div><strong>Kent's Original Question:</strong> <em>"Vậy giá trị sử dụng cho cá nhân, cho từng bộ phận để Kaizen, 5S, 7-wastes, tăng hiệu suất?"</em><br><span style="color:var(--text-muted);font-size:0.9rem;">Translation: "What value does it have for individuals and departments to do Kaizen, 5S, reduce 7-wastes, improve efficiency?"</span></div>
+    <div><strong>🎯 Kent's Original Question:</strong> <em>"Vậy giá trị sử dụng cho cá nhân, cho từng bộ phận để Kaizen, 5S, 7-wastes, tăng hiệu suất?"</em><br><span style="color:var(--text-muted);font-size:0.9rem;">Translation: "What value does it have for individuals and departments to do Kaizen, 5S, reduce 7-Wastes, and improve efficiency?"</span><br><span style="color:var(--gold);font-size:0.9rem;margin-top:0.5rem;display:block;">This is exactly the right question — and ISC is already answering it, just with a different (better-fit) tool.</span></div>
   </div>
 
-  <p class="prose">This is exactly the right question. The theory is sound — AI agents that eliminate repetitive tasks would directly address Waiting, Defects, and Over-processing waste. The current reality is more nuanced: OpenClaw creates overhead for typical office users today, but the concept behind Kent's question will be answered by mature AI agents in the near future.</p>
+  <p class="prose" style="margin-bottom:1.5rem;">The theory is sound — AI agents that eliminate repetitive tasks would directly address <strong>Waiting, Defects, and Over-processing waste</strong>. The current reality: OpenClaw creates overhead for typical office users today. But ISC's existing automation approach already delivers exactly what Kent described — right now.</p>
 
   <!-- Department Assessment -->
   <h3 class="subsec-title"><i class="fa-solid fa-table"></i> Department Readiness Assessment</h3>
@@ -558,19 +744,24 @@
         <tr><th>Department</th><th>OpenClaw Today?</th><th>ISC Current Solution</th><th>Status</th></tr>
       </thead>
       <tbody>
-        <tr><td><strong>Supply Chain (SC)</strong></td><td><span class="badge badge-amber">Not needed</span></td><td>BigQuery + Apps Script automation</td><td><span class="badge badge-green">Live</span></td></tr>
-        <tr><td><strong>Master Plan (MPL)</strong></td><td><span class="badge badge-amber">Not needed</span></td><td>Scheduling engine & SC demand sync</td><td><span class="badge badge-gold">Q2 2026</span></td></tr>
-        <tr><td><strong>Customer Service (CS)</strong></td><td><span class="badge badge-amber">Not needed</span></td><td>M1 CS Status Protocol</td><td><span class="badge badge-gold">Q2 2026</span></td></tr>
-        <tr><td><strong>Production (PRD)</strong></td><td><span class="badge badge-amber">Not needed</span></td><td>Completion dashboard & sync</td><td><span class="badge badge-outline">Q3 2026</span></td></tr>
-        <tr><td><strong>Quality Control (QC)</strong></td><td><span class="badge badge-amber">Not needed</span></td><td>Defect pattern tracking</td><td><span class="badge badge-outline">Q3 2026</span></td></tr>
-        <tr><td><strong>Finance / Accounting</strong></td><td><span class="badge badge-amber">Not needed</span></td><td>Invoice matching automation</td><td><span class="badge badge-outline">Q4 2026</span></td></tr>
-        <tr><td><strong>Individual (Tech Staff)</strong></td><td><span class="badge badge-green">Experiment OK</span></td><td>Personal tasks, non-ISC data only</td><td><span class="badge badge-outline">Ongoing</span></td></tr>
+        <tr><td><strong>🔗 Supply Chain (SC)</strong></td><td><span class="badge badge-amber">Not needed</span></td><td>BigQuery + Apps Script automation</td><td><span class="badge badge-green">✅ Live</span></td></tr>
+        <tr><td><strong>📅 Master Plan (MPL)</strong></td><td><span class="badge badge-amber">Not needed</span></td><td>Scheduling engine &amp; SC demand sync</td><td><span class="badge badge-gold">Q2 2026</span></td></tr>
+        <tr><td><strong>📞 Customer Service (CS)</strong></td><td><span class="badge badge-amber">Not needed</span></td><td>M1 CS Status Protocol</td><td><span class="badge badge-gold">Q2 2026</span></td></tr>
+        <tr><td><strong>🏭 Production (PRD)</strong></td><td><span class="badge badge-amber">Not needed</span></td><td>Completion dashboard &amp; sync</td><td><span class="badge badge-outline">Q3 2026</span></td></tr>
+        <tr><td><strong>🔬 Quality Control (QC)</strong></td><td><span class="badge badge-amber">Not needed</span></td><td>Defect pattern tracking</td><td><span class="badge badge-outline">Q3 2026</span></td></tr>
+        <tr><td><strong>💼 Finance / Accounting</strong></td><td><span class="badge badge-amber">Not needed</span></td><td>Invoice matching automation</td><td><span class="badge badge-outline">Q4 2026</span></td></tr>
+        <tr><td><strong>👩‍💻 Individual (Tech Staff)</strong></td><td><span class="badge badge-green">Experiment OK</span></td><td>Personal tasks, non-ISC data only</td><td><span class="badge badge-outline">Ongoing</span></td></tr>
       </tbody>
     </table>
   </div>
 
   <div class="callout callout-success">
-    <div><strong>The Kaizen Opportunity Is Real.</strong> The automation vision Kent identified is valid and important. The answer isn't that AI agents are wrong — it's that ISC already has a safer, proven path delivering exactly those benefits today. And when enterprise AI agents mature, we'll be ready to adopt them instantly.</div>
+    <div><strong>✅ The Kaizen Opportunity Is Real.</strong> The automation vision Kent identified is valid and important. The answer isn't that AI agents are wrong for ISC — it's that ISC already has a safer, proven path delivering exactly those benefits today. And when enterprise AI agents mature, we'll be ready to adopt them instantly.</div>
+  </div>
+
+  <div class="section-hook">
+    <i class="fa-solid fa-arrow-down hook-arrow"></i>
+    <em>The answer is: we don't need OpenClaw yet — because what ISC has already built is working. The numbers speak for themselves.</em>
   </div>
 </section>
 
@@ -578,27 +769,28 @@
      SECTION 6 — OUR PROVEN PATH
      ══════════════════════════════════════════════════════════════ -->
 <section class="section" id="s6">
+  <div class="chapter-div"><span>Chapter 7 of 9 · What's Working Now</span></div>
   <div class="sec-header">
     <span class="sec-num">6</span>
-    <h2><i class="fa-solid fa-chart-gantt"></i> What We're Doing Instead</h2>
+    <h2><i class="fa-solid fa-chart-gantt"></i> What We're Doing Instead ✅</h2>
   </div>
 
   <div class="exec-box">
-    <p>ISC has already deployed a reliable version of the same vision: <strong>intelligent automation that eliminates the 7-Wastes</strong> without the security risks. Here's what's running right now — and what it's saving.</p>
+    <p>ISC has already deployed a reliable version of the same vision: <strong>intelligent automation that eliminates the 7-Wastes</strong> without the security risks. Here's what's running right now — and exactly what it's saving the company.</p>
   </div>
 
   <!-- Live System -->
   <h3 class="subsec-title"><i class="fa-solid fa-circle-check" style="color:var(--green);"></i> Supply Chain Automation: Already Live</h3>
   <div class="feature-grid cols-2">
     <div class="feature-card fc-green">
-      <div class="fc-icon"><i class="fa-solid fa-bolt"></i></div>
+      <div class="fc-icon">⚡</div>
       <h4>Automated Shortage Calculation</h4>
-      <p>Runs every business day at 06:00. Zero manual Excel work required.</p>
+      <p>Runs every business day at 06:00. Zero manual Excel work required. The team wakes up to a solved problem.</p>
     </div>
     <div class="feature-card fc-green">
-      <div class="fc-icon"><i class="fa-solid fa-envelope-circle-check"></i></div>
+      <div class="fc-icon">📧</div>
       <h4>Auto-email to Purchasing</h4>
-      <p>Exact shortage list delivered before the team arrives at work.</p>
+      <p>Exact shortage list delivered before the team arrives at work. Purchasing starts their day with actionable data, not a blank spreadsheet.</p>
     </div>
   </div>
 
@@ -631,18 +823,19 @@
   </div>
 
   <!-- 7-Wastes Table -->
-  <h3 class="subsec-title"><i class="fa-solid fa-recycle"></i> How Data Automation Targets the 7-Wastes</h3>
+  <h3 class="subsec-title"><i class="fa-solid fa-recycle"></i> How Data Automation Directly Targets the 7-Wastes</h3>
+  <p class="prose" style="margin-bottom:1.2rem;">Kent asked about 7-Wastes. Here's the direct mapping — waste eliminated by automation <em>already live at ISC</em>:</p>
   <div class="tbl-wrap">
     <table>
-      <thead><tr><th>Waste Type</th><th>Old Problem at ISC</th><th>Automation Solution</th></tr></thead>
+      <thead><tr><th>Waste Type</th><th>Old Problem at ISC</th><th>✅ Automation Solution</th></tr></thead>
       <tbody>
-        <tr><td><strong>Waiting</strong></td><td>Waiting for daily Excel reports to be compiled</td><td class="td-green">Auto-runs at 06:00 every business day</td></tr>
-        <tr><td><strong>Defects</strong></td><td>Manual formula errors (#REF!, wrong cell references)</td><td class="td-green">Deterministic SQL = zero formula errors</td></tr>
-        <tr><td><strong>Over-processing</strong></td><td>Reprocessing same data 3x per week</td><td class="td-green">Single source of truth — BigQuery schema</td></tr>
-        <tr><td><strong>Motion</strong></td><td>Opening 5 different files to get one answer</td><td class="td-green">One dashboard, all data in one place</td></tr>
-        <tr><td><strong>Transportation</strong></td><td>Emailing Excel files back and forth</td><td class="td-green">Auto-email with fully processed data</td></tr>
-        <tr><td><strong>Info Waste</strong></td><td>Outdated spreadsheets in multiple locations</td><td class="td-green">Real-time BigQuery database — always current</td></tr>
-        <tr><td><strong>Overproduction</strong></td><td>Reports nobody reads, emailed to everyone</td><td class="td-green">Targeted alerts to the right person only</td></tr>
+        <tr><td><strong>⏳ Waiting</strong></td><td>Waiting for daily Excel reports to be compiled</td><td class="td-green">Auto-runs at 06:00 every business day</td></tr>
+        <tr><td><strong>⚠️ Defects</strong></td><td>Manual formula errors (#REF!, wrong cell references)</td><td class="td-green">Deterministic SQL = zero formula errors</td></tr>
+        <tr><td><strong>🔄 Over-processing</strong></td><td>Reprocessing same data 3× per week</td><td class="td-green">Single source of truth — BigQuery schema</td></tr>
+        <tr><td><strong>🏃 Motion</strong></td><td>Opening 5 different files to get one answer</td><td class="td-green">One dashboard, all data in one place</td></tr>
+        <tr><td><strong>📦 Transportation</strong></td><td>Emailing Excel files back and forth</td><td class="td-green">Auto-email with fully processed data</td></tr>
+        <tr><td><strong>📋 Info Waste</strong></td><td>Outdated spreadsheets in multiple locations</td><td class="td-green">Real-time BigQuery — always current</td></tr>
+        <tr><td><strong>📊 Overproduction</strong></td><td>Reports nobody reads, emailed to everyone</td><td class="td-green">Targeted alerts to the right person only</td></tr>
       </tbody>
     </table>
   </div>
@@ -660,21 +853,189 @@
   </div>
 
   <!-- Kaizen Metrics -->
-  <h3 class="subsec-title"><i class="fa-solid fa-chart-line"></i> Kaizen Impact Metrics</h3>
+  <h3 class="subsec-title"><i class="fa-solid fa-chart-line"></i> Kaizen Impact — Hours Reclaimed</h3>
   <div class="tbl-wrap">
     <table>
       <thead><tr><th>Department</th><th>Initiative</th><th>Hours Saved / Week</th><th>Status</th></tr></thead>
       <tbody>
-        <tr><td><strong>Supply Chain</strong></td><td>Shortage auto-calculation</td><td class="td-green"><strong>14 hrs</strong></td><td><span class="badge badge-green">Live</span></td></tr>
-        <tr><td><strong>Supply Chain</strong></td><td>PO matching engine</td><td class="td-green"><strong>6 hrs</strong></td><td><span class="badge badge-green">Live</span></td></tr>
-        <tr><td><strong>Master Plan</strong></td><td>Scheduling & SC demand sync</td><td>~6 hrs (est.)</td><td><span class="badge badge-gold">Q2 2026</span></td></tr>
-        <tr><td><strong>Customer Service</strong></td><td>M1 CS Protocol</td><td>~4 hrs (est.)</td><td><span class="badge badge-gold">Q2 2026</span></td></tr>
-        <tr><td><strong>Production</strong></td><td>Scheduling dashboard</td><td>~8 hrs (est.)</td><td><span class="badge badge-outline">Q3 2026</span></td></tr>
-        <tr><td><strong>QC</strong></td><td>Defect pattern tracking</td><td>~5 hrs (est.)</td><td><span class="badge badge-outline">Q3 2026</span></td></tr>
-        <tr><td><strong>Finance</strong></td><td>Invoice matching</td><td>~10 hrs (est.)</td><td><span class="badge badge-outline">Q3 2026</span></td></tr>
+        <tr><td><strong>🔗 Supply Chain</strong></td><td>Shortage auto-calculation</td><td class="td-green"><strong>14 hrs</strong></td><td><span class="badge badge-green">✅ Live</span></td></tr>
+        <tr><td><strong>🔗 Supply Chain</strong></td><td>PO matching engine</td><td class="td-green"><strong>6 hrs</strong></td><td><span class="badge badge-green">✅ Live</span></td></tr>
+        <tr><td><strong>📅 Master Plan</strong></td><td>Scheduling &amp; SC demand sync</td><td>~6 hrs (est.)</td><td><span class="badge badge-gold">Q2 2026</span></td></tr>
+        <tr><td><strong>📞 Customer Service</strong></td><td>M1 CS Protocol</td><td>~4 hrs (est.)</td><td><span class="badge badge-gold">Q2 2026</span></td></tr>
+        <tr><td><strong>🏭 Production</strong></td><td>Scheduling dashboard</td><td>~8 hrs (est.)</td><td><span class="badge badge-outline">Q3 2026</span></td></tr>
+        <tr><td><strong>🔬 QC</strong></td><td>Defect pattern tracking</td><td>~5 hrs (est.)</td><td><span class="badge badge-outline">Q3 2026</span></td></tr>
+        <tr><td><strong>💼 Finance</strong></td><td>Invoice matching</td><td>~10 hrs (est.)</td><td><span class="badge badge-outline">Q4 2026</span></td></tr>
         <tr class="row-gold"><td><strong>TOTAL</strong></td><td><em>Full roadmap</em></td><td><strong style="color:var(--gold-bright);font-size:1.1rem;">53+ hrs/week</strong></td><td><span class="badge badge-gold">2026 Roadmap</span></td></tr>
       </tbody>
     </table>
+  </div>
+
+  <div class="pull-quote">
+    "53 hours saved per week. That's more than one full-time employee — recovered through automation, without a single new hire."
+  </div>
+
+  <div class="section-hook">
+    <i class="fa-solid fa-arrow-down hook-arrow"></i>
+    <em>And this is just Level 1 of what's possible. Here's what Level 5 — the Dark Office that Kent has been reading about — actually looks like for ISC specifically.</em>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════
+     SECTION 6.5 — DARK OFFICE VISION (NEW)
+     ══════════════════════════════════════════════════════════════ -->
+<section class="section" id="s65">
+  <div class="chapter-div"><span>Chapter 8 of 9 · The Vision</span></div>
+  <div class="sec-header">
+    <span class="sec-num" style="background:linear-gradient(135deg,#1a1a2e,#16213e);">🏭</span>
+    <h2><i class="fa-solid fa-moon"></i> The Dark Office Vision: Where ISC Is Headed</h2>
+  </div>
+
+  <div class="dark-office-intro">
+    <div class="doi-eyebrow">🔦 Inspired by Kent's Interest in Dark Factories</div>
+    <p>You've been visiting and reading about <strong>Dark Factories</strong> in China and elsewhere — fully automated manufacturing plants that operate 24/7 with minimal human presence, lights off. The machines do the work. Humans design, supervise, and improve.</p>
+    <p>The equivalent revolution is coming for knowledge work. It's called the <strong>Dark Office</strong>.</p>
+  </div>
+
+  <!-- What Is a Dark Office -->
+  <div class="dark-office-compare">
+    <div class="doc-card doc-factory">
+      <div class="doc-icon">🏭</div>
+      <h4>Dark Factory</h4>
+      <ul>
+        <li>🤖 Robots + sensors + CNC machines</li>
+        <li>💡 Lights off — no humans needed</li>
+        <li>⏰ Runs 24/7 without breaks</li>
+        <li>👔 Humans: design, maintain, improve</li>
+        <li>📍 Already real: Foxconn, FANUC, BMW</li>
+      </ul>
+    </div>
+    <div class="doc-divider">↔</div>
+    <div class="doc-card doc-office">
+      <div class="doc-icon">🏢</div>
+      <h4>Dark Office</h4>
+      <ul>
+        <li>🤖 AI agents + automation + data pipelines</li>
+        <li>📊 Reports generated before dawn</li>
+        <li>⏰ Processes run overnight &amp; weekends</li>
+        <li>👔 Humans: strategy, relationships, exceptions</li>
+        <li>📍 Emerging: ISC is already at Level 1</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Maturity Ladder -->
+  <h3 class="subsec-title"><i class="fa-solid fa-stairs"></i> ISC's Dark Office Maturity Ladder</h3>
+  <p class="prose" style="margin-bottom:1.5rem;">Every company moves through levels. ISC has already climbed to Level 1 — ahead of most companies in Vietnam.</p>
+
+  <div class="dark-office-ladder">
+    <div class="level-item level-done">
+      <div class="level-num">L0</div>
+      <div class="level-body">
+        <strong>Manual Everything</strong>
+        <p>Excel files, email chains, manual data entry. Every report takes hours.</p>
+        <span class="level-status level-status-done">✅ Behind Us (2024)</span>
+      </div>
+    </div>
+    <div class="level-item level-current">
+      <div class="level-num">L1</div>
+      <div class="level-body">
+        <strong>Scheduled Automation</strong>
+        <p>SQL + Apps Script runs on schedule. Shortage reports arrive at 06:00 without anyone working.</p>
+        <span class="level-status level-status-current">⚡ ISC is HERE — Supply Chain (March 2026)</span>
+      </div>
+    </div>
+    <div class="level-item level-upcoming">
+      <div class="level-num">L2</div>
+      <div class="level-body">
+        <strong>Reactive Automation</strong>
+        <p>Systems detect anomalies and alert the right person automatically. No one has to check — problems find the human.</p>
+        <span class="level-status level-status-upcoming">🔜 Q2–Q3 2026</span>
+      </div>
+    </div>
+    <div class="level-item level-upcoming">
+      <div class="level-num">L3</div>
+      <div class="level-body">
+        <strong>Predictive Automation</strong>
+        <p>AI model anticipates shortages 2 weeks before they occur. ISC orders proactively, eliminating emergency POs entirely.</p>
+        <span class="level-status level-status-upcoming">🔜 Q4 2026</span>
+      </div>
+    </div>
+    <div class="level-item level-future">
+      <div class="level-num">L4</div>
+      <div class="level-body">
+        <strong>Autonomous Operation</strong>
+        <p>Enterprise AI agents (Claude, Gemini) act on data, draft POs, update schedules. Humans review and approve exceptions — that's it.</p>
+        <span class="level-status level-status-future">🔮 2027+ (When enterprise AI agents mature)</span>
+      </div>
+    </div>
+    <div class="level-item level-future level-peak">
+      <div class="level-num">L5</div>
+      <div class="level-body">
+        <strong>🌙 Dark Office</strong>
+        <p>Fully autonomous knowledge work. The office "runs itself" overnight, on weekends, during Tet. Kent's team focuses entirely on strategy, customer relationships, and growth.</p>
+        <span class="level-status level-status-future">🔮 2028+ (The Goal)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day in the Life Scenario -->
+  <h3 class="subsec-title"><i class="fa-solid fa-moon"></i> What a Dark Office Day Looks Like for ISC (Level 5 Vision)</h3>
+  <p class="prose" style="margin-bottom:1.5rem;">Imagine ISC in 2028. Here's what a typical day looks like:</p>
+
+  <div class="vision-scenario">
+    <div class="vs-header">
+      <div class="vs-icon">🌙</div>
+      <div>
+        <h4>ISC Dark Office — A Tuesday in 2028</h4>
+        <p>No manual work. No one waiting for reports. No one chasing data.</p>
+      </div>
+    </div>
+    <div class="vs-timeline">
+      <div class="vs-item"><span class="vs-time">02:00</span><div class="vs-dot vs-dot-blue"></div><div class="vs-body"><strong>🤖 AI Weekly Analysis</strong><p>AI scans last 7 days of production data. Flags 2 quality anomalies for QC review Monday morning. Nobody was disturbed.</p></div></div>
+      <div class="vs-item"><span class="vs-time">05:00</span><div class="vs-dot vs-dot-gold"></div><div class="vs-body"><strong>📊 Shortage Engine Runs</strong><p>BigQuery calculates shortages. AI cross-references with supplier lead times. 4 items flagged. Draft PO requests prepared.</p></div></div>
+      <div class="vs-item"><span class="vs-time">06:00</span><div class="vs-dot vs-dot-green"></div><div class="vs-body"><strong>📧 Reports Delivered</strong><p>Kent receives 1-page CEO summary. Purchasing receives shortage list. Each department head gets their morning briefing.</p></div></div>
+      <div class="vs-item"><span class="vs-time">08:00</span><div class="vs-dot vs-dot-gold"></div><div class="vs-body"><strong>👆 Human Reviews Exceptions</strong><p>Purchasing approves 3 of 4 POs with one click. Flags 1 for negotiation. Done in 10 minutes. The rest of the day is strategy.</p></div></div>
+      <div class="vs-item"><span class="vs-time">14:00</span><div class="vs-dot vs-dot-blue"></div><div class="vs-body"><strong>📦 Order Confirmation Processing</strong><p>AI receives supplier confirmations, updates ERP, adjusts production schedule, notifies MPL team of changes automatically.</p></div></div>
+      <div class="vs-item"><span class="vs-time">Saturday</span><div class="vs-dot vs-dot-green"></div><div class="vs-body"><strong>🌙 Weekend Runs Normally</strong><p>AI processes weekend orders, monitors stock levels, prepares Monday's briefing. The ISC team is with their families. The office works without them.</p></div></div>
+    </div>
+    <div class="vs-footer">
+      <strong>👔 Human Role in the Dark Office:</strong> Approve exceptions. Build customer relationships. Make strategic decisions. Design better systems. Everything else is automated.
+    </div>
+  </div>
+
+  <!-- How OpenClaw Fits -->
+  <h3 class="subsec-title"><i class="fa-solid fa-puzzle-piece"></i> How OpenClaw &amp; Enterprise AI Agents Fit This Vision</h3>
+
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="fc-icon">🦀</div>
+      <h4>OpenClaw's Role</h4>
+      <p>OpenClaw was one of the <strong>first public attempts</strong> at Level 4–5. It's a proof of concept that computer-operating AI agents are possible. Rough today, but pointing in the right direction.</p>
+    </div>
+    <div class="feature-card">
+      <div class="fc-icon" style="color:#D4730A;">🤖</div>
+      <h4>Enterprise AI Agents (Claude, Gemini)</h4>
+      <p>These will be the <strong>practical path to Level 4</strong> for ISC — with enterprise security, predictable pricing, and vendor support. They'll do what OpenClaw promises, but safely and reliably.</p>
+    </div>
+    <div class="feature-card">
+      <div class="fc-icon">🗄️</div>
+      <h4>ISC's BigQuery Foundation</h4>
+      <p>This is the <strong>prerequisite for every level</strong> of the Dark Office. Clean, structured, API-accessible data is what makes AI integration possible. ISC is already building this.</p>
+    </div>
+    <div class="feature-card">
+      <div class="fc-icon" style="color:var(--green);">🎯</div>
+      <h4>ISC's Current Position</h4>
+      <p><strong>Level 1 and rising.</strong> Supply Chain automation is live. The roadmap goes to Level 3 by end of 2026. ISC is on the path to becoming one of the most efficiently automated companies of its size in Vietnam.</p>
+    </div>
+  </div>
+
+  <div class="pull-quote">
+    "The Dark Office isn't a fantasy. ISC is already building it — one automation at a time. The foundation is the data. The data is BigQuery. BigQuery is already running."
+  </div>
+
+  <div class="section-hook">
+    <i class="fa-solid fa-arrow-down hook-arrow"></i>
+    <em>With this vision clear — let's look at the structured plan: exactly which tools, platforms, and priorities should ISC invest in at each organizational level.</em>
   </div>
 </section>
 
@@ -682,9 +1043,10 @@
      SECTION 7 — 5W-2H FRAMEWORK
      ══════════════════════════════════════════════════════════════ -->
 <section class="section" id="s7">
+  <div class="chapter-div"><span>Chapter 9 of 9 · The Structured Plan</span></div>
   <div class="sec-header">
     <span class="sec-num">7</span>
-    <h2><i class="fa-solid fa-table-cells"></i> ISC Digitalization: 5W-2H Framework</h2>
+    <h2><i class="fa-solid fa-table-cells"></i> ISC Digitalization: 5W-2H Framework 📐</h2>
   </div>
 
   <p class="prose">A structured answer to Kent's question: <strong>which tools, platforms, and applications should ISC use for digitalization at each organizational level?</strong></p>
@@ -694,11 +1056,11 @@
   <div class="tbl-wrap">
     <table>
       <tbody>
-        <tr><td class="td-label" style="width:100px;">WHAT</td><td>Personal productivity tools — AI note-taking, document drafting, Q&A assistance</td></tr>
+        <tr><td class="td-label" style="width:100px;">WHAT</td><td>Personal productivity tools — AI note-taking, document drafting, Q&amp;A assistance</td></tr>
         <tr><td class="td-label">WHY</td><td>Reduce individual Waiting and Over-processing waste in daily tasks</td></tr>
         <tr><td class="td-label">WHEN</td><td><span class="badge badge-green">Immediately</span> — Low risk, no infrastructure needed</td></tr>
         <tr><td class="td-label">WHO</td><td>All office staff — non-sensitive tasks only</td></tr>
-        <tr><td class="td-label">HOW</td><td>Gemini free tier for drafting, summarizing, Q&A. Google Workspace AI features. OpenClaw: personal experimentation for tech-savvy users only (non-ISC data).</td></tr>
+        <tr><td class="td-label">HOW</td><td>Gemini free tier for drafting, summarizing, Q&amp;A. Google Workspace AI features. OpenClaw: personal experimentation for tech-savvy staff only (non-ISC data).</td></tr>
         <tr><td class="td-label">HOW MUCH</td><td>Free (Google AI included) or ~$20/month per person (Gemini Pro optional)</td></tr>
       </tbody>
     </table>
@@ -714,7 +1076,7 @@
         <tr><td class="td-label">WHEN</td><td>Q1 2026 SC (done) → Q2 MPL + CS → Q3 PRD + QC → Q4 Finance + HR</td></tr>
         <tr><td class="td-label">WHO</td><td>DK Nguyen (Data Engineer) + Department Data Owners</td></tr>
         <tr><td class="td-label">HOW</td><td>DK builds deterministic SQL logic + Apps Script scheduler. Reports auto-delivered before 06:00 each business day.</td></tr>
-        <tr><td class="td-label">HOW MUCH</td><td>~$15-$30/month (BigQuery compute) — already budgeted</td></tr>
+        <tr><td class="td-label">HOW MUCH</td><td>~$15–$30/month (BigQuery compute) — already budgeted</td></tr>
       </tbody>
     </table>
   </div>
@@ -726,10 +1088,10 @@
       <tbody>
         <tr><td class="td-label" style="width:100px;">WHAT</td><td>Enterprise Data Warehouse + CEO Dashboard + Cross-department data sync</td></tr>
         <tr><td class="td-label">WHY</td><td>Give Kent real-time visibility into all departments without manual reports</td></tr>
-        <tr><td class="td-label">WHEN</td><td>Q3-Q4 2026 (Phase 4 of ISC Digital Transformation)</td></tr>
+        <tr><td class="td-label">WHEN</td><td>Q3–Q4 2026 (Phase 4 of ISC Digital Transformation)</td></tr>
         <tr><td class="td-label">WHO</td><td>DK Nguyen + IT Lead + Kent approval</td></tr>
-        <tr><td class="td-label">HOW</td><td>Unified BigQuery schema across M1-M4 modules. CEO Looker Studio dashboard (live, no manual refresh). Weekly automated summary to Kent's email every Friday 16:00.</td></tr>
-        <tr><td class="td-label">HOW MUCH</td><td>~$50-$100/month (BigQuery + Looker) — High ROI vs. current manual cost</td></tr>
+        <tr><td class="td-label">HOW</td><td>Unified BigQuery schema across M1–M4 modules. CEO Looker Studio dashboard (live, no manual refresh). Weekly automated summary to Kent's email every Friday 16:00.</td></tr>
+        <tr><td class="td-label">HOW MUCH</td><td>~$50–$100/month (BigQuery + Looker) — High ROI vs. current manual cost</td></tr>
       </tbody>
     </table>
   </div>
@@ -740,25 +1102,26 @@
     <table>
       <thead><tr><th>Tool / Platform</th><th>Individual</th><th>Department</th><th>Company</th><th>Monthly Cost</th><th>Security</th></tr></thead>
       <tbody>
-        <tr><td><strong>Gemini.ai</strong></td><td class="td-green">Yes</td><td class="td-green">Yes</td><td class="td-green">Yes</td><td>$0-$30</td><td class="td-green">High</td></tr>
-        <tr><td><strong>Google BigQuery</strong></td><td>—</td><td class="td-green">Yes</td><td class="td-green">Yes</td><td>$15-$100</td><td class="td-green">High</td></tr>
-        <tr><td><strong>Google Apps Script</strong></td><td>Advanced</td><td class="td-green">Yes</td><td class="td-green">Yes</td><td>$0</td><td class="td-green">High</td></tr>
-        <tr><td><strong>Looker Studio</strong></td><td>—</td><td class="td-green">Yes</td><td class="td-green">Yes</td><td>$0</td><td class="td-green">High</td></tr>
-        <tr><td><strong>OpenClaw</strong></td><td><span class="badge badge-amber">Experiment</span></td><td><span class="badge badge-amber">Re-eval Q4</span></td><td><span class="badge badge-amber">Re-eval Q4</span></td><td>Variable</td><td><span class="badge badge-amber">Unaudited</span></td></tr>
-        <tr><td><strong>Enterprise AI Agents*</strong></td><td><span class="badge badge-blue">Watch</span></td><td><span class="badge badge-blue">Watch</span></td><td><span class="badge badge-blue">Watch</span></td><td>TBD</td><td><span class="badge badge-green">Expected High</span></td></tr>
+        <tr><td><strong>✨ Gemini.ai</strong></td><td class="td-green">Yes</td><td class="td-green">Yes</td><td class="td-green">Yes</td><td>$0–$30</td><td class="td-green">High</td></tr>
+        <tr><td><strong>🗄️ Google BigQuery</strong></td><td>—</td><td class="td-green">Yes</td><td class="td-green">Yes</td><td>$15–$100</td><td class="td-green">High</td></tr>
+        <tr><td><strong>⚙️ Google Apps Script</strong></td><td>Advanced</td><td class="td-green">Yes</td><td class="td-green">Yes</td><td>$0</td><td class="td-green">High</td></tr>
+        <tr><td><strong>📊 Looker Studio</strong></td><td>—</td><td class="td-green">Yes</td><td class="td-green">Yes</td><td>$0</td><td class="td-green">High</td></tr>
+        <tr><td><strong>🦀 OpenClaw</strong></td><td><span class="badge badge-amber">Experiment</span></td><td><span class="badge badge-amber">Re-eval Q4</span></td><td><span class="badge badge-amber">Re-eval Q4</span></td><td>Variable</td><td><span class="badge badge-amber">Unaudited</span></td></tr>
+        <tr><td><strong>🤖 Enterprise AI Agents*</strong></td><td><span class="badge badge-blue">Watch</span></td><td><span class="badge badge-blue">Watch</span></td><td><span class="badge badge-blue">Watch</span></td><td>TBD</td><td><span class="badge badge-green">Expected High</span></td></tr>
       </tbody>
     </table>
   </div>
-  <p class="text-muted text-sm">*Enterprise AI Agents = Claude Computer Use, OpenAI Operator, Gemini Agent, Microsoft Copilot Actions — expected to reach enterprise readiness 2027-2028.</p>
+  <p class="text-muted text-sm">*Enterprise AI Agents = Claude Computer Use, OpenAI Operator, Gemini Agent, Microsoft Copilot Actions — expected to reach enterprise readiness 2027–2028.</p>
 </section>
 
 <!-- ══════════════════════════════════════════════════════════════
      SECTION 8 — FINAL RECOMMENDATION
      ══════════════════════════════════════════════════════════════ -->
 <section class="section" id="s8">
+  <div class="chapter-div"><span>Final Chapter · The Decision</span></div>
   <div class="sec-header">
     <span class="sec-num">8</span>
-    <h2><i class="fa-solid fa-flag-checkered"></i> DK's Recommendation to Kent</h2>
+    <h2><i class="fa-solid fa-flag-checkered"></i> DK's Recommendation to Kent 🚀</h2>
   </div>
 
   <!-- Strategic Sequence -->
@@ -767,18 +1130,18 @@
   <div class="strategy-timeline">
     <div class="st-phase st-now">
       <div class="st-badge">NOW</div>
-      <h4>Build the Foundation</h4>
-      <p>Accelerate ISC's data automation roadmap. Every department. BigQuery + Apps Script + Gemini. This is the foundation that makes future AI integration possible.</p>
+      <h4>🏗️ Build the Foundation</h4>
+      <p>Accelerate ISC's data automation roadmap. Every department. BigQuery + Apps Script + Gemini. This is the foundation that makes every future level of the Dark Office possible.</p>
     </div>
     <div class="st-phase st-monitor">
       <div class="st-badge">2026</div>
-      <h4>Monitor the Ecosystem</h4>
-      <p>Watch OpenClaw's evolution. Track Claude Computer Use, OpenAI Operator, Gemini Agent. DK will include an "AI Agent Watch" section in weekly Friday reports.</p>
+      <h4>👁️ Monitor the Ecosystem</h4>
+      <p>Watch OpenClaw's evolution. Track Claude Computer Use, OpenAI Operator, Gemini Agent. DK will include an <strong>"AI Agent Watch"</strong> section in weekly Friday reports to Kent.</p>
     </div>
     <div class="st-phase st-future">
       <div class="st-badge">2027+</div>
-      <h4>Integrate When Mature</h4>
-      <p>When enterprise-grade AI agents arrive with security audits and predictable pricing, ISC's clean BigQuery schema means instant integration. We won't be starting from zero.</p>
+      <h4>🚀 Integrate When Mature</h4>
+      <p>When enterprise-grade AI agents arrive with security audits and predictable pricing, ISC's clean BigQuery schema means instant integration. We won't be starting from zero — we'll already be at Level 3.</p>
     </div>
   </div>
 
@@ -786,24 +1149,24 @@
   <h3 class="subsec-title"><i class="fa-solid fa-bolt"></i> Immediate Priorities</h3>
   <div class="feature-grid cols-2">
     <div class="feature-card fc-gold">
-      <div class="fc-icon"><i class="fa-solid fa-bolt"></i></div>
+      <div class="fc-icon">⚡</div>
       <h4>Priority 1: Accelerate Data Automation</h4>
-      <p>SC is done. Production is next. Every month of manual work = measurable productivity cost across the whole team.</p>
+      <p>SC is done. Production is next. Every month of manual work = measurable productivity cost. Every automation = hours given back to the team.</p>
     </div>
     <div class="feature-card fc-gold">
-      <div class="fc-icon"><i class="fa-solid fa-display"></i></div>
+      <div class="fc-icon">🖥️</div>
       <h4>Priority 2: Build the CEO Dashboard</h4>
-      <p>Kent should not need to ask for data. Looker Studio + BigQuery = real-time company-wide visibility.</p>
+      <p>Kent should not need to ask for data. Looker Studio + BigQuery = real-time company-wide visibility. Kent sees everything, from anywhere, without waiting for a report.</p>
     </div>
     <div class="feature-card fc-gold">
-      <div class="fc-icon"><i class="fa-solid fa-database"></i></div>
+      <div class="fc-icon">🗄️</div>
       <h4>Priority 3: Build AI-Readiness</h4>
-      <p>When enterprise AI matures (2027-2028), ISC's clean BigQuery schema means instant integration. We're building readiness today.</p>
+      <p>When enterprise AI matures (2027–2028), ISC's clean BigQuery schema means instant integration. We're building AI-readiness today, so we can move fast when the moment comes.</p>
     </div>
     <div class="feature-card fc-green">
-      <div class="fc-icon"><i class="fa-solid fa-calendar-check"></i></div>
+      <div class="fc-icon">📅</div>
       <h4>Ongoing: Weekly Progress Reports</h4>
-      <p>DK continues Friday 16:00 reports to Kent. Structured 5W-2H format with hours saved and milestone tracking.</p>
+      <p>DK continues Friday 16:00 reports to Kent. Structured 5W-2H format with hours saved, milestone tracking, and an <strong>AI Agent Watch</strong> section.</p>
     </div>
   </div>
 
@@ -813,15 +1176,33 @@
     <table>
       <thead><tr><th>Initiative</th><th>Investment</th><th>Annual Value</th><th>Status</th></tr></thead>
       <tbody>
-        <tr><td><strong>SC Shortage Automation</strong></td><td>Built (DK + Q1 2026)</td><td class="td-green"><strong>~$18k saved</strong></td><td><span class="badge badge-green">Live</span></td></tr>
-        <tr><td><strong>PO Matching Engine</strong></td><td>Built (DK + Q1 2026)</td><td class="td-green"><strong>~$8k saved</strong></td><td><span class="badge badge-green">Live</span></td></tr>
-        <tr><td><strong>Production Dashboard</strong></td><td>~2 weeks DK time</td><td>~$12k est.</td><td><span class="badge badge-gold">Q2 2026</span></td></tr>
-        <tr><td><strong>QC Defect Tracking</strong></td><td>~3 weeks DK time</td><td>~$8k est.</td><td><span class="badge badge-outline">Q3 2026</span></td></tr>
-        <tr><td><strong>Finance Invoice Matching</strong></td><td>~3 weeks DK time</td><td>~$15k est.</td><td><span class="badge badge-outline">Q3 2026</span></td></tr>
-        <tr><td><strong>CEO Dashboard (Looker)</strong></td><td>~1 week DK time</td><td>Strategic visibility</td><td><span class="badge badge-outline">Q3 2026</span></td></tr>
+        <tr><td><strong>🔗 SC Shortage Automation</strong></td><td>Built (DK + Q1 2026)</td><td class="td-green"><strong>~$18k saved</strong></td><td><span class="badge badge-green">✅ Live</span></td></tr>
+        <tr><td><strong>🔗 PO Matching Engine</strong></td><td>Built (DK + Q1 2026)</td><td class="td-green"><strong>~$8k saved</strong></td><td><span class="badge badge-green">✅ Live</span></td></tr>
+        <tr><td><strong>🏭 Production Dashboard</strong></td><td>~2 weeks DK time</td><td>~$12k est.</td><td><span class="badge badge-gold">Q2 2026</span></td></tr>
+        <tr><td><strong>🔬 QC Defect Tracking</strong></td><td>~3 weeks DK time</td><td>~$8k est.</td><td><span class="badge badge-outline">Q3 2026</span></td></tr>
+        <tr><td><strong>💼 Finance Invoice Matching</strong></td><td>~3 weeks DK time</td><td>~$15k est.</td><td><span class="badge badge-outline">Q3 2026</span></td></tr>
+        <tr><td><strong>🖥️ CEO Dashboard (Looker)</strong></td><td>~1 week DK time</td><td>Strategic visibility</td><td><span class="badge badge-outline">Q3 2026</span></td></tr>
         <tr class="row-gold"><td><strong>TOTAL (Full Roadmap)</strong></td><td>~2 months DK time</td><td><strong style="color:var(--gold-bright);font-size:1.1rem;">~$61k+/year</strong></td><td><span class="badge badge-gold">2026 Target</span></td></tr>
       </tbody>
     </table>
+  </div>
+
+  <!-- DK's Personal Note -->
+  <div class="dk-note">
+    <div class="dk-header">
+      <div class="dk-avatar">DK</div>
+      <div>
+        <h4>✍️ A Note from DK — Personal Perspective</h4>
+        <p class="dk-subtitle">Data Engineer, ISC · March 2026</p>
+      </div>
+    </div>
+    <div class="dk-body">
+      <p>I want to be transparent with you, Kent: when I first looked at OpenClaw, my instinct was to write a straightforward "don't deploy" recommendation and move on. It would have been the safe answer. But that would have missed the bigger picture entirely.</p>
+      <p>The honest truth is that <strong>AI agents represent the most significant shift in knowledge-work automation since the spreadsheet was invented.</strong> OpenClaw is rough today — but it's pointing in a direction that every major technology company in the world is now racing toward. The concept is right. The timing is early.</p>
+      <p>I'm also going to say something that might sound surprising: <strong>ISC's data foundation is genuinely ahead of most companies our size.</strong> We have clean, structured, API-accessible data in BigQuery. That is rare. That is valuable. When enterprise AI agents mature, companies with messy data will spend 12–18 months just cleaning up before they can integrate. ISC can integrate immediately — because we're building that foundation now.</p>
+      <p>My recommendation is not "be cautious." My recommendation is <strong>"be strategic."</strong> We're not waiting — we're preparing. There is a real difference between those two words. And that preparation has a dollar value that compounds every quarter.</p>
+      <p>I'm excited about where this is going. I think you should be too.</p>
+    </div>
   </div>
 
   <!-- Kent's Decision Box -->
@@ -831,7 +1212,7 @@
     <div class="decision-item decision-approve"><span class="decision-icon">✅</span><div><strong>APPROVE</strong> — Continue data automation rollout to Production in Q2 2026</div></div>
     <div class="decision-item decision-approve"><span class="decision-icon">✅</span><div><strong>APPROVE</strong> — Authorize Looker Studio CEO Dashboard development in Q3 2026</div></div>
     <div class="decision-item decision-review"><span class="decision-icon">📋</span><div><strong>REVIEW</strong> — Confirm department rollout priority order (SC → MPL → CS → PRD → QC → Finance → HR)</div></div>
-    <div class="decision-item decision-noted"><span class="decision-icon">📝</span><div><strong>NOTED</strong> — AI agent ecosystem (incl. OpenClaw) will be monitored and reported weekly</div></div>
+    <div class="decision-item decision-noted"><span class="decision-icon">📝</span><div><strong>NOTED</strong> — AI agent ecosystem (incl. OpenClaw, Claude, OpenAI Operator) will be monitored and reported weekly</div></div>
     <p style="margin-top:1.5rem;font-size:0.88rem;color:var(--text-muted);">Weekly progress reports continue every <strong>Friday before 16:00</strong> to Kent's email.</p>
   </div>
 
@@ -840,6 +1221,7 @@
     <div class="closing-emoji">🏁</div>
     <h2>ISC's path forward is clear.<br>The foundation is built. The future is being watched.</h2>
     <p>The alternative to adopting OpenClaw today is not inaction — it is the <strong>structured, secure, and already-running automation system</strong> designed specifically for ISC's operations. And when enterprise AI agents mature, ISC will be the first to benefit — because our data is already clean, structured, and API-ready.</p>
+    <p style="margin-top:1rem;color:var(--gold);font-style:italic;">The Dark Office is not a 2028 fantasy. Level 1 is already running. Level 2 starts next quarter.</p>
   </div>
 
   <!-- Footer -->
@@ -847,7 +1229,7 @@
     <p>
       <i class="fa-solid fa-pen-nib" style="color:var(--gold);margin-right:0.4rem;"></i>
       Prepared by: <strong>DK Nguyen, Data Engineer</strong><br>
-      ISC Digital Transformation Initiative · March 2026 · V2.0
+      ISC Digital Transformation Initiative · March 2026 · V2.1
     </p>
   </div>
 </section>
@@ -856,8 +1238,8 @@
 
 <!-- ═══ SITE FOOTER ═══ -->
 <footer class="site-footer">
-  <span><strong>ISC</strong> · OpenClaw & AI Agent Analysis Report</span>
-  <span>Prepared by DK Nguyen · March 2026</span>
+  <span><strong>ISC</strong> · OpenClaw &amp; AI Agent Analysis Report</span>
+  <span>Prepared by DK Nguyen · March 2026 · V2.1</span>
   <span>Confidential — Internal Use Only</span>
 </footer>
 
