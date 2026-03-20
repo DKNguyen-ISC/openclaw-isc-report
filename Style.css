@@ -71,8 +71,8 @@ body {
   font-family: var(--font-body);
   background: var(--bg-main);
   /* Subtle dot-grid texture for depth */
-  background-image: radial-gradient(rgba(232,160,32,0.035) 1px, transparent 1px);
-  background-size: 32px 32px;
+  background-image: radial-gradient(rgba(232,160,32,0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
   color: var(--text-main);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
@@ -879,9 +879,9 @@ tbody td { padding: 14px 18px; vertical-align: middle; color: var(--text-main); 
   will-change: transform;
 }
 .orb-gold {
-  width: 500px; height: 500px;
-  background: radial-gradient(circle, rgba(232,160,32,0.18) 0%, transparent 70%);
-  top: -100px; right: -80px;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(232,160,32,0.28) 0%, rgba(232,160,32,0.06) 50%, transparent 70%);
+  top: -140px; right: -100px;
   animation: orb-gold 18s ease-in-out infinite alternate;
 }
 .orb-blue {
@@ -1433,6 +1433,227 @@ tbody td { padding: 14px 18px; vertical-align: middle; color: var(--text-main); 
   .vs-timeline::before { display: none; }
   .pull-quote { font-size: 1rem; }
   .dk-note { padding: 1.5rem; }
+}
+
+/* =============================================
+   V2.2 — SECOND GOLD ORB
+   ============================================= */
+.orb-gold2 {
+  width: 320px; height: 320px;
+  background: radial-gradient(circle, rgba(245,200,66,0.22) 0%, transparent 70%);
+  bottom: 30px; right: 18%;
+  animation: orb-gold 22s ease-in-out infinite alternate-reverse;
+}
+
+/* =============================================
+   V2.2 — GOLD HAIRLINE AT TOP OF PAGE
+   ============================================= */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, transparent 0%, var(--gold) 25%, var(--gold-bright) 50%, var(--gold) 75%, transparent 100%);
+  z-index: 9998;
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+/* =============================================
+   V2.2 — ENHANCED HOVER GLOWS
+   ============================================= */
+.kpi-cell:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 32px rgba(232,160,32,0.28), 0 2px 8px rgba(0,0,0,0.35);
+  border-color: var(--gold) !important;
+}
+.feature-card:hover,
+.gap-card:hover,
+.insight-card:hover,
+.verdict-card:hover {
+  box-shadow: 0 0 0 1px var(--gold-border), 0 0 24px rgba(232,160,32,0.15), var(--shadow-lg) !important;
+}
+tbody tr:hover {
+  background: rgba(232,160,32,0.055);
+  cursor: default;
+}
+
+/* =============================================
+   V2.2 — CAPABILITY TAGS (Day in Life)
+   ============================================= */
+.cap-legend {
+  display: flex; gap: 0.6rem; flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+  font-size: 0.78rem;
+}
+.tl-caps  { display: flex; gap: 0.3rem; flex-wrap: wrap; margin-top: 0.35rem; }
+.cap-tag  {
+  font-size: 0.68rem; padding: 2px 8px; border-radius: 10px;
+  background: rgba(232,160,32,0.1); color: var(--gold-bright);
+  border: 1px solid rgba(232,160,32,0.2);
+}
+.cap-tag.ct-browser { background: rgba(87,203,255,0.1);  color: #57cbff; border-color: rgba(87,203,255,0.22); }
+.cap-tag.ct-shell   { background: rgba(100,255,218,0.1); color: #64ffd9; border-color: rgba(100,255,218,0.22); }
+.cap-tag.ct-email   { background: rgba(163,113,247,0.1); color: #b388ff; border-color: rgba(163,113,247,0.22); }
+.cap-tag.ct-msg     { background: rgba(232,160,32,0.12); color: var(--gold-bright); border-color: rgba(232,160,32,0.25); }
+.cap-tag.ct-file    { background: rgba(255,180,80,0.1);  color: #ffb450; border-color: rgba(255,180,80,0.22); }
+
+/* =============================================
+   V2.2 — DEPARTMENT CARDS GRID
+   ============================================= */
+.dept-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+@media (max-width: 900px) { .dept-grid { grid-template-columns: 1fr; } }
+
+.dept-card {
+  border: 1px solid rgba(100,130,200,0.14);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-card);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.dept-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.25);
+}
+.dept-card-header {
+  padding: 1rem 1.5rem;
+  display: flex; align-items: center; gap: 0.85rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.dept-card-header.dh-sc  { background: rgba(232,160,32,0.08);  border-top: 3px solid var(--gold); }
+.dept-card-header.dh-cs  { background: rgba(87,203,255,0.08);  border-top: 3px solid #57cbff; }
+.dept-card-header.dh-mpl { background: rgba(100,255,218,0.07); border-top: 3px solid #64ffd9; }
+.dept-card-header.dh-prd { background: rgba(255,180,80,0.07);  border-top: 3px solid #ffb450; }
+
+.dept-badge-high {
+  display: inline-block;
+  background: rgba(72,187,120,0.15); color: #72e5a0;
+  border: 1px solid rgba(72,187,120,0.3);
+  font-size: 0.68rem; padding: 2px 8px; border-radius: 12px;
+}
+.dept-badge-med {
+  display: inline-block;
+  background: rgba(232,160,32,0.15); color: var(--gold-bright);
+  border: 1px solid rgba(232,160,32,0.3);
+  font-size: 0.68rem; padding: 2px 8px; border-radius: 12px;
+}
+.dept-card-body  { padding: 1rem 1.5rem; }
+.dept-steps      { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; }
+.dept-step {
+  display: flex; flex-direction: column; gap: 0.2rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.dept-step:last-of-type { border-bottom: none; }
+.dept-step-meta  { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+.dept-time       { font-size: 0.7rem; color: var(--text-muted); min-width: 70px; font-family: 'Fira Code', monospace; }
+.dept-step strong { font-size: 0.85rem; color: var(--text-heading); }
+.dept-step p     { font-size: 0.8rem; color: var(--text-muted); margin: 0.15rem 0 0; line-height: 1.5; }
+.dept-step code  { font-size: 0.75rem; background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px; }
+.dept-human {
+  margin-top: 0.85rem; padding: 0.65rem 0.85rem;
+  border-radius: 6px;
+  background: rgba(232,160,32,0.05);
+  border-left: 2px solid rgba(232,160,32,0.35);
+  font-size: 0.77rem; color: var(--text-muted); line-height: 1.5;
+}
+.dept-human strong { color: var(--gold-bright); }
+
+/* =============================================
+   V2.2 — CLAUDE SECTION UPGRADES
+   ============================================= */
+.claude-spotlight .cs-header {
+  border-left: 4px solid #C15F3C;
+  padding-left: 1.25rem;
+}
+.cs-logo {
+  display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+.cs-logo-text    { display: flex; flex-direction: column; gap: 0.2rem; }
+.cs-logo-name    { font-size: 1.1rem; font-weight: 600; color: #C15F3C; }
+
+/* Claude vs OpenClaw comparison card */
+.vs-compare-card {
+  border: 1px solid rgba(193,95,60,0.22);
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin-top: 1.5rem;
+  background: rgba(193,95,60,0.04);
+}
+.vs-compare-card h4 { color: #C15F3C; margin-bottom: 0.75rem; }
+
+/* DK's #1 rec block */
+.claude-rec-block {
+  display: flex; gap: 1rem; align-items: flex-start;
+  background: rgba(193,95,60,0.07);
+  border: 1px solid rgba(193,95,60,0.22);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  margin-top: 1.5rem;
+}
+.crb-icon { font-size: 2rem; flex-shrink: 0; line-height: 1; }
+.claude-rec-block strong { color: #C15F3C; display: block; margin-bottom: 0.35rem; font-size: 1rem; }
+.claude-rec-block p { color: var(--text-muted); font-size: 0.88rem; margin: 0; line-height: 1.6; }
+
+/* =============================================
+   V2.2 — MATURITY DIAL INFOGRAPHIC
+   ============================================= */
+.maturity-dial-wrap {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 0.6rem; margin: 1.25rem 0 2rem;
+}
+.maturity-dial {
+  width: 140px; height: 140px; border-radius: 50%;
+  position: relative;
+  background: conic-gradient(var(--gold) 0% var(--dial-pct, 0%), rgba(255,255,255,0.07) var(--dial-pct, 0%) 100%);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 0 24px rgba(232,160,32,0.18);
+}
+.maturity-dial::before {
+  content: ''; position: absolute; inset: 16px;
+  border-radius: 50%; background: var(--bg-card);
+}
+.dial-inner     { position: relative; z-index: 1; text-align: center; }
+.dial-level     { font-size: 2.2rem; font-weight: 700; color: var(--gold-bright); display: block; line-height: 1; }
+.dial-of        { font-size: 0.72rem; color: var(--text-muted); }
+.dial-caption   { font-size: 0.8rem; color: var(--text-muted); text-align: center; }
+
+/* =============================================
+   V2.2 — ROADMAP TIMELINE INFOGRAPHIC
+   ============================================= */
+.roadmap-timeline {
+  display: flex; align-items: flex-start;
+  margin: 1.5rem 0; flex-wrap: wrap; gap: 0;
+}
+.rt-line {
+  flex: 1; height: 2px; min-width: 16px;
+  background: linear-gradient(90deg, var(--gold-border), rgba(232,160,32,0.12));
+  margin-top: 0.85rem;
+}
+.rt-item { display: flex; flex-direction: column; align-items: center; gap: 0.4rem; min-width: 80px; }
+.rt-dot  {
+  width: 16px; height: 16px; border-radius: 50%; flex-shrink: 0;
+  border: 2px solid var(--gold-border); background: var(--bg-card);
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+.rt-item.rt-done   .rt-dot { background: var(--gold); border-color: var(--gold-bright); }
+.rt-item.rt-active .rt-dot { background: var(--gold-bright); border-color: var(--gold-bright); box-shadow: 0 0 12px rgba(232,160,32,0.65); }
+.rt-body { text-align: center; font-size: 0.78rem; max-width: 90px; }
+.rt-body strong { color: var(--gold-bright); display: block; margin-bottom: 0.15rem; }
+.rt-body p { color: var(--text-muted); margin: 0; line-height: 1.4; }
+
+/* =============================================
+   V2.2 — BADGE AMBER (pilot/testing)
+   ============================================= */
+.badge-amber {
+  background: rgba(255,160,50,0.12);
+  color: #ffb450;
+  border: 1px solid rgba(255,160,50,0.3);
 }
 
 /* =============================================

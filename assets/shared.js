@@ -190,8 +190,9 @@ document.addEventListener('DOMContentLoaded', function () {
   // ── Reading progress bar ──
   const progressBar = document.createElement('div');
   progressBar.style.cssText = [
-    'position:fixed','top:0','left:0','height:2px','width:0%',
+    'position:fixed','top:0','left:0','height:3px','width:0%',
     'background:linear-gradient(90deg,var(--gold),var(--gold-bright),var(--gold))',
+    'box-shadow:0 0 8px rgba(232,160,32,0.7)',
     'z-index:9999','pointer-events:none','transition:width 0.1s linear'
   ].join(';');
   document.body.appendChild(progressBar);
@@ -218,8 +219,35 @@ document.addEventListener('DOMContentLoaded', function () {
     el.setAttribute('tabindex', '0');
   });
 
+  // ── Maturity Dial animation (conic-gradient via CSS custom property) ──
+  const dialEl = document.querySelector('.maturity-dial');
+  if (dialEl) {
+    const dialObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Animate from 0% to 20% (L1 of 5 = 20%)
+          let pct = 0;
+          const target = 20;
+          const duration = 900;
+          const startTime = performance.now();
+          function animateDial(now) {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            pct = Math.round((1 - Math.pow(1 - progress, 3)) * target);
+            entry.target.style.setProperty('--dial-pct', pct + '%');
+            if (progress < 1) requestAnimationFrame(animateDial);
+          }
+          requestAnimationFrame(animateDial);
+          dialObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    dialObserver.observe(dialEl);
+  }
+
   // ── Reduced motion: skip all animations ──
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (dialEl) dialEl.style.setProperty('--dial-pct', '20%');
     document.querySelectorAll('.section').forEach(sec => sec.classList.add('reveal'));
     document.querySelectorAll('.kpi-value').forEach(el => {
       // Show final value immediately
