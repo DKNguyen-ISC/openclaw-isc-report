@@ -23,7 +23,7 @@
   <span>CEO Kent · Confidential</span>
   <div class="top-actions">
     <button class="btn-top" onclick="window.print()"><i class="fa-solid fa-print"></i> Print / PDF</button>
-    <button class="btn-top btn-top-gold">V2.1 — 20/03/2026</button>
+    <button class="btn-top btn-top-gold">V2.2 — 20/03/2026</button>
   </div>
 </div>
 
@@ -34,6 +34,7 @@
   <div class="cover-gold-line"></div>
   <!-- Animated orb background -->
   <div class="hero-orb orb-gold"></div>
+  <div class="hero-orb orb-gold2"></div>
   <div class="hero-orb orb-blue"></div>
   <div class="hero-orb orb-green"></div>
 
@@ -64,8 +65,8 @@
     </div>
     <div class="kpi-cell kpi-highlight">
       <div class="kpi-label">⚡ ISC Automation</div>
-      <div class="kpi-value" data-target="Live" data-type="text">Live</div>
-      <div class="kpi-sub">14+ hrs/week saved</div>
+      <div class="kpi-value" data-target="Pilot" data-type="text">Pilot</div>
+      <div class="kpi-sub">10–15 hrs/wk (testing)</div>
     </div>
     <div class="kpi-cell">
       <div class="kpi-label">📈 AI Agent Trend</div>
@@ -78,9 +79,9 @@
       <div class="kpi-sub">BigQuery foundation built</div>
     </div>
     <div class="kpi-cell kpi-gold">
-      <div class="kpi-label">💰 2026 ROI Target</div>
-      <div class="kpi-value" data-target="61" data-type="currency" data-suffix="k+">$61k+</div>
-      <div class="kpi-sub">Annual labor savings</div>
+      <div class="kpi-label">💰 Pilot Phase</div>
+      <div class="kpi-value" data-target="TBD" data-type="text">TBD</div>
+      <div class="kpi-sub">Savings pending validation</div>
     </div>
   </div>
 </div>
@@ -215,15 +216,190 @@
     </div>
   </div>
 
-  <!-- A Day in the Life -->
-  <h3 class="subsec-title"><i class="fa-solid fa-calendar-day"></i> A Day in the Life of OpenClaw at ISC</h3>
-  <p class="prose" style="margin-bottom:1.5rem;">Imagine it works perfectly. Here's what a day could look like:</p>
-  <div class="timeline">
-    <div class="tl-item"><span class="tl-time">06:00</span><div class="tl-dot"></div><div class="tl-body"><strong>📧 Morning Email Review</strong><p>Reads incoming emails, flags urgent supplier messages, categorizes by department — before anyone arrives at the office.</p></div></div>
-    <div class="tl-item"><span class="tl-time">08:30</span><div class="tl-dot"></div><div class="tl-body"><strong>🗄️ ERP Login &amp; Data Pull</strong><p>Logs into ERP system autonomously, extracts production schedule data, cross-references with demand plan.</p></div></div>
-    <div class="tl-item"><span class="tl-time">12:00</span><div class="tl-dot"></div><div class="tl-body"><strong>📊 Shortage Report Compilation</strong><p>Cross-references demand vs. stock across multiple sheets, compiles shortage list, flags critical items automatically.</p></div></div>
-    <div class="tl-item"><span class="tl-time">17:00</span><div class="tl-dot"></div><div class="tl-body"><strong>📬 Auto Summary Email</strong><p>Drafts and sends daily summary report to manager — runs while the team is already home with their families.</p></div></div>
+  <!-- A Day in the Life — Multi-Department -->
+  <h3 class="subsec-title"><i class="fa-solid fa-calendar-day"></i> 🎭 OpenClaw Across ISC — A Day in 4 Departments</h3>
+  <p class="prose" style="margin-bottom:1rem;">AI agents don't replace people — they handle the data grind so people can do the work that actually matters. Below is what OpenClaw could realistically handle in 4 ISC departments, based on its verified capabilities, and what that frees the team to focus on instead.</p>
+
+  <!-- Capability Legend -->
+  <div class="cap-legend">
+    <span class="cap-tag ct-browser">🌐 Browser Automation</span>
+    <span class="cap-tag ct-shell">⚡ Shell / Script</span>
+    <span class="cap-tag ct-file">📁 File System</span>
+    <span class="cap-tag ct-msg">💬 Messaging (Telegram)</span>
+    <span class="cap-tag ct-email">✉️ Email</span>
   </div>
+
+  <!-- Department Cards Grid -->
+  <div class="dept-grid">
+
+    <!-- SC -->
+    <div class="dept-card">
+      <div class="dept-card-header dh-sc">
+        <span style="font-size:1.4rem;">🔗</span>
+        <div>
+          <strong>Supply Chain (SC)</strong>
+          <div style="margin-top:2px;"><span class="dept-badge-high">✅ High Confidence</span></div>
+        </div>
+      </div>
+      <div class="dept-card-body">
+        <div class="dept-steps">
+          <div class="dept-step">
+            <div class="dept-step-meta"><span class="dept-time">06:00</span><strong>💬 Morning Trigger</strong></div>
+            <p>Scheduled Telegram message starts the routine: "Run daily SC check" — no one needs to be awake.</p>
+            <div class="tl-caps"><span class="cap-tag ct-msg">💬 Messaging</span></div>
+          </div>
+          <div class="dept-step">
+            <div class="dept-step-meta"><span class="dept-time">06:05</span><strong>🔐 ERP Login &amp; Export</strong></div>
+            <p>Playwright opens Chrome, logs into the web ERP, navigates to Inventory Report, clicks Export CSV — saved to local report folder.</p>
+            <div class="tl-caps"><span class="cap-tag ct-browser">🌐 Browser</span><span class="cap-tag ct-file">📁 File</span></div>
+          </div>
+          <div class="dept-step">
+            <div class="dept-step-meta"><span class="dept-time">07:00</span><strong>🧮 Shortage Calculation</strong></div>
+            <p>Runs <code>shortage_calc.py</code> — demand vs. stock vs. incoming PO qty — 3 critical items flagged below safety stock.</p>
+            <div class="tl-caps"><span class="cap-tag ct-shell">⚡ Shell</span><span class="cap-tag ct-file">📁 File</span></div>
+          </div>
+          <div class="dept-step">
+            <div class="dept-step-meta"><span class="dept-time">08:00</span><strong>📊 Dashboard Update</strong></div>
+            <p>Opens Google Sheets in Chrome, pastes shortage data into SC Dashboard tab — visible to the whole team before they arrive.</p>
+            <div class="tl-caps"><span class="cap-tag ct-browser">🌐 Browser</span></div>
+          </div>
+          <div class="dept-step">
+            <div class="dept-step-meta"><span class="dept-time">09:30</span><strong>✉️ Supplier Portal Check</strong></div>
+            <p>Logs into supplier web portals, checks PO confirmation status, drafts follow-up emails for any late orders.</p>
+            <div class="tl-caps"><span class="cap-tag ct-browser">🌐 Browser</span><span class="cap-tag ct-email">✉️ Email</span></div>
+          </div>
+          <div class="dept-step">
+            <div class="dept-step-meta"><span class="dept-time">17:00</span><strong>📄 Daily Digest</strong></div>
+            <p>Compiles shortage summary → emails SC manager and sends Telegram digest to the team while everyone is already home.</p>
+            <div class="tl-caps"><span class="cap-tag ct-shell">⚡ Shell</span><span class="cap-tag ct-email">✉️ Email</span><span class="cap-tag ct-msg">💬 Messaging</span></div>
+          </div>
+        </div>
+        <div class="dept-human"><strong>👔 Human focus:</strong> Supplier relationship-building, escalation judgment calls, emergency spending decisions — the things that require business authority and trust.</div>
+      </div>
+    </div>
+
+    <!-- CS -->
+    <div class="dept-card">
+      <div class="dept-card-header dh-cs">
+        <span style="font-size:1.4rem;">📞</span>
+        <div>
+          <strong>Customer Service (CS)</strong>
+          <div style="margin-top:2px;"><span class="dept-badge-high">✅ High Confidence</span></div>
+        </div>
+      </div>
+      <div class="dept-card-body">
+        <div class="dept-steps">
+          <div class="dept-step">
+            <div class="dept-step-meta"><span class="dept-time">07:30</span><strong>💬 CS Morning Trigger</strong></div>
+            <p>Telegram triggers CS routine — no human needed to start the day.</p>
+            <div class="tl-caps"><span class="cap-tag ct-msg">💬 Messaging</span></div>
+          </div>
+          <div class="dept-step">
+            <div class="dept-step-meta"><span class="dept-time">07:35</span><strong>📧 Inbox Triage</strong></div>
+            <p>Parses overnight customer emails — extracts order numbers, categorizes by type (status inquiry / complaint / urgent).</p>
+            <div class="tl-caps"><span class="cap-tag ct-email">✉️ Email</span></div>
+          </div>
+          <div class="dept-step">
+            <div class="dept-step-meta"><span class="dept-time">08:00</span><strong>🔐 ERP Order Lookup</strong></div>
+            <p>Logs into ERP, searches each order number, scrapes delivery status and ETA for every open inquiry.</p>
+            <div class="tl-caps"><span class="cap-tag ct-browser">🌐 Browser</span></div>
+          </div>
+          <div class="dept-step">
+            <div class="dept-step-meta"><span class="dept-time">08:30</span><strong>✉️ Status Replies Sent</strong></div>
+            <p>Drafts and sends individual status reply emails using templates — populated with real ERP data, not copy-paste.</p>
+            <div class="tl-caps"><span class="cap-tag ct-email">✉️ Email</span><span class="cap-tag ct-file">📁 File</span></div>
+          </div>
+          <div class="dept-step">
+            <div class="dept-step-meta"><span class="dept-time">14:00</span><strong>⚠️ Proactive Delay Alert</strong></div>
+            <p>Detects delayed shipment pattern → sends proactive delay notifications to 5 affected customers before they call.</p>
+            <div class="tl-caps"><span class="cap-tag ct-shell">⚡ Shell</span><span class="cap-tag ct-email">✉️ Email</span></div>
+          </div>
+          <div class="dept-step">
+            <div class="dept-step-meta"><span class="dept-time">17:00</span><strong>📋 Case Log &amp; Escalation</strong></div>
+            <p>Updates open-case log in Google Sheets, escalates 1 complaint by forwarding thread to CS supervisor with auto-generated summary.</p>
+            <div class="tl-caps"><span class="cap-tag ct-browser">🌐 Browser</span><span class="cap-tag ct-email">✉️ Email</span></div>
+          </div>
+        </div>
+        <div class="dept-human"><strong>👔 Human focus:</strong> Customers who need empathy and de-escalation, pricing or credit decisions, long-term relationship conversations — the interactions that actually retain clients.</div>
+      </div>
+    </div>
+
+    <!-- MPL -->
+    <div class="dept-card">
+      <div class="dept-card-header dh-mpl">
+        <span style="font-size:1.4rem;">📅</span>
+        <div>
+          <strong>Master Production Planning (MPL)</strong>
+          <div style="margin-top:2px;"><span class="dept-badge-med">🟡 Medium-High Confidence</span></div>
+        </div>
+      </div>
+      <div class="dept-card-body">
+        <div class="dept-steps">
+          <div class="dept-step">
+            <div class="dept-step-meta"><span class="dept-time">06:30</span><strong>📥 Data Ingestion</strong></div>
+            <p>Reads SC shortage report and yesterday's PRD actual output file — all inputs for the planning calculation.</p>
+            <div class="tl-caps"><span class="cap-tag ct-file">📁 File</span></div>
+          </div>
+          <div class="dept-step">
+            <div class="dept-step-meta"><span class="dept-time">07:00</span><strong>🧮 Cross-Reference Run</strong></div>
+            <p>Flags every production order where a required material is in shortage — the planner gets the list, not the search work.</p>
+            <div class="tl-caps"><span class="cap-tag ct-shell">⚡ Shell</span><span class="cap-tag ct-file">📁 File</span></div>
+          </div>
+          <div class="dept-step">
+            <div class="dept-step-meta"><span class="dept-time">07:30</span><strong>📊 Variance Calculation</strong></div>
+            <p>Calculates planned vs. actual output per SKU per shift — surfaces gaps before the planning meeting starts.</p>
+            <div class="tl-caps"><span class="cap-tag ct-shell">⚡ Shell</span></div>
+          </div>
+          <div class="dept-step">
+            <div class="dept-step-meta"><span class="dept-time">08:00</span><strong>📄 Feasibility Report</strong></div>
+            <p>Generates daily feasibility report — "blocked" vs. "can proceed" per production order — sent to PRD and SC before the 9am meeting.</p>
+            <div class="tl-caps"><span class="cap-tag ct-shell">⚡ Shell</span><span class="cap-tag ct-email">✉️ Email</span><span class="cap-tag ct-msg">💬 Messaging</span></div>
+          </div>
+        </div>
+        <div class="dept-human"><strong>👔 Human focus:</strong> OpenClaw surfaces the information — the planner makes the calls. Which customer order matters more, which contract has penalties, which supplier relationship needs a phone call today.</div>
+      </div>
+    </div>
+
+    <!-- PRD -->
+    <div class="dept-card">
+      <div class="dept-card-header dh-prd">
+        <span style="font-size:1.4rem;">🏭</span>
+        <div>
+          <strong>Production (PRD)</strong>
+          <div style="margin-top:2px;"><span class="dept-badge-med">🟡 Medium Confidence</span></div>
+        </div>
+      </div>
+      <div class="dept-card-body">
+        <div class="callout callout-amber" style="margin-bottom:1rem;font-size:0.8rem;">
+          <strong>⚠️ Condition:</strong> This only works if ISC's shift data is entered digitally (ERP web form or shared file). Paper-based shift reports cannot be read by an AI agent.
+        </div>
+        <div class="dept-steps">
+          <div class="dept-step">
+            <div class="dept-step-meta"><span class="dept-time">End of shift</span><strong>📥 Shift Data Read</strong></div>
+            <p>Reads shift output data directly from the ERP web entry form or shared file — no manual copy-paste needed.</p>
+            <div class="tl-caps"><span class="cap-tag ct-browser">🌐 Browser</span><span class="cap-tag ct-file">📁 File</span></div>
+          </div>
+          <div class="dept-step">
+            <div class="dept-step-meta"><span class="dept-time">Calculated</span><strong>🧮 OEE Calculation</strong></div>
+            <p>Calculates OEE per production line — Availability × Performance × Quality — from raw time, output, and defect inputs.</p>
+            <div class="tl-caps"><span class="cap-tag ct-shell">⚡ Shell</span></div>
+          </div>
+          <div class="dept-step">
+            <div class="dept-step-meta"><span class="dept-time">Threshold</span><strong>⚠️ Real-Time Alert</strong></div>
+            <p>If any line falls below OEE threshold → Telegram alert to production supervisor immediately, before the shift ends.</p>
+            <div class="tl-caps"><span class="cap-tag ct-shell">⚡ Shell</span><span class="cap-tag ct-msg">💬 Messaging</span></div>
+          </div>
+          <div class="dept-step">
+            <div class="dept-step-meta"><span class="dept-time">Daily</span><strong>📄 Shift Summary Report</strong></div>
+            <p>Exports formatted shift report → emails MPL and management. Done automatically, no one needs to compile it manually.</p>
+            <div class="tl-caps"><span class="cap-tag ct-shell">⚡ Shell</span><span class="cap-tag ct-email">✉️ Email</span></div>
+          </div>
+        </div>
+        <div class="dept-human"><strong>👔 Human focus:</strong> Production supervisors stop compiling reports — they spend that time on root cause analysis, machine optimization, coaching operators, and safety decisions that only humans can make.</div>
+      </div>
+    </div>
+
+  </div><!-- end dept-grid -->
 
   <!-- How It Works -->
   <h3 class="subsec-title"><i class="fa-solid fa-gears"></i> Under the Hood: The "Brain + Hands" Model</h3>
@@ -436,78 +612,130 @@
   <div class="claude-spotlight">
     <div class="cs-header">
       <div class="cs-logo">
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M16.44 4.67L22.25 22.75H18.67L17.27 18.5H10.73L9.33 22.75H5.75L11.56 4.67h4.88zm-2.44 4.2L11.5 15.6h5L14 8.87z" fill="#D4730A"/>
+        <!-- Real Claude starburst / pinwheel logo — official brand color #C15F3C (Crail) -->
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g transform="translate(24,24)">
+            <ellipse rx="4.5" ry="11" fill="#C15F3C" transform="rotate(0) translate(0,-5)"/>
+            <ellipse rx="4.5" ry="11" fill="#C15F3C" transform="rotate(45) translate(0,-5)" opacity="0.85"/>
+            <ellipse rx="4.5" ry="11" fill="#C15F3C" transform="rotate(90) translate(0,-5)" opacity="0.9"/>
+            <ellipse rx="4.5" ry="11" fill="#C15F3C" transform="rotate(135) translate(0,-5)" opacity="0.8"/>
+            <ellipse rx="4.5" ry="11" fill="#C15F3C" transform="rotate(180) translate(0,-5)" opacity="0.85"/>
+            <ellipse rx="4.5" ry="11" fill="#C15F3C" transform="rotate(225) translate(0,-5)" opacity="0.75"/>
+            <ellipse rx="4.5" ry="11" fill="#C15F3C" transform="rotate(270) translate(0,-5)" opacity="0.9"/>
+            <ellipse rx="4.5" ry="11" fill="#C15F3C" transform="rotate(315) translate(0,-5)" opacity="0.8"/>
+          </g>
         </svg>
-        <span>Claude Computer Use</span>
-        <span class="cs-badge">Special Focus</span>
+        <div class="cs-logo-text">
+          <span class="cs-logo-name">Claude Computer Use</span>
+          <span class="cs-badge">⭐ Special Focus</span>
+        </div>
       </div>
       <h3>Why Claude Deserves Kent's Attention 🔦</h3>
     </div>
 
-    <p class="prose">Of all the companies building AI agents, <strong>Anthropic's Claude</strong> is the one DK recommends ISC watch most closely. Here's why it's different from the others:</p>
+    <p class="prose">Of all the companies building AI agents, <strong>Anthropic's Claude</strong> is the one DK recommends ISC watch most closely. It's not just another chatbot — Claude is designed to operate computers, read complex documents, and integrate directly into the tools ISC already uses.</p>
 
     <div class="feature-grid cols-2" style="margin-top:1.5rem;">
       <div class="feature-card">
-        <div class="fc-icon" style="color:#D4730A;">🔗</div>
+        <div class="fc-icon" style="color:#C15F3C;">🔗</div>
         <h4>Native Google Stack Integration</h4>
         <p>Claude integrates directly with Google Workspace APIs — the same stack ISC already uses. Claude can read from BigQuery, write to Sheets, send via Gmail, and query your data without any middleware.</p>
       </div>
       <div class="feature-card">
-        <div class="fc-icon" style="color:#D4730A;">🛡️</div>
+        <div class="fc-icon" style="color:#C15F3C;">🛡️</div>
         <h4>Best-in-Class Safety Research</h4>
         <p>Anthropic was founded specifically to build safe AI. Their enterprise security practices are among the most rigorous in the industry — critical for a company like ISC handling supplier and customer data.</p>
       </div>
       <div class="feature-card">
-        <div class="fc-icon" style="color:#D4730A;">💬</div>
+        <div class="fc-icon" style="color:#C15F3C;">💬</div>
         <h4>Long-Form Reasoning</h4>
         <p>Claude excels at reading complex documents, understanding context, and making nuanced decisions — exactly what ISC needs for supply chain analysis and exception handling.</p>
       </div>
       <div class="feature-card">
-        <div class="fc-icon" style="color:#D4730A;">🏢</div>
+        <div class="fc-icon" style="color:#C15F3C;">🏢</div>
         <h4>Enterprise Deployment Path</h4>
         <p>Anthropic offers enterprise contracts with SOC 2 compliance, custom data residency, and dedicated support — the compliance checklist ISC will need when deploying AI agents at scale.</p>
       </div>
     </div>
 
+    <!-- Claude vs OpenClaw quick comparison -->
+    <div class="vs-compare-card">
+      <h4>Claude vs. OpenClaw — At a Glance</h4>
+      <div class="tbl-wrap" style="margin:0;">
+        <table>
+          <thead><tr><th>Factor</th><th>🦀 OpenClaw</th><th style="color:#C15F3C;">Claude Computer Use</th></tr></thead>
+          <tbody>
+            <tr><td>Hosting</td><td>Self-hosted (your PC)</td><td>☁️ Cloud (Anthropic servers)</td></tr>
+            <tr><td>Security</td><td>⚠️ 512 CVEs reported</td><td>✅ SOC 2 · sandboxed by design</td></tr>
+            <tr><td>ISC Google stack fit</td><td>Manual setup required</td><td>✅ Native API integration</td></tr>
+            <tr><td>Enterprise support</td><td>Community only</td><td>✅ Dedicated SLA available</td></tr>
+            <tr><td>Data residency</td><td>Local (unaudited)</td><td>✅ Custom residency option</td></tr>
+            <tr><td>Maturity (March 2026)</td><td>Early / risky</td><td>Beta · enterprise track in progress</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
     <h4 class="subsec-title" style="margin-top:2rem;"><i class="fa-solid fa-play-circle"></i> What ISC + Claude Could Look Like (2027 Scenario)</h4>
+    <p class="text-muted text-sm" style="margin-bottom:1rem;">This is a forward-looking scenario — Claude Computer Use is currently in beta as of March 2026.</p>
 
     <div class="scenario-flow">
       <div class="sf-step">
-        <div class="sf-num">1</div>
+        <div class="sf-num" style="background:#C15F3C;">1</div>
         <div class="sf-body">
           <strong>06:00 · BigQuery Query</strong>
-          <p>Claude queries ISC's BigQuery warehouse, identifies 3 shortage items exceeding threshold</p>
+          <p>Claude queries ISC's BigQuery warehouse, identifies 3 shortage items exceeding safety stock threshold</p>
         </div>
       </div>
       <div class="sf-arrow">→</div>
       <div class="sf-step">
-        <div class="sf-num">2</div>
+        <div class="sf-num" style="background:#C15F3C;">2</div>
         <div class="sf-body">
-          <strong>06:05 · Decision Made</strong>
-          <p>Claude cross-references supplier lead times, selects optimal PO quantities for each shortage</p>
+          <strong>06:05 · Analysis Done</strong>
+          <p>Claude cross-references supplier lead times and current PO pipeline, calculates optimal order quantities</p>
         </div>
       </div>
       <div class="sf-arrow">→</div>
       <div class="sf-step">
-        <div class="sf-num">3</div>
+        <div class="sf-num" style="background:#C15F3C;">3</div>
         <div class="sf-body">
           <strong>06:10 · Draft Created</strong>
-          <p>Claude drafts PO request email in Vietnamese, attaches shortage report, flags for human approval</p>
+          <p>Claude drafts PO request email in Vietnamese, attaches the shortage report, flags for human approval</p>
         </div>
       </div>
       <div class="sf-arrow">→</div>
       <div class="sf-step">
-        <div class="sf-num">4</div>
+        <div class="sf-num" style="background:#C15F3C;">4</div>
         <div class="sf-body">
-          <strong>07:00 · Human Reviews</strong>
+          <strong>07:00 · Human Approves</strong>
           <p>Purchasing manager reviews 3 items, approves with one click — before morning coffee is finished</p>
+        </div>
+      </div>
+      <div class="sf-arrow">→</div>
+      <div class="sf-step">
+        <div class="sf-num" style="background:#C15F3C;">5</div>
+        <div class="sf-body">
+          <strong>07:05 · ERP Updated</strong>
+          <p>Claude logs into the ERP portal, records the approved PO numbers, updates stock allocation fields automatically</p>
+        </div>
+      </div>
+      <div class="sf-arrow">→</div>
+      <div class="sf-step">
+        <div class="sf-num" style="background:#C15F3C;">6</div>
+        <div class="sf-body">
+          <strong>07:10 · Done</strong>
+          <p>Full cycle complete before the SC team finishes their morning standup. Zero manual data entry. Zero missed items.</p>
         </div>
       </div>
     </div>
 
-    <div class="callout callout-gold" style="margin-top:1.5rem;">
-      <div><strong>🎯 DK's Recommendation:</strong> When ISC evaluates enterprise AI agents in 2027, <strong>Claude should be the first pilot candidate</strong> — given ISC's existing Google infrastructure, Claude's native compatibility means the fastest path from "pilot" to "production." DK will track Anthropic's enterprise roadmap in weekly reports.</div>
+    <!-- DK's #1 Recommendation Block -->
+    <div class="claude-rec-block">
+      <div class="crb-icon">🥇</div>
+      <div>
+        <strong>DK's #1 Pick for ISC's 2027 AI Agent Pilot</strong>
+        <p>Claude's native Google Workspace integration means zero middleware setup. ISC's BigQuery data is already queryable today. When enterprise AI agents are ready for production deployment, Claude has the shortest path from pilot to live for ISC's exact stack. DK will track Anthropic's enterprise roadmap and report any changes immediately.</p>
+      </div>
     </div>
   </div>
 
@@ -854,24 +1082,49 @@
 
   <!-- Kaizen Metrics -->
   <h3 class="subsec-title"><i class="fa-solid fa-chart-line"></i> Kaizen Impact — Hours Reclaimed</h3>
+  <p class="text-muted text-sm" style="margin-bottom:1rem;font-style:italic;">⚠️ Estimates based on active pilot testing — not yet confirmed production savings. Tools are in testing and debugging phase.</p>
   <div class="tbl-wrap">
     <table>
-      <thead><tr><th>Department</th><th>Initiative</th><th>Hours Saved / Week</th><th>Status</th></tr></thead>
+      <thead><tr><th>Department</th><th>Initiative</th><th>Est. Hours / Week</th><th>Status</th></tr></thead>
       <tbody>
-        <tr><td><strong>🔗 Supply Chain</strong></td><td>Shortage auto-calculation</td><td class="td-green"><strong>14 hrs</strong></td><td><span class="badge badge-green">✅ Live</span></td></tr>
-        <tr><td><strong>🔗 Supply Chain</strong></td><td>PO matching engine</td><td class="td-green"><strong>6 hrs</strong></td><td><span class="badge badge-green">✅ Live</span></td></tr>
+        <tr><td><strong>🔗 Supply Chain</strong></td><td>Shortage auto-calculation</td><td class="td-green"><strong>10–15 hrs</strong></td><td><span class="badge badge-amber">⚙️ Pilot</span></td></tr>
+        <tr><td><strong>🔗 Supply Chain</strong></td><td>PO matching engine</td><td><strong>~6 hrs</strong></td><td><span class="badge badge-amber">⚙️ Pilot</span></td></tr>
         <tr><td><strong>📅 Master Plan</strong></td><td>Scheduling &amp; SC demand sync</td><td>~6 hrs (est.)</td><td><span class="badge badge-gold">Q2 2026</span></td></tr>
         <tr><td><strong>📞 Customer Service</strong></td><td>M1 CS Protocol</td><td>~4 hrs (est.)</td><td><span class="badge badge-gold">Q2 2026</span></td></tr>
         <tr><td><strong>🏭 Production</strong></td><td>Scheduling dashboard</td><td>~8 hrs (est.)</td><td><span class="badge badge-outline">Q3 2026</span></td></tr>
         <tr><td><strong>🔬 QC</strong></td><td>Defect pattern tracking</td><td>~5 hrs (est.)</td><td><span class="badge badge-outline">Q3 2026</span></td></tr>
         <tr><td><strong>💼 Finance</strong></td><td>Invoice matching</td><td>~10 hrs (est.)</td><td><span class="badge badge-outline">Q4 2026</span></td></tr>
-        <tr class="row-gold"><td><strong>TOTAL</strong></td><td><em>Full roadmap</em></td><td><strong style="color:var(--gold-bright);font-size:1.1rem;">53+ hrs/week</strong></td><td><span class="badge badge-gold">2026 Roadmap</span></td></tr>
+        <tr class="row-gold"><td><strong>CURRENT PILOT</strong></td><td><em>SC pilot phase</em></td><td><strong style="color:var(--gold-bright);font-size:1.1rem;">10–15 hrs/wk</strong></td><td><span class="badge badge-amber">⚙️ In Testing</span></td></tr>
       </tbody>
     </table>
   </div>
 
   <div class="pull-quote">
-    "53 hours saved per week. That's more than one full-time employee — recovered through automation, without a single new hire."
+    "10 to 15 hours reclaimed per week in current pilot testing — freeing the SC team to focus on supplier relationships and strategic decisions. The full roadmap points toward 40+ hours once validated across all departments."
+  </div>
+
+  <!-- 2026 Roadmap Timeline Infographic -->
+  <h3 class="subsec-title" style="margin-top:2rem;"><i class="fa-solid fa-road"></i> 2026 Automation Roadmap</h3>
+  <div class="roadmap-timeline">
+    <div class="rt-item rt-done">
+      <div class="rt-dot"></div>
+      <div class="rt-body"><strong>Q1 2026</strong><p>SC Shortage pilot live</p></div>
+    </div>
+    <div class="rt-line"></div>
+    <div class="rt-item rt-active">
+      <div class="rt-dot"></div>
+      <div class="rt-body"><strong>Q2 2026</strong><p>Master Plan + CS Protocol</p></div>
+    </div>
+    <div class="rt-line"></div>
+    <div class="rt-item">
+      <div class="rt-dot"></div>
+      <div class="rt-body"><strong>Q3 2026</strong><p>Production + QC dashboards</p></div>
+    </div>
+    <div class="rt-line"></div>
+    <div class="rt-item">
+      <div class="rt-dot"></div>
+      <div class="rt-body"><strong>Q4 2026</strong><p>Finance + AI agent eval</p></div>
+    </div>
   </div>
 
   <div class="section-hook">
@@ -926,6 +1179,17 @@
   <!-- Maturity Ladder -->
   <h3 class="subsec-title"><i class="fa-solid fa-stairs"></i> ISC's Dark Office Maturity Ladder</h3>
   <p class="prose" style="margin-bottom:1.5rem;">Every company moves through levels. ISC has already climbed to Level 1 — ahead of most companies in Vietnam.</p>
+
+  <!-- Maturity Dial Infographic -->
+  <div class="maturity-dial-wrap">
+    <div class="maturity-dial" style="--dial-pct: 0%">
+      <div class="dial-inner">
+        <span class="dial-level">L1</span>
+        <span class="dial-of">of 5</span>
+      </div>
+    </div>
+    <p class="dial-caption">ISC Current Position — March 2026</p>
+  </div>
 
   <div class="dark-office-ladder">
     <div class="level-item level-done">
@@ -1172,17 +1436,18 @@
 
   <!-- ROI Table -->
   <h3 class="subsec-title"><i class="fa-solid fa-coins"></i> Return on Investment Summary</h3>
+  <p class="text-muted text-sm" style="margin-bottom:1rem;font-style:italic;">⚠️ Early-stage estimates based on pilot testing — cost savings are not yet confirmed in production. Tools are in testing and debugging phase.</p>
   <div class="tbl-wrap">
     <table>
-      <thead><tr><th>Initiative</th><th>Investment</th><th>Annual Value</th><th>Status</th></tr></thead>
+      <thead><tr><th>Initiative</th><th>Investment</th><th>Estimated Annual Value</th><th>Status</th></tr></thead>
       <tbody>
-        <tr><td><strong>🔗 SC Shortage Automation</strong></td><td>Built (DK + Q1 2026)</td><td class="td-green"><strong>~$18k saved</strong></td><td><span class="badge badge-green">✅ Live</span></td></tr>
-        <tr><td><strong>🔗 PO Matching Engine</strong></td><td>Built (DK + Q1 2026)</td><td class="td-green"><strong>~$8k saved</strong></td><td><span class="badge badge-green">✅ Live</span></td></tr>
+        <tr><td><strong>🔗 SC Shortage Automation</strong></td><td>Built (DK + Q1 2026)</td><td><strong>~$5–8k est.</strong></td><td><span class="badge badge-amber">⚙️ Pilot</span></td></tr>
+        <tr><td><strong>🔗 PO Matching Engine</strong></td><td>Built (DK + Q1 2026)</td><td><strong>~$3–5k est.</strong></td><td><span class="badge badge-amber">⚙️ Pilot</span></td></tr>
         <tr><td><strong>🏭 Production Dashboard</strong></td><td>~2 weeks DK time</td><td>~$12k est.</td><td><span class="badge badge-gold">Q2 2026</span></td></tr>
         <tr><td><strong>🔬 QC Defect Tracking</strong></td><td>~3 weeks DK time</td><td>~$8k est.</td><td><span class="badge badge-outline">Q3 2026</span></td></tr>
         <tr><td><strong>💼 Finance Invoice Matching</strong></td><td>~3 weeks DK time</td><td>~$15k est.</td><td><span class="badge badge-outline">Q3 2026</span></td></tr>
         <tr><td><strong>🖥️ CEO Dashboard (Looker)</strong></td><td>~1 week DK time</td><td>Strategic visibility</td><td><span class="badge badge-outline">Q3 2026</span></td></tr>
-        <tr class="row-gold"><td><strong>TOTAL (Full Roadmap)</strong></td><td>~2 months DK time</td><td><strong style="color:var(--gold-bright);font-size:1.1rem;">~$61k+/year</strong></td><td><span class="badge badge-gold">2026 Target</span></td></tr>
+        <tr class="row-gold"><td><strong>TOTAL (Current Pilot Estimate)</strong></td><td>~2 months DK time</td><td><strong style="color:var(--gold-bright);font-size:1.1rem;">~$8–15k/yr (pilot est.)</strong></td><td><span class="badge badge-amber">⚙️ Validating</span></td></tr>
       </tbody>
     </table>
   </div>
